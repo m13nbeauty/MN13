@@ -1236,6 +1236,57 @@
                     <div class="case-desc">曾服用 A 酸並接受脈衝光治療的客人，結合無創水光、矽晶煥膚與針清粉刺，以溫和方式協助肌膚代謝，閉鎖性痘痘逐步排出，整體膚況趨於穩定。</div>
                 </div>
 
+                <!-- 案例 3 -->
+                <div class="case-card">
+                    <div class="case-card-header">
+                        <div class="case-tag-group">
+                            <span class="case-chip type">無創水光</span>
+                            <span class="case-chip type">矽晶煥膚</span>
+                            <span class="case-chip type">Plasma</span>
+                            <span class="case-chip type">針清粉刺</span>
+                        </div>
+                    </div>
+                    <div class="case-compare">
+                        <div class="case-side">
+                            <div class="case-date">114.04.07</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前3.png" alt="前"></div>
+                            <div class="case-label">過敏肌、曾服A酸<br>肌膚敏感不穩定</div>
+                        </div>
+                        <div class="case-arrow-center">→</div>
+                        <div class="case-side">
+                            <div class="case-date">115.01.20</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後3.png" alt="後"></div>
+                            <div class="case-label">膚況逐漸穩定、<br>舒適度明顯提升</div>
+                        </div>
+                    </div>
+                    <div class="case-desc">曾就診皮膚科多年、嘗試過多家美容仍未改善的過敏肌客人。針對敏感肌底，以客製化流程循序漸進調理，依當下膚況彈性搭配課程，協助肌膚在可接受的狀態下逐步恢復穩定。</div>
+                </div>
+
+                <!-- 案例 4 -->
+                <div class="case-card">
+                    <div class="case-card-header">
+                        <div class="case-tag-group">
+                            <span class="case-chip type">矽晶煥膚</span>
+                            <span class="case-chip type">燈泡肌</span>
+                            <span class="case-chip type">MTS</span>
+                        </div>
+                    </div>
+                    <div class="case-compare">
+                        <div class="case-side">
+                            <div class="case-date">113.07.07</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前4.png" alt="前"></div>
+                            <div class="case-label">工作環境影響<br>臉部凹疤困擾</div>
+                        </div>
+                        <div class="case-arrow-center">→</div>
+                        <div class="case-side">
+                            <div class="case-date">113.11.24</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後4.png" alt="後"></div>
+                            <div class="case-label">膚質逐漸細緻、<br>肌膚趨於均勻</div>
+                        </div>
+                    </div>
+                    <div class="case-desc">從事電焊工作的客人，因長期工作環境影響造成臉部凹疤困擾。透過矽晶煥膚、燈泡肌與 MTS 階段性護理，幫助肌膚逐步恢復細緻均勻的狀態。</div>
+                </div>
+
             </div>
 
             <p class="cases-disclaimer">
@@ -1279,21 +1330,21 @@ const courses = {
         tag: '淨化毛孔',
         title: '小氣泡',
         desc: '小氣泡是一種以水流與溫和負壓搭配進行的臉部清潔護理，透過旋渦水流方式協助帶走毛孔內的老廢角質與多餘皮脂，並同步補充調理精華，讓肌膚維持清爽舒適的感受。適合平日肌膚保養，建議定期進行以維持毛孔暢通。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png'],
         hasCases: false
     },
     extraction: {
         tag: '淨化毛孔',
         title: '針清粉刺',
         desc: '針清粉刺由受過專業訓練的美容師，在嚴格的衛生規範下進行臉部毛孔清潔作業，針對閉鎖性與開放性粉刺進行處理，協助維持毛孔通暢。施作前後皆搭配舒緩護理，減少肌膚不適，維護肌膚健康狀態。個人膚況與體質有所差異，建議於諮詢後安排適合的護理計畫。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png'],
         hasCases: false
     },
     crystal: {
         tag: '問題肌．養膚',
         title: '矽晶煥膚',
         desc: '矽晶煥膚是一項專為問題肌膚設計的調理護理課程，透過專業技術與精華成分的結合，協助肌膚代謝老廢物質，維護肌底的清爽與穩定。適合容易出油、毛孔阻塞或肌膚狀況不穩定的族群，建議持續護理以逐步改善肌膚狀態。每位客人的肌膚狀況各異，美容師將依個人需求提供客製化的護理建議。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png'],
         hasCases: false
     },
     aqua: {
@@ -1307,21 +1358,21 @@ const courses = {
         tag: '水煮蛋肌',
         title: 'Plasma 電漿',
         desc: 'Plasma 電漿護理運用電漿技術進行肌膚表面調理，協助維護肌膚屏障功能，改善肌膚表面粗糙感，使整體膚觸更加細緻。施作過程須依個人肌膚狀況調整，建議於諮詢後由專業美容師評估最適合的護理方式。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png'],
         hasCases: false
     },
     foundation: {
         tag: '水煮蛋肌',
         title: '駐顏粉底',
         desc: '駐顏粉底護理結合養膚成分與調色技術，協助均勻肌膚色調，提升整體氣色與光澤感，讓肌膚呈現自然健康的視覺效果。護理過程溫和，適合追求自然素顏感的族群。建議諮詢後依膚色與需求選擇最適合的護理方案。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png'],
         hasCases: false
     },
     contour: {
         tag: '彈力．輪廓',
         title: '輪廓管理',
         desc: '輪廓管理透過專業的手法操作與儀器輔助，針對臉部輪廓進行整體性的調理與護理，協助維護肌膚的緊實感與線條清晰度。每次護理皆依個人臉部狀態進行評估，建議定期回診以維持最佳護理成效。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png'],
         hasCases: false
     },
     acid: {
@@ -1335,35 +1386,38 @@ const courses = {
         tag: '彈力．輪廓',
         title: '逆時彈力緊膚',
         desc: '逆時彈力緊膚護理以提升肌膚緊緻感與彈力為主要目標，透過儀器與護理成分的搭配使用，協助肌膚維持緊實狀態。課程適合感受到肌膚緊緻度下降或輪廓感較不明顯的族群，建議諮詢後制定適合的護理週期。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png'],
         hasCases: false
     },
     eye: {
         tag: '重點呵護',
         title: '眼部三合一',
         desc: '眼部三合一是專為眼周脆弱肌膚設計的複合式護理課程，針對眼周常見的疲勞感、水分不足及細紋進行全面性調理，以溫和手法進行眼周按摩與精華導入，讓眼周肌膚恢復放鬆與明亮感。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png'],
         hasCases: false
     },
     spot: {
         tag: '重點呵護',
         title: '斑點剋星',
         desc: '斑點剋星護理針對肌膚局部色素不均的問題進行調理，搭配具有美白輔助功效的護理成分，協助肌膚維持均勻色調。課程效果因個人肌膚狀況、體質及生活習慣而有所差異，建議配合防曬習慣，效果更加穩定持久。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png'],
         hasCases: false
     },
     'cleansing-edu': {
         tag: '其他',
         title: '卸洗教學',
         desc: '卸洗教學由專業美容師親自示範正確的卸妝與洗臉步驟，協助客人建立完整的清潔概念。正確的清潔習慣是所有後續保養的基礎，錯誤的卸洗方式可能造成肌膚負擔。課程內容依個人使用產品與膚況進行調整，讓每位客人都能找到最適合自己的清潔方式。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png'],
         hasCases: false
     },
     exosome: {
         tag: '其他',
         title: '外泌體凍膜',
         desc: '外泌體凍膜以富含修護成分的凍膜進行臉部敷膜護理，協助肌膚在護理後快速舒緩，降低不適感，並補充肌膚所需水分與養分。適合護理後需要加強修護的肌膚，或作為日常保養的加強選項，與其他課程搭配使用效果更佳。',
-        imgs: [],
+        imgs: [
+            'https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png',
+            'https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png'
+        ],
         hasCases: false
     }
 };
