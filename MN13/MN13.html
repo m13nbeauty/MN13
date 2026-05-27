@@ -7,21 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #4B3D2B;    /* 品牌深褐 */
-            --accent-gold: #B39766;    /* 品牌金 */
+            --primary-bg: #4B3D2B;
+            --accent-gold: #B39766;
             --text-main: #333333;
             --text-soft: #777777;
-            --note-bg: #fbf9f5;        /* 指定方塊底色 */
+            --note-bg: #fbf9f5;
             --white: #ffffff;
-            --primary-brown: #4a3e2a; /* 字體指定色 */
+            --primary-brown: #4a3e2a;
         }
 
-        /* 基礎設定 */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background-color: #f5f5f5; 
-            display: flex; 
-            justify-content: center; 
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
             min-height: 100vh;
             font-family: 'Noto Serif TC', serif;
         }
@@ -36,7 +35,7 @@
             flex-direction: column;
         }
 
-        /* 頂部 Header */
+        /* Header */
         header {
             background-color: var(--primary-bg);
             color: #FAF8F5;
@@ -46,64 +45,459 @@
         header h1 { font-size: 1.7rem; letter-spacing: 3px; font-weight: 500; margin-bottom: 5px; font-family: 'Noto Serif TC', serif; }
         header p { font-size: 0.7rem; letter-spacing: 4px; opacity: 0.7; font-family: 'Noto Serif TC', serif; }
 
-        /* 導覽列 */
-        nav {
-            display: flex; 
-            background: var(--white); 
-            border-bottom: 1px solid #F0F0F0;
-            position: sticky; 
-            top: 0; 
-            z-index: 100;
+        /* ── 漢堡選單按鈕 ── */
+        .menu-btn {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            z-index: 200;
+            transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .nav-item {
-            flex: 1; padding: 16px 0; text-align: center;
-            font-size: 0.85rem; color: var(--text-soft); cursor: pointer;
+        .menu-btn:active { background: rgba(255,255,255,0.25); }
+        .menu-btn span {
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: #FAF8F5;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .menu-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .menu-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* ── 抽屜式選單 ── */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 150;
+        }
+        .drawer-overlay.open { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background: var(--primary-bg);
+            z-index: 160;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(-100%);
+            transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+        .drawer.open { transform: translateX(0); }
+
+        .drawer-brand {
+            padding: 54px 28px 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .drawer-brand h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.3rem;
+            color: #FAF8F5;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .drawer-brand p {
+            font-size: 0.62rem;
+            color: rgba(250,248,245,0.45);
+            letter-spacing: 3px;
             font-family: 'Noto Sans TC', sans-serif;
-            transition: 0.3s;
         }
-        .nav-item.active {
-            color: var(--primary-bg);
-            font-weight: 600;
-            border-bottom: 3px solid var(--primary-bg);
+
+        .drawer-nav { flex: 1; padding: 18px 0; }
+        .drawer-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 28px;
+            cursor: pointer;
+            color: rgba(250,248,245,0.7);
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.92rem;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            border-left: 3px solid transparent;
         }
+        .drawer-item:active { background: rgba(255,255,255,0.05); }
+        .drawer-item.active {
+            color: var(--accent-gold);
+            border-left-color: var(--accent-gold);
+            background: rgba(179,151,102,0.08);
+        }
+        .drawer-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .drawer-item.active .drawer-item-icon { background: rgba(179,151,102,0.18); }
+
+        .drawer-footer {
+            padding: 22px 28px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.62rem;
+            color: rgba(250,248,245,0.28);
+            letter-spacing: 1px;
+        }
+
+        /* ── Header 相對定位（for 漢堡按鈕） ── */
+        header { position: relative; }
 
         .page-content { display: none; }
         .page-content.active { display: block; }
 
         /* =========================================
-           頁面：日常卸洗
+           保養篇：子選單
+           ========================================= */
+        .care-subnav {
+            display: flex;
+            background: var(--note-bg);
+            border-bottom: 1px solid #ece8e0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+        .care-subnav-item {
+            flex: 1; padding: 13px 0; text-align: center;
+            font-size: 0.82rem; color: var(--text-soft); cursor: pointer;
+            font-family: 'Noto Sans TC', sans-serif;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .care-subnav-item.active {
+            color: var(--accent-gold);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        .care-sub-content { display: none; }
+        .care-sub-content.active { display: block; }
+
+        /* =========================================
+           課程：分類選單
+           ========================================= */
+        .course-cat-nav {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            background: var(--note-bg);
+            border-bottom: 1px solid #ece8e0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+        .course-cat-nav::-webkit-scrollbar { display: none; }
+        .course-cat-item {
+            flex-shrink: 0;
+            padding: 12px 16px;
+            font-size: 0.78rem;
+            color: var(--text-soft);
+            cursor: pointer;
+            font-family: 'Noto Sans TC', sans-serif;
+            transition: 0.3s;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+        .course-cat-item.active {
+            color: var(--accent-gold);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        .course-cat-content { display: none; }
+        .course-cat-content.active { display: block; }
+
+        /* =========================================
+           課程卡片（列表用）
+           ========================================= */
+        .cat-page-header {
+            text-align: center;
+            padding: 28px 22px 16px;
+        }
+        .cat-page-header h4 {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .cat-page-header h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+        }
+        .cat-page-header p {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.75rem;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .course-list { padding: 8px 22px 40px; }
+
+        .course-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--note-bg);
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            border-left: 3px solid var(--accent-gold);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .course-card:active { transform: scale(0.98); }
+        .course-card:hover { box-shadow: 0 4px 16px rgba(179,151,102,0.15); }
+
+        .course-card-left { flex: 1; }
+        .course-card-name {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1rem;
+            color: var(--primary-brown);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .course-card-hint {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.72rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+        .course-card-arrow {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin-left: 12px;
+            flex-shrink: 0;
+        }
+
+        /* =========================================
+           Modal 彈跳視窗
+           ========================================= */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 999;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .modal-overlay.open {
+            display: flex;
+            animation: overlayIn 0.25s ease;
+        }
+        @keyframes overlayIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .modal-sheet {
+            background: #fff;
+            width: 100%;
+            max-width: 480px;
+            max-height: 88vh;
+            border-radius: 22px 22px 0 0;
+            display: flex;
+            flex-direction: column;
+            animation: sheetUp 0.3s cubic-bezier(0.34,1.56,0.64,1);
+            overflow: hidden;
+        }
+        @keyframes sheetUp {
+            from { transform: translateY(100%); }
+            to   { transform: translateY(0); }
+        }
+
+        /* 拖曳把手 */
+        .modal-handle {
+            width: 40px; height: 4px;
+            background: #ddd;
+            border-radius: 2px;
+            margin: 12px auto 0;
+            flex-shrink: 0;
+        }
+
+        /* Modal 頂部固定區 */
+        .modal-header {
+            padding: 16px 22px 14px;
+            border-bottom: 1px solid #f0f0f0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .modal-title-group { flex: 1; }
+        .modal-tag {
+            display: inline-block;
+            background: var(--primary-bg);
+            color: #FAF8F5;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.62rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+        .modal-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.25rem;
+            color: var(--primary-brown);
+            font-weight: 600;
+        }
+        .modal-close {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 50%;
+            width: 32px; height: 32px;
+            font-size: 1rem;
+            color: #888;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Modal 捲動內容區 */
+        .modal-body {
+            overflow-y: auto;
+            flex: 1;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* 圖片佔位區 */
+        .modal-img-area {
+            width: 100%;
+            background: #f3f0eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .modal-img-area img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        .modal-img-placeholder {
+            /* 預設佔位，上傳圖片後會被替換 */
+            width: 100%;
+            min-height: 200px;
+            background: #ede8df;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .modal-img-placeholder-icon {
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+        .modal-img-placeholder-text {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.72rem;
+            color: #b5a99a;
+            letter-spacing: 1px;
+        }
+
+        /* Modal 內容文字 */
+        .modal-content-inner {
+            padding: 22px 22px 36px;
+        }
+        .modal-desc {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 2;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Modal 內案例分享 */
+        .modal-cases-title {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .modal-cases-title::before,
+        .modal-cases-title::after { content: "—"; margin: 0 10px; font-weight: 300; }
+
+        .compare-group { margin-bottom: 24px; }
+        .compare-grid { display: grid; grid-template-columns: 1fr 20px 1fr; align-items: center; gap: 10px; }
+        .compare-item { text-align: center; }
+        .compare-date { font-size: 0.72rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 8px; font-family: 'Noto Sans TC', sans-serif; }
+        .img-box { position: relative; aspect-ratio: 1/1; border-radius: 10px; overflow: hidden; background: #eee; border: 1px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .arrow { color: var(--accent-gold); font-weight: bold; text-align: center; }
+        .compare-desc { font-size: 0.68rem; color: #666; line-height: 1.4; margin-top: 8px; font-family: 'Noto Sans TC', sans-serif; }
+        .hr-line { border: 0; border-top: 1px solid rgba(179, 151, 102, 0.2); margin: 18px 0; }
+        .case-disclaimer { font-size: 0.62rem; color: #bbb; text-align: center; margin-top: 14px; letter-spacing: 1px; line-height: 1.8; font-family: 'Noto Sans TC', sans-serif; }
+
+        /* =========================================
+           日常卸洗（原版完整）
            ========================================= */
         .content-cleansing { padding: 30px 22px; }
         .video-wrapper {
-            width: 100%; 
+            width: 100%;
             aspect-ratio: 3 / 4;
             background-color: #f9f9f9;
-            background-image: url('image/影片縮圖.jpg');
-            background-size: cover; 
+            background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/影片縮圖.jpg');
+            background-size: cover;
             background-position: center;
-            border: 1px solid #eee; 
-            border-radius: 15px; 
-            margin-bottom: 40px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: relative; 
+            border: 1px solid #eee;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             overflow: hidden;
         }
         .play-overlay {
             width: 70px; height: 70px; background: rgba(75, 61, 43, 0.7);
-            border-radius: 50%; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; padding-left: 5px; text-decoration: none;
+            border-radius: 50%; color: #fff; display: flex; align-items: center;
+            justify-content: center; font-size: 24px; padding-left: 5px; text-decoration: none;
         }
-
         .teaching-box { background-color: var(--note-bg); border-radius: 15px; padding: 35px 25px; margin-bottom: 30px; }
         .teaching-box h2 { text-align: center; font-size: 1.2rem; color: var(--text-main); margin-bottom: 10px; letter-spacing: 6px; }
-        .important-note {
-            display: block; text-align: center; font-size: 0.8rem; color: var(--accent-gold); 
-            margin-bottom: 20px; font-weight: 600; letter-spacing: 0.5px;
-        }
+        .important-note { display: block; text-align: center; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 20px; font-weight: 600; letter-spacing: 0.5px; }
         .step-content { font-size: 0.9rem; color: #555; line-height: 2; }
         .sub-steps { padding-left: 20px; list-style: circle; font-size: 0.85rem; color: #888; margin: 10px 0; }
-
         .product-section { background: #FDFBFA; border: 1px solid rgba(179, 151, 102, 0.15); border-radius: 20px; padding: 40px 20px; }
         .product-section .title { text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: var(--text-main); }
         .product-item { display: flex; align-items: center; background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
@@ -116,164 +510,556 @@
         .line-call-to-action { text-align: center; font-size: 0.9rem; color: var(--primary-bg); margin-top: 30px; line-height: 1.8; font-weight: 600; letter-spacing: 1px; }
 
         /* =========================================
-           頁面：矽晶照護
+           矽晶照護（原版完整）
            ========================================= */
         .content-crystal { padding: 30px 22px; }
-        .section-header {
-            text-align: center; font-size: 1.1rem; color: var(--accent-gold);
-            margin: 40px 0 25px; letter-spacing: 4px;
-        }
+        .section-header { text-align: center; font-size: 1.1rem; color: var(--accent-gold); margin: 40px 0 25px; letter-spacing: 4px; }
         .section-header::before, .section-header::after { content: "—"; margin: 0 15px; font-weight: 300; }
-
         .grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 40px; }
-        .grid-box {
-            grid-column: span 2; background: var(--white); border: 1px solid rgba(179, 151, 102, 0.3);
-            border-radius: 12px; padding: 15px 5px; display: flex; align-items: center; justify-content: center;
-            text-align: center; font-size: 0.75rem; color: #666; line-height: 1.6; min-height: 85px;
-        }
+        .grid-box { grid-column: span 2; background: var(--white); border: 1px solid rgba(179, 151, 102, 0.3); border-radius: 12px; padding: 15px 5px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.75rem; color: #666; line-height: 1.6; min-height: 85px; }
         .grid-box-wide { grid-column: span 3; }
-
         .gradient-section { background-image: linear-gradient(to top, #ffffff, #d8c7ab, #ffffff); padding: 20px 0; margin: 0 -22px; }
         .gradient-inner { padding: 0 22px; }
-
-        .card {
-            background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 15px; padding: 22px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); backdrop-filter: blur(5px);
-        }
+        .card { background: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.5); border-radius: 15px; padding: 22px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); backdrop-filter: blur(5px); }
         .day-label { color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 15px; display: block; font-weight: 600; }
         .routine-p { font-size: 0.9rem; color: #444; line-height: 1.8; margin-bottom: 8px; }
-
-        .compare-group { margin-bottom: 30px; }
-        .compare-grid { display: grid; grid-template-columns: 1fr 20px 1fr; align-items: center; gap: 10px; margin-top: 10px; }
-        .compare-item { text-align: center; }
-        .compare-date { font-size: 0.75rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 8px; }
-        .img-box { position: relative; aspect-ratio: 1/1; border-radius: 10px; overflow: hidden; background: #eee; border: 1px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .arrow { color: var(--accent-gold); font-weight: bold; text-align: center; }
-        .compare-desc { font-size: 0.72rem; color: #666; line-height: 1.4; margin-top: 8px; min-height: 2.8em; }
-        .hr-line { border: 0; border-top: 1px solid rgba(179, 151, 102, 0.2); margin: 15px 0; }
-
         .note-tan-card { background: #F4F0E8; border-radius: 12px; padding: 20px; font-size: 0.85rem; margin-top: 20px; }
-
         .precautions-block { background-color: var(--note-bg); border-radius: 15px; padding: 35px 22px; margin: 40px 0; }
         .precautions-block .title { text-align: center; font-size: 1.15rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 4px; font-weight: 500; }
-        .precaution-item { font-size: 0.88rem; color: #555; line-height: 2; margin-bottom: 15px; padding-left: 28px; position: relative; text-align: justify;}
+        .precaution-item { font-size: 0.88rem; color: #555; line-height: 2; margin-bottom: 15px; padding-left: 28px; position: relative; text-align: justify; }
         .precaution-item::before { content: attr(data-index); position: absolute; left: 0; color: var(--accent-gold); font-weight: 600; }
-
-        .footer-crystal { 
-            padding: 20px 22px 60px; 
-            text-align: center; 
-            font-size: 0.78rem; 
-            color: #9b9185; 
-            line-height: 1.8; 
-            background: #fff;
-        }
+        .footer-crystal { padding: 20px 22px 60px; text-align: center; font-size: 0.78rem; color: #9b9185; line-height: 1.8; background: #fff; }
 
         /* =========================================
-           頁面：關於我們
+           關於我們（原版完整）
            ========================================= */
         .content-about { padding-top: 30px; }
-        .section-title {
-            text-align: center; font-size: 1.1rem; color: var(--primary-brown);
-            margin-bottom: 30px; letter-spacing: 4px; font-family: 'Noto Serif TC', serif;
-        }
+        .section-title { text-align: center; font-size: 1.1rem; color: var(--primary-brown); margin-bottom: 30px; letter-spacing: 4px; font-family: 'Noto Serif TC', serif; }
         .section-title::before, .section-title::after { content: "—"; margin: 0 15px; font-weight: 300; }
-
         .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 22px 40px; }
-        .link-item {
-            border: 1px solid rgba(179, 151, 102, 0.2); border-radius: 12px; padding: 18px 15px;
-            text-align: center; text-decoration: none; background-color: var(--note-bg);
-            transition: transform 0.2s ease;
-        }
+        .link-item { border: 1px solid rgba(179,151,102,0.2); border-radius: 12px; padding: 18px 15px; text-align: center; text-decoration: none; background-color: var(--note-bg); transition: transform 0.2s ease; }
         .link-item:active { transform: scale(0.95); }
         .link-item span { display: block; color: var(--primary-brown); font-size: 0.95rem; font-family: 'Noto Serif TC', serif; font-weight: 600; }
         .link-item small { color: #9b9185; font-size: 0.65rem; display: block; font-family: 'Noto Sans TC', sans-serif; margin-top: 4px; }
-
         .brand-story-section { background-image: linear-gradient(to top, #ffffff, #d8c7ab, #ffffff); padding: 60px 22px; }
         .brand-story-section h4 { font-family: 'Noto Sans TC', sans-serif; font-size: 0.75rem; color: var(--accent-gold); letter-spacing: 1px; margin-bottom: 5px; }
         .brand-story-section h2 { font-family: 'Noto Serif TC', serif; font-size: 1.35rem; color: var(--primary-brown); margin-bottom: 20px; }
         .story-text { font-family: 'Noto Sans TC', sans-serif; font-size: 0.88rem; color: var(--text-main); line-height: 1.9; text-align: justify; margin-bottom: 30px; }
-
         .image-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
-        
-        .story-img-box { 
-            position: relative; 
-            aspect-ratio: 1 / 1.2; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-        }
+        .story-img-box { position: relative; aspect-ratio: 1/1.2; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .story-img-box img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
-        
-        /* 1. 調整文字大小 2. 改為思源黑體 (Noto Sans TC) */
-        .img-overlay-text { 
-            position: relative; 
-            z-index: 2;
-            color: #fff; 
-            font-size: 0.85rem; /* 大一點點 */
-            text-align: center; 
-            padding: 0 5px; 
-            line-height: 1.4; 
-            font-family: 'Noto Sans TC', sans-serif; /* 改為黑體 */
-            font-weight: 500; /* 加粗增強辨識度 */
-            text-shadow: 0 1px 4px rgba(0,0,0,0.85); 
-        }
-
+        .img-overlay-text { position: relative; z-index: 2; color: #fff; font-size: 0.85rem; text-align: center; padding: 0 5px; line-height: 1.4; font-family: 'Noto Sans TC', sans-serif; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.85); }
         .founder-intro { padding: 40px 22px; }
         .founder-intro h4 { font-size: 0.75rem; color: var(--accent-gold); font-family: 'Noto Sans TC', sans-serif; margin-bottom: 5px; }
         .founder-intro h2 { font-family: 'Noto Serif TC', serif; font-size: 1.35rem; color: var(--primary-brown); margin-bottom: 25px; }
         .quote { font-family: 'Noto Serif TC', serif; font-size: 0.95rem; color: var(--primary-brown); margin-bottom: 25px; line-height: 1.6; font-weight: 600; }
         .intro-p { font-family: 'Noto Sans TC', sans-serif; font-size: 0.85rem; color: #666; line-height: 2; margin-bottom: 30px; }
-
         .core-value-item { display: flex; align-items: center; margin-bottom: 35px; }
         .core-circle { width: 85px; height: 85px; border: 1px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif TC', serif; font-size: 1.1rem; color: #333; flex-shrink: 0; margin-right: 20px; }
         .core-text { font-family: 'Noto Sans TC', sans-serif; font-size: 0.8rem; color: #666; line-height: 1.6; }
         .core-text b { display: block; font-size: 0.9rem; color: #333; margin-bottom: 6px; font-weight: 600; }
-
-        .cert-section { 
-            background-image: linear-gradient(to top, #d8c7ab, #ffffff); 
-            padding: 60px 22px 0px; 
-            position: relative; 
-            overflow: hidden;
-            min-height: 460px;
-        }
+        .cert-section { background-image: linear-gradient(to top, #d8c7ab, #ffffff); padding: 60px 22px 0px; position: relative; overflow: hidden; min-height: 460px; }
         .cert-list { list-style: none; font-family: 'Noto Sans TC', sans-serif; font-size: 0.82rem; color: #333; line-height: 1.2; margin-bottom: 30px; }
         .cert-list li { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.1); width: 60%; position: relative; z-index: 5; }
-        
         .cert-visual-box { position: relative; width: 100%; height: 320px; margin-top: -20px; }
         .cert-single-img-container { position: absolute; left: -10px; bottom: 30px; width: 65%; z-index: 1; }
         .cert-img { width: 100%; display: block; }
-        .founder-portrait {
-            position: absolute; right: -20px; bottom: 0; width: 55%; z-index: 2;
+        .founder-portrait { position: absolute; right: -20px; bottom: 0; width: 55%; z-index: 2; }
+        .main-footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #BBB; background: #fff; }
+        .main-footer.about-style { background: #f9f9f9; color: #9b9185; }
+        /* =========================================
+           客製化案例頁面
+           ========================================= */
+        .cases-page { padding: 0 0 60px; }
+
+        .cases-hero {
+            background: linear-gradient(160deg, var(--primary-bg) 0%, #6b5438 100%);
+            padding: 40px 22px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cases-hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(179,151,102,0.12);
+        }
+        .cases-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: -30px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background: rgba(179,151,102,0.08);
+        }
+        .cases-hero h4 {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.65rem;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+        .cases-hero h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            color: #FAF8F5;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .cases-hero p {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.78rem;
+            color: rgba(250,248,245,0.6);
+            line-height: 1.8;
         }
 
-        .main-footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #BBB; background: #fff;}
-        .main-footer.about-style { background: #f9f9f9; color: #9b9185; }
+        .cases-filter {
+            display: flex;
+            gap: 8px;
+            padding: 20px 22px 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .cases-filter::-webkit-scrollbar { display: none; }
+        .filter-chip {
+            flex-shrink: 0;
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 0.72rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            cursor: pointer;
+            border: 1px solid rgba(179,151,102,0.3);
+            color: var(--text-soft);
+            background: #fff;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+        }
+        .filter-chip.active {
+            background: var(--primary-bg);
+            color: #FAF8F5;
+            border-color: var(--primary-bg);
+        }
 
+        .cases-grid { padding: 12px 22px; }
+
+        .case-card {
+            background: var(--note-bg);
+            border-radius: 18px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .case-card-header {
+            padding: 16px 18px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .case-tag-group { display: flex; gap: 6px; flex-wrap: wrap; }
+        .case-chip {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.62rem;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .case-chip.type { background: var(--primary-bg); color: #FAF8F5; }
+        .case-chip.duration { background: rgba(179,151,102,0.15); color: var(--accent-gold); }
+
+        .case-compare {
+            display: grid;
+            grid-template-columns: 1fr 28px 1fr;
+            align-items: center;
+            gap: 6px;
+            padding: 0 14px 14px;
+        }
+        .case-side { text-align: center; }
+        .case-date {
+            font-size: 0.65rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .case-img-box {
+            aspect-ratio: 3/4;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e8e3da;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .case-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .case-label {
+            font-size: 0.65rem;
+            color: #888;
+            margin-top: 6px;
+            line-height: 1.4;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .case-arrow-center {
+            text-align: center;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .case-desc {
+            padding: 0 18px 18px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.78rem;
+            color: #666;
+            line-height: 1.8;
+            border-top: 1px solid rgba(179,151,102,0.12);
+            padding-top: 12px;
+            margin-top: 0;
+        }
+
+        .cases-disclaimer {
+            text-align: center;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.62rem;
+            color: #bbb;
+            letter-spacing: 0.5px;
+            line-height: 1.9;
+            padding: 4px 22px 20px;
+        }
+
+        .cases-cta {
+            margin: 10px 22px 30px;
+            background: linear-gradient(135deg, var(--primary-bg), #6b5438);
+            border-radius: 14px;
+            padding: 22px;
+            text-align: center;
+        }
+        .cases-cta p {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 0.95rem;
+            color: #FAF8F5;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .cases-cta a {
+            display: inline-block;
+            padding: 10px 28px;
+            background: var(--accent-gold);
+            color: #fff;
+            border-radius: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.82rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
     </style>
-</head>
 <body>
+<div class="phone-container">
+    <header>
+        <!-- 漢堡按鈕 -->
+        <button class="menu-btn" id="menuBtn" onclick="toggleDrawer()" aria-label="選單">
+            <span></span><span></span><span></span>
+        </button>
+        <h1>MN13 Beauty</h1>
+        <p>ESTABLISHED 2022</p>
+    </header>
 
-    <div class="phone-container">
-        <header>
-            <h1>MN13 Beauty</h1>
-            <p>ESTABLISHED 2022</p>
-        </header>
+    <!-- 抽屜遮罩 -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 
-        <nav>
-            <div class="nav-item active" onclick="switchPage('cleansing', this)">日常卸洗</div>
-            <div class="nav-item" onclick="switchPage('crystal', this)">矽晶照護</div>
-            <div class="nav-item" onclick="switchPage('about', this)">關於我們</div>
+    <!-- 抽屜選單 -->
+    <div class="drawer" id="drawer">
+        <div class="drawer-brand">
+            <h2>MN13 Beauty</h2>
+            <p>PROFESSIONAL SKIN CARE</p>
+        </div>
+        <nav class="drawer-nav">
+            <div class="drawer-item active" id="nav-about" onclick="switchPage('about','nav-about')">
+                <div class="drawer-item-icon">✦</div>關於我們
+            </div>
+            <div class="drawer-item" id="nav-courses" onclick="switchPage('courses','nav-courses')">
+                <div class="drawer-item-icon">◈</div>課程介紹
+            </div>
+            <div class="drawer-item" id="nav-care" onclick="switchPage('care','nav-care')">
+                <div class="drawer-item-icon">❋</div>保養篇
+            </div>
+            <div class="drawer-item" id="nav-cases" onclick="switchPage('cases','nav-cases')">
+                <div class="drawer-item-icon">◎</div>客製化案例
+            </div>
         </nav>
+        <div class="drawer-footer">© 2022 MN13 Beauty<br>專業皮膚管理 | 隱私客製化服務</div>
+    </div>
 
-        <div id="cleansing" class="page-content active">
+    <!-- =============================================
+         關於我們（首頁）
+         ============================================= -->
+    <div id="about" class="page-content active">
+        <div class="content-about">
+            <h2 class="section-title">品牌社群</h2>
+            <div class="link-grid">
+                <a href="https://lin.ee/8NyVW9j" target="_blank" class="link-item"><span>LINE 官方</span><small>諮詢與預約</small></a>
+                <a href="https://www.instagram.com/mn13_beauty/" target="_blank" class="link-item"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
+                <a href="https://www.instagram.com/0421_luru/" target="_blank" class="link-item"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
+                <a href="https://www.instagram.com/_moon_spa_/" target="_blank" class="link-item"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
+            </div>
+            <section class="brand-story-section">
+                <h4>BRAND STORY</h4>
+                <h2>回歸肌膚的本質</h2>
+                <p class="story-text">MN13 創立於 2022 年，源自於對完美的堅持與專業的追求。創辦人曾任職於大型連鎖體系並擔任資深業績第一店長，累積了深厚的實戰經驗，為了解決每位顧客獨特的肌膚問題，決定成立個人工作室，提供更具隱私且客製化的專業服務。</p>
+                <div class="image-row">
+                    <div class="story-img-box">
+                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸1.png">
+                        <div class="img-overlay-text">找出適合<br>每一位客人<br>養膚模式</div>
+                    </div>
+                    <div class="story-img-box">
+                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸2.png">
+                        <div class="img-overlay-text">每一次諮詢<br>都基於<br>科學驗證</div>
+                    </div>
+                    <div class="story-img-box">
+                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸3.png">
+                        <div class="img-overlay-text">不只解決當下<br>更建立<br>長期保養觀念</div>
+                    </div>
+                </div>
+            </section>
+            <section class="founder-intro">
+                <h4>FOUNDER</h4>
+                <h2>潘昱如 Luru</h2>
+                <div class="quote">「愛美的關鍵，不在擁有多少瓶罐，<br>而在於理解肌膚的邏輯。」</div>
+                <div class="intro-p">
+                    我是 Luru，你的「肌膚邏輯顧問」。<br><br>
+                    我的角色不是告訴你該買什麼，而是運用皮膚科學，拆解你獨特的肌膚問題，找出最直接有效的路徑。我堅持說真話、重邏輯、求實效，目標只有一個：讓你用最對的方法，停止浪費，獲得「素顏也好看」的肌膚與自信。<br><br>
+                    如果你都倦了在護膚迷宮裡打轉，我將為你點亮那盞遠離煩惱的燈。
+                </div>
+                <div class="core-value-item">
+                    <div class="core-circle">說真話</div>
+                    <div class="core-text"><b>拒絕華麗的話術與誇大的承諾</b>肌膚的改善有跡可循，我會告訴你真實的原理與可能的結果。</div>
+                </div>
+                <div class="core-value-item">
+                    <div class="core-circle">重邏輯</div>
+                    <div class="core-text"><b>所有的護膚行為，從清潔到修護</b>都必須建立在皮膚科學的邏輯之上。我們解決「為什麼」和「怎麼做」而不只是「做什麼」。</div>
+                </div>
+                <div class="core-value-item">
+                    <div class="core-circle">求實效</div>
+                    <div class="core-text"><b>美感不應該是一種負擔</b>我們的目標是「用最對的方法、最少的浪費」，讓你不再在護膚的彎路上面浪費金錢與心力，真正實現「素顏也好看」的從容與自信。</div>
+                </div>
+            </section>
+            <section class="cert-section">
+                <h2 class="section-title">國際證照</h2>
+                <ul class="cert-list">
+                    <li>第一屆ISO17024國際認證</li>
+                    <li>國際整形KISPA | 醫療交流 KMCA</li>
+                    <li>韓國K-BEAUTY國際美妝認證</li>
+                </ul>
+                <div class="cert-visual-box">
+                    <div class="cert-single-img-container">
+                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/證書.png" class="cert-img" alt="國際證照合集">
+                    </div>
+                    <img src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png" class="founder-portrait" alt="店長">
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer about-style">
+            © MN13 Beauty Professional Skin Care<br>
+            專業皮膚管理 | 隱私客製化服務
+        </footer>
+    </div>
+
+
+    <!-- =============================================
+         課程介紹
+         ============================================= -->
+    <div id="courses" class="page-content">
+        <div class="course-cat-nav">
+            <div class="course-cat-item active" onclick="switchCat('pore', this)">淨化毛孔</div>
+            <div class="course-cat-item" onclick="switchCat('problem', this)">問題肌．養膚</div>
+            <div class="course-cat-item" onclick="switchCat('egg', this)">水煮蛋肌</div>
+            <div class="course-cat-item" onclick="switchCat('elastic', this)">彈力．輪廓</div>
+            <div class="course-cat-item" onclick="switchCat('focus', this)">重點呵護</div>
+            <div class="course-cat-item" onclick="switchCat('other', this)">其他</div>
+        </div>
+
+        <!-- 淨化毛孔 -->
+        <div id="cat-pore" class="course-cat-content active">
+            <div class="cat-page-header">
+                <h4>PORE PURIFYING</h4>
+                <h2>淨化毛孔</h2>
+                <p>輕柔清潔，維持毛孔清爽舒適</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('bubble')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">小氣泡</div>
+                        <div class="course-card-hint">深層清潔 · 舒緩調理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('extraction')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">針清粉刺</div>
+                        <div class="course-card-hint">專業清潔 · 毛孔護理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 問題肌．養膚 -->
+        <div id="cat-problem" class="course-cat-content">
+            <div class="cat-page-header">
+                <h4>SKIN RESTORATION</h4>
+                <h2>問題肌．養膚</h2>
+                <p>溫和呵護，陪伴肌膚逐步穩定</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('crystal')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">矽晶煥膚</div>
+                        <div class="course-card-hint">深層調理 · 養膚修護</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 水煮蛋肌 -->
+        <div id="cat-egg" class="course-cat-content">
+            <div class="cat-page-header">
+                <h4>EGG SKIN</h4>
+                <h2>水煮蛋肌</h2>
+                <p>補水保濕，感受柔嫩光滑的觸感</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('aqua')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">無創水光</div>
+                        <div class="course-card-hint">深層保濕 · 光澤感提升</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('plasma')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">Plasma 電漿</div>
+                        <div class="course-card-hint">膚質調理 · 緊緻護理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('foundation')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">駐顏粉底</div>
+                        <div class="course-card-hint">均勻膚色 · 自然光澤</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 彈力．輪廓 -->
+        <div id="cat-elastic" class="course-cat-content">
+            <div class="cat-page-header">
+                <h4>LIFT & CONTOUR</h4>
+                <h2>彈力．輪廓</h2>
+                <p>輪廓管理，感受緊緻彈力的肌膚</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('contour')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">輪廓管理</div>
+                        <div class="course-card-hint">臉部塑形 · 輪廓調理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('acid')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">汰酸排導</div>
+                        <div class="course-card-hint">循環促進 · 代謝調理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('firming')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">逆時彈力緊膚</div>
+                        <div class="course-card-hint">彈力維護 · 肌膚調理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 重點呵護 -->
+        <div id="cat-focus" class="course-cat-content">
+            <div class="cat-page-header">
+                <h4>TARGETED CARE</h4>
+                <h2>重點呵護</h2>
+                <p>局部加強，給予肌膚細緻照護</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('eye')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">眼部三合一</div>
+                        <div class="course-card-hint">眼周護理 · 複合式調理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('spot')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">斑點剋星</div>
+                        <div class="course-card-hint">膚色調理 · 均勻護理</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 其他 -->
+        <div id="cat-other" class="course-cat-content">
+            <div class="cat-page-header">
+                <h4>MORE SERVICES</h4>
+                <h2>其他</h2>
+                <p>從清潔到修護，完整護膚體驗</p>
+            </div>
+            <div class="course-list">
+                <div class="course-card" onclick="openModal('cleansing-edu')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">卸洗教學</div>
+                        <div class="course-card-hint">清潔觀念 · 正確手法示範</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('exosome')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">外泌體凍膜</div>
+                        <div class="course-card-hint">舒緩修護 · 術後保養</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer about-style">
+            © MN13 Beauty Professional Skin Care<br>
+            專業皮膚管理 | 隱私客製化服務
+        </footer>
+    </div>
+
+
+    <!-- =============================================
+         保養篇
+         ============================================= -->
+    <div id="care" class="page-content">
+        <div class="care-subnav">
+            <div class="care-subnav-item active" onclick="switchCare('cleansing', this)">卸洗教學</div>
+            <div class="care-subnav-item" onclick="switchCare('crystal', this)">矽晶保養</div>
+        </div>
+
+        <!-- 卸洗教學 -->
+        <div id="care-cleansing" class="care-sub-content active">
             <div class="content-cleansing">
                 <div class="video-wrapper">
                     <a href="https://www.instagram.com/reel/DIQhIO5ya0p/" target="_blank" class="play-overlay">▶</a>
                 </div>
-
                 <div class="teaching-box">
                     <h2>— 卸妝 —</h2>
                     <span class="important-note">請將手部清潔乾淨後，手乾臉乾的情況下使用。</span>
@@ -287,7 +1073,6 @@
                         3. 乳化重複 3 次即可用清水洗淨臉部
                     </div>
                 </div>
-
                 <div class="teaching-box">
                     <h2>— 洗臉 —</h2>
                     <span class="important-note">請確保於手部清潔乾淨的情況下使用。</span>
@@ -296,11 +1081,10 @@
                         2. 搓出綿密泡泡後，再塗抹於臉上清潔
                     </div>
                 </div>
-
                 <div class="product-section">
                     <h3 class="title">一切的保養從(好的)清潔開始</h3>
                     <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('image/卸妝乳.png');"></div>
+                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png');"></div>
                         <div class="prod-info">
                             <span class="prod-tag">卸妝乳</span>
                             <div class="prod-name">玫瑰水淨顏卸妝乳</div>
@@ -308,7 +1092,7 @@
                         </div>
                     </div>
                     <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('image/洗面乳.png');"></div>
+                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/洗面乳.png');"></div>
                         <div class="prod-info">
                             <span class="prod-tag">洗面乳</span>
                             <div class="prod-name">極透亮妍鑽白潔膚霜</div>
@@ -317,7 +1101,7 @@
                     </div>
                     <hr class="prod-divider">
                     <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('image/卸妝液.png');"></div>
+                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png');"></div>
                         <div class="prod-info">
                             <span class="prod-tag">卸妝液</span>
                             <div class="prod-name">玫瑰水漾淨顏卸妝液</div>
@@ -335,7 +1119,8 @@
             </footer>
         </div>
 
-        <div id="crystal" class="page-content">
+        <!-- 矽晶保養 -->
+        <div id="care-crystal" class="care-sub-content">
             <div class="content-crystal">
                 <h2 class="section-header">黃金修復期</h2>
                 <div class="grid-5">
@@ -345,7 +1130,6 @@
                     <div class="grid-box grid-box-wide"><div>一週<br>無需塗抹<br>其他護膚品</div></div>
                     <div class="grid-box grid-box-wide"><div>做好防曬<br>防曬後須卸妝</div></div>
                 </div>
-
                 <div class="gradient-section">
                     <div class="gradient-inner">
                         <h2 class="section-header">居家保養流程</h2>
@@ -361,50 +1145,15 @@
                         </div>
                         <div class="card">
                             <span class="day-label">DAY 8</span>
-                            <p class="routine-p" style="color:#666; font-size: 0.85rem; margin-bottom: 20px;">建議回到 MN13 進行養膚課程，開始全方位保養，使肌膚完整更新，效果加倍。</p>
-                            <div class="compare-group">
-                                <div class="compare-grid">
-                                    <div class="compare-item">
-                                        <div class="compare-date">113.11.22</div>
-                                        <div class="img-box"><img src="image/前1.png"></div>
-                                        <div class="compare-desc">肌膚多處泛紅、<br>紅腫痘痘多</div>
-                                    </div>
-                                    <div class="arrow">→</div>
-                                    <div class="compare-item">
-                                        <div class="compare-date">114.01.04</div>
-                                        <div class="img-box"><img src="image/後1.png"></div>
-                                        <div class="compare-desc">紅腫減少、<br>肌膚逐漸穩定</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="hr-line">
-                            <div class="compare-group">
-                                <div class="compare-grid">
-                                    <div class="compare-item">
-                                        <div class="compare-date">114.05.23</div>
-                                        <div class="img-box"><img src="image/前2.png"></div>
-                                        <div class="compare-desc">肌膚多處泛紅、閉鎖痘多<br>(曾服A酸、做脈衝光)</div>
-                                    </div>
-                                    <div class="arrow">→</div>
-                                    <div class="compare-item">
-                                        <div class="compare-date">114.07.28</div>
-                                        <div class="img-box"><img src="image/後2.png"></div>
-                                        <div class="compare-desc">肌膚穩定許多、<br>閉鎖痘痘已被代謝</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p style="font-size:0.65rem; color:#999; text-align:center; margin-top:15px; letter-spacing: 1px;">
-                                圖片為矽晶課程後的養膚過程，以上為案例體驗，效果因個人體體質而異。
-                            </p>
+                            <p class="routine-p" style="color:#666; font-size:0.85rem;">建議回到 MN13 進行養膚課程，開始全方位保養，使肌膚完整更新，效果加倍。</p>
                         </div>
                         <div class="note-tan-card">
-                            <b style="color:var(--text-main); display:block; margin-bottom:10px; font-size: 0.9rem;">無購買產品者步驟：</b>
+                            <b style="color:var(--text-main); display:block; margin-bottom:10px; font-size:0.9rem;">無購買產品者步驟：</b>
                             <p style="color:#666;">• 無妝時：清水洗臉 ➝ 保濕面膜</p>
                             <p style="color:#666;">• 有妝時：卸妝清潔 ➝ 保濕面膜</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="precautions-block">
                     <div class="title">— 注意事項 —</div>
                     <div class="precaution-item" data-index="1.">泛紅溫熱：循環加重、微刺感屬正常現象。</div>
@@ -419,98 +1168,311 @@
                 課程完成後需 7-14 天修復期，即可看見煥然一新的肌膚
             </footer>
         </div>
+    </div>
 
-        <div id="about" class="page-content">
-            <div class="content-about">
-                <h2 class="section-title">品牌社群</h2>
-                <div class="link-grid">
-                    <a href="https://lin.ee/8NyVW9j" target="_blank" class="link-item"><span>LINE 官方</span><small>諮詢與預約</small></a>
-                    <a href="https://www.instagram.com/mn13_beauty/" target="_blank" class="link-item"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
-                    <a href="https://www.instagram.com/0421_luru/" target="_blank" class="link-item"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
-                    <a href="https://www.instagram.com/_moon_spa_/" target="_blank" class="link-item"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
+
+    <!-- =============================================
+         客製化案例
+         ============================================= -->
+    <div id="cases" class="page-content">
+        <div class="cases-page">
+            <div class="cases-hero">
+                <h4>CUSTOMIZED CASES</h4>
+                <h2>客製化案例</h2>
+                <p>每一張臉都有自己的故事<br>記錄每位客人的肌膚蛻變歷程</p>
+            </div>
+
+            <div class="cases-grid" id="cases-grid" style="padding-top:20px;">
+
+                <!-- 案例 1 -->
+                <div class="case-card">
+                    <div class="case-card-header">
+                        <div class="case-tag-group">
+                            <span class="case-chip type">針清粉刺</span>
+                            <span class="case-chip type">矽晶煥膚</span>
+                            <span class="case-chip type">MTS</span>
+                            <span class="case-chip duration">約 6 週</span>
+                        </div>
+                    </div>
+                    <div class="case-compare">
+                        <div class="case-side">
+                            <div class="case-date">113.11.22</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前1.png" alt="前"></div>
+                            <div class="case-label">肌膚多處泛紅、<br>紅腫痘痘多</div>
+                        </div>
+                        <div class="case-arrow-center">→</div>
+                        <div class="case-side">
+                            <div class="case-date">114.01.04</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後1.png" alt="後"></div>
+                            <div class="case-label">紅腫減少、<br>肌膚逐漸穩定</div>
+                        </div>
+                    </div>
+                    <div class="case-desc">長期敏感泛紅的問題肌，透過針清粉刺、矽晶煥膚與 MTS 課程搭配居家保養，約 6 週後明顯感受到肌膚穩定度提升，紅腫痘痘大幅減少。</div>
                 </div>
 
-                <section class="brand-story-section">
-                    <h4>BRAND STORY</h4>
-                    <h2>回歸肌膚的本質</h2>
-                    <p class="story-text">
-                        MN13 創立於 2022 年，源自於對完美的堅持與專業的追求。創辦人曾任職於大型連鎖體系並擔任資深業績第一店長，累積了深厚的實戰經驗，為了解決每位顧客獨特的肌膚問題，決定成立個人工作室，提供更具隱私且客製化的專業服務。
-                    </p>
-                    <div class="image-row">
-                        <div class="story-img-box">
-                            <img src="image/回歸1.png">
-                            <div class="img-overlay-text">找出適合<br>每一位客人<br>養膚模式</div>
-                        </div>
-                        <div class="story-img-box">
-                            <img src="image/回歸2.png">
-                            <div class="img-overlay-text">每一次諮詢<br>都基於<br>科學驗證</div>
-                        </div>
-                        <div class="story-img-box">
-                            <img src="image/回歸3.png">
-                            <div class="img-overlay-text">不只解決當下<br>更建立<br>長期保養觀念</div>
+                <!-- 案例 2 -->
+                <div class="case-card">
+                    <div class="case-card-header">
+                        <div class="case-tag-group">
+                            <span class="case-chip type">無創水光</span>
+                            <span class="case-chip type">矽晶煥膚</span>
+                            <span class="case-chip type">針清粉刺</span>
+                            <span class="case-chip duration">約 10 週</span>
                         </div>
                     </div>
-                </section>
-
-                <section class="founder-intro">
-                    <h4>FOUNDER</h4>
-                    <h2>潘昱如 Luru</h2>
-                    <div class="quote">「愛美的關鍵，不在擁有多少瓶罐，<br>而在於理解肌膚的邏輯。」</div>
-                    <div class="intro-p">
-                        我是 Luru，你的「肌膚邏輯顧問」。<br><br>
-                        我的角色不是告訴你該買什麼，而是運用皮膚科學，拆解你獨特的肌膚問題，找出最直接有效的路徑。我堅持說真話、重邏輯、求實效，目標只有一個：讓你用最對的方法，停止浪費，獲得「素顏也好看」的肌膚與自信。<br><br>
-                        如果你都倦了在護膚迷宮裡打轉，我將為你點亮那盞遠離煩惱的燈。
-                    </div>
-
-                    <div class="core-value-item">
-                        <div class="core-circle">說真話</div>
-                        <div class="core-text"><b>拒絕華麗的話術與誇大的承諾</b>肌膚的改善有跡可循，我會告訴你真實的原理與可能的結果。</div>
-                    </div>
-                    <div class="core-value-item">
-                        <div class="core-circle">重邏輯</div>
-                        <div class="core-text"><b>所有的護膚行為，從清潔到修護</b>都必須建立在皮膚科學的邏輯之上。我們解決「為什麼」和「怎麼做」而不只是「做什麼」。</div>
-                    </div>
-                    <div class="core-value-item">
-                        <div class="core-circle">求實效</div>
-                        <div class="core-text"><b>美感不應該是一種負擔</b>我們的目標是「用最對的方法、最少的浪費」，讓你不再在護膚的彎路上面浪費金錢與心力，真正實現「素顏也好看」的從容與自信。</div>
-                    </div>
-                </section>
-
-                <section class="cert-section">
-                    <h2 class="section-title">國際證照</h2>
-                    <ul class="cert-list">
-                        <li>第一屆ISO17024國際認證</li>
-                        <li>國際整形KISPA | 醫療交流 KMCA</li>
-                        <li>韓國K-BEAUTY國際美妝認證</li>
-                    </ul>
-
-                    <div class="cert-visual-box">
-                        <div class="cert-single-img-container">
-                            <img src="image/證書.png" class="cert-img" alt="國際證照合集">
+                    <div class="case-compare">
+                        <div class="case-side">
+                            <div class="case-date">114.05.23</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前2.png" alt="前"></div>
+                            <div class="case-label">肌膚多處泛紅、閉鎖痘多<br>(曾服A酸、做脈衝光)</div>
                         </div>
-                        <img src="image/店長.png" class="founder-portrait" alt="店長">
+                        <div class="case-arrow-center">→</div>
+                        <div class="case-side">
+                            <div class="case-date">114.07.28</div>
+                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後2.png" alt="後"></div>
+                            <div class="case-label">肌膚穩定許多、<br>閉鎖痘痘已被代謝</div>
+                        </div>
                     </div>
-                </section>
+                    <div class="case-desc">曾服用 A 酸並接受脈衝光治療的客人，結合無創水光、矽晶煥膚與針清粉刺，以溫和方式協助肌膚代謝，閉鎖性痘痘逐步排出，整體膚況趨於穩定。</div>
+                </div>
+
             </div>
-            <footer class="main-footer about-style">
-                © MN13 Beauty Professional Skin Care<br>
-                專業皮膚管理 | 隱私客製化服務
-            </footer>
+
+            <p class="cases-disclaimer">
+                以上案例為實際護理歷程記錄<br>
+                效果因個人體質、生活習慣及護理配合度而有所差異
+            </p>
+
+            <div class="cases-cta">
+                <p>想了解適合您的<br>客製化護膚方案？</p>
+                <a href="https://lin.ee/8NyVW9j" target="_blank">LINE 免費諮詢</a>
+            </div>
         </div>
     </div>
 
-    <script>
-        function switchPage(pageId, element) {
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active'));
 
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
+    <!-- =============================================
+         Modal 彈跳視窗
+         ============================================= -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-sheet" id="modal-sheet">
+            <div class="modal-handle"></div>
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <div class="modal-tag" id="modal-tag"></div>
+                    <div class="modal-title" id="modal-title"></div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- 動態內容 -->
+            </div>
+        </div>
+    </div>
 
-            document.getElementById(pageId).classList.add('active');
-            element.classList.add('active');
-            window.scrollTo(0, 0);
+</div><!-- /phone-container -->
+
+<script>
+/* ── 課程資料 ── */
+const courses = {
+    bubble: {
+        tag: '淨化毛孔',
+        title: '小氣泡',
+        desc: '小氣泡是一種以水流與溫和負壓搭配進行的臉部清潔護理，透過旋渦水流方式協助帶走毛孔內的老廢角質與多餘皮脂，並同步補充調理精華，讓肌膚維持清爽舒適的感受。適合平日肌膚保養，建議定期進行以維持毛孔暢通。',
+        imgs: [],
+        hasCases: false
+    },
+    extraction: {
+        tag: '淨化毛孔',
+        title: '針清粉刺',
+        desc: '針清粉刺由受過專業訓練的美容師，在嚴格的衛生規範下進行臉部毛孔清潔作業，針對閉鎖性與開放性粉刺進行處理，協助維持毛孔通暢。施作前後皆搭配舒緩護理，減少肌膚不適，維護肌膚健康狀態。個人膚況與體質有所差異，建議於諮詢後安排適合的護理計畫。',
+        imgs: [],
+        hasCases: false
+    },
+    crystal: {
+        tag: '問題肌．養膚',
+        title: '矽晶煥膚',
+        desc: '矽晶煥膚是一項專為問題肌膚設計的調理護理課程，透過專業技術與精華成分的結合，協助肌膚代謝老廢物質，維護肌底的清爽與穩定。適合容易出油、毛孔阻塞或肌膚狀況不穩定的族群，建議持續護理以逐步改善肌膚狀態。每位客人的肌膚狀況各異，美容師將依個人需求提供客製化的護理建議。',
+        imgs: [],
+        hasCases: false
+    },
+    aqua: {
+        tag: '水煮蛋肌',
+        title: '無創水光',
+        desc: '無創水光採用非侵入式的保濕導入技術，將高效保濕成分透過儀器輔助深入肌膚表層，協助肌膚維持充足水分，使肌膚看起來更加柔嫩光滑。整體過程溫和舒適，無須恢復期，適合肌膚乾燥或需要加強保濕的族群。建議配合日常護膚習慣，效果更加理想。',
+        imgs: [],
+        hasCases: false
+    },
+    plasma: {
+        tag: '水煮蛋肌',
+        title: 'Plasma 電漿',
+        desc: 'Plasma 電漿護理運用電漿技術進行肌膚表面調理，協助維護肌膚屏障功能，改善肌膚表面粗糙感，使整體膚觸更加細緻。施作過程須依個人肌膚狀況調整，建議於諮詢後由專業美容師評估最適合的護理方式。',
+        imgs: [],
+        hasCases: false
+    },
+    foundation: {
+        tag: '水煮蛋肌',
+        title: '駐顏粉底',
+        desc: '駐顏粉底護理結合養膚成分與調色技術，協助均勻肌膚色調，提升整體氣色與光澤感，讓肌膚呈現自然健康的視覺效果。護理過程溫和，適合追求自然素顏感的族群。建議諮詢後依膚色與需求選擇最適合的護理方案。',
+        imgs: [],
+        hasCases: false
+    },
+    contour: {
+        tag: '彈力．輪廓',
+        title: '輪廓管理',
+        desc: '輪廓管理透過專業的手法操作與儀器輔助，針對臉部輪廓進行整體性的調理與護理，協助維護肌膚的緊實感與線條清晰度。每次護理皆依個人臉部狀態進行評估，建議定期回診以維持最佳護理成效。',
+        imgs: [],
+        hasCases: false
+    },
+    acid: {
+        tag: '彈力．輪廓',
+        title: '汰酸排導',
+        desc: '汰酸排導護理以專業手法協助促進臉部循環與代謝，搭配特定護理成分進行導入，有助於維護肌膚排毒機能，改善因循環不佳所造成的氣色黯沉或輕微浮腫感。課程前後搭配舒緩護理，全程輕柔操作。',
+        imgs: [],
+        hasCases: false
+    },
+    firming: {
+        tag: '彈力．輪廓',
+        title: '逆時彈力緊膚',
+        desc: '逆時彈力緊膚護理以提升肌膚緊緻感與彈力為主要目標，透過儀器與護理成分的搭配使用，協助肌膚維持緊實狀態。課程適合感受到肌膚緊緻度下降或輪廓感較不明顯的族群，建議諮詢後制定適合的護理週期。',
+        imgs: [],
+        hasCases: false
+    },
+    eye: {
+        tag: '重點呵護',
+        title: '眼部三合一',
+        desc: '眼部三合一是專為眼周脆弱肌膚設計的複合式護理課程，針對眼周常見的疲勞感、水分不足及細紋進行全面性調理，以溫和手法進行眼周按摩與精華導入，讓眼周肌膚恢復放鬆與明亮感。',
+        imgs: [],
+        hasCases: false
+    },
+    spot: {
+        tag: '重點呵護',
+        title: '斑點剋星',
+        desc: '斑點剋星護理針對肌膚局部色素不均的問題進行調理，搭配具有美白輔助功效的護理成分，協助肌膚維持均勻色調。課程效果因個人肌膚狀況、體質及生活習慣而有所差異，建議配合防曬習慣，效果更加穩定持久。',
+        imgs: [],
+        hasCases: false
+    },
+    'cleansing-edu': {
+        tag: '其他',
+        title: '卸洗教學',
+        desc: '卸洗教學由專業美容師親自示範正確的卸妝與洗臉步驟，協助客人建立完整的清潔概念。正確的清潔習慣是所有後續保養的基礎，錯誤的卸洗方式可能造成肌膚負擔。課程內容依個人使用產品與膚況進行調整，讓每位客人都能找到最適合自己的清潔方式。',
+        imgs: [],
+        hasCases: false
+    },
+    exosome: {
+        tag: '其他',
+        title: '外泌體凍膜',
+        desc: '外泌體凍膜以富含修護成分的凍膜進行臉部敷膜護理，協助肌膚在護理後快速舒緩，降低不適感，並補充肌膚所需水分與養分。適合護理後需要加強修護的肌膚，或作為日常保養的加強選項，與其他課程搭配使用效果更佳。',
+        imgs: [],
+        hasCases: false
+    }
+};
+
+function openModal(id) {
+    const c = courses[id];
+    if (!c) return;
+
+    document.getElementById('modal-tag').textContent = c.tag;
+    document.getElementById('modal-title').textContent = c.title;
+
+    /* 組裝 body HTML */
+    let html = '';
+
+    /* 圖片區（佔位，之後替換圖片 src 即可） */
+    if (c.imgs && c.imgs.length > 0) {
+        c.imgs.forEach(src => {
+            html += `<div class="modal-img-area"><img src="${src}" alt="${c.title}"></div>`;
+        });
+    } else {
+        html += `
+        <div class="modal-img-placeholder">
+            <div class="modal-img-placeholder-icon">🖼</div>
+            <div class="modal-img-placeholder-text">課程圖片放置區</div>
+        </div>`;
+    }
+
+    /* 課程說明 */
+    html += `<div class="modal-content-inner"><p class="modal-desc">${c.desc}</p>`;
+
+    html += '</div>'; /* /modal-content-inner */
+
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-body').scrollTop = 0;
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+/* 抽屜選單 */
+function toggleDrawer() {
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const btn = document.getElementById('menuBtn');
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+        closeDrawer();
+    } else {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+}
+function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('drawerOverlay').classList.remove('open');
+    document.getElementById('menuBtn').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+/* 主頁籤切換 */
+function switchPage(pageId, navId) {
+    document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.drawer-item').forEach(n => n.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    document.getElementById(navId).classList.add('active');
+    closeDrawer();
+    window.scrollTo(0, 0);
+}
+
+/* 保養篇子選單 */
+function switchCare(subId, element) {
+    document.querySelectorAll('.care-sub-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.care-subnav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('care-' + subId).classList.add('active');
+    element.classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+/* 課程分類切換 */
+function switchCat(catId, element) {
+    document.querySelectorAll('.course-cat-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.course-cat-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('cat-' + catId).classList.add('active');
+    element.classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+/* 客製化案例篩選 */
+function filterCases(category, element) {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    element.classList.add('active');
+    document.querySelectorAll('.case-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
         }
-    </script>
+    });
+}
+</script>
 </body>
 </html>
