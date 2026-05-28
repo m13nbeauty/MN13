@@ -898,7 +898,7 @@
                 </div>
                 <div class="course-card" onclick="openModal('extraction')">
                     <div class="course-card-left">
-                        <div class="course-card-name">針清粉刺</div>
+                        <div class="course-card-name">手清粉刺</div>
                         <div class="course-card-hint">專業清潔 · 毛孔護理</div>
                     </div>
                     <div class="course-card-arrow">›</div>
@@ -934,22 +934,22 @@
             <div class="course-list">
                 <div class="course-card" onclick="openModal('aqua')">
                     <div class="course-card-left">
-                        <div class="course-card-name">無創水光</div>
+                        <div class="course-card-name">女神無創水光</div>
                         <div class="course-card-hint">深層保濕 · 光澤感提升</div>
                     </div>
                     <div class="course-card-arrow">›</div>
                 </div>
                 <div class="course-card" onclick="openModal('plasma')">
                     <div class="course-card-left">
-                        <div class="course-card-name">Plasma 電漿</div>
-                        <div class="course-card-hint">膚質調理 · 緊緻護理</div>
+                        <div class="course-card-name">Plasma</div>
+                        <div class="course-card-hint">膚質調理 · 細緻護理</div>
                     </div>
                     <div class="course-card-arrow">›</div>
                 </div>
-                <div class="course-card" onclick="openModal('foundation')">
+                <div class="course-card" onclick="openModal('exosome_youth')">
                     <div class="course-card-left">
-                        <div class="course-card-name">駐顏粉底</div>
-                        <div class="course-card-hint">均勻膚色 · 自然光澤</div>
+                        <div class="course-card-name">外泌體幼態美膚</div>
+                        <div class="course-card-hint">修護補水 · 幼態光澤</div>
                     </div>
                     <div class="course-card-arrow">›</div>
                 </div>
@@ -1030,8 +1030,15 @@
                 </div>
                 <div class="course-card" onclick="openModal('exosome')">
                     <div class="course-card-left">
-                        <div class="course-card-name">外泌體凍膜</div>
-                        <div class="course-card-hint">舒緩修護 · 術後保養</div>
+                        <div class="course-card-name">外泌體膠原凍膜</div>
+                        <div class="course-card-hint">舒緩修護 · 補水保養</div>
+                    </div>
+                    <div class="course-card-arrow">›</div>
+                </div>
+                <div class="course-card" onclick="openModal('foundation')">
+                    <div class="course-card-left">
+                        <div class="course-card-name">駐顏粉底</div>
+                        <div class="course-card-hint">均勻膚色 · 自然光澤</div>
                     </div>
                     <div class="course-card-arrow">›</div>
                 </div>
@@ -1329,49 +1336,49 @@ const courses = {
     bubble: {
         tag: '淨化毛孔',
         title: '小氣泡',
-        desc: '小氣泡是一種以水流與溫和負壓搭配進行的臉部清潔護理，透過旋渦水流方式協助帶走毛孔內的老廢角質與多餘皮脂，並同步補充調理精華，讓肌膚維持清爽舒適的感受。適合平日肌膚保養，建議定期進行以維持毛孔暢通。',
+        desc: '小氣泡以水流與溫和負壓搭配進行臉部清潔護理，透過旋渦水流方式協助帶走毛孔內的老廢角質與多餘皮脂，並同步補充調理精華，讓肌膚維持清爽舒適的感受。適合平日肌膚保養，建議定期進行以維持毛孔暢通。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png'],
         hasCases: false
     },
     extraction: {
         tag: '淨化毛孔',
-        title: '針清粉刺',
-        desc: '針清粉刺由受過專業訓練的美容師，在嚴格的衛生規範下進行臉部毛孔清潔作業，針對閉鎖性與開放性粉刺進行處理，協助維持毛孔通暢。施作前後皆搭配舒緩護理，減少肌膚不適，維護肌膚健康狀態。個人膚況與體質有所差異，建議於諮詢後安排適合的護理計畫。',
+        title: '手清粉刺',
+        desc: '手清粉刺由受過專業訓練的美容師，在嚴格的衛生規範下進行臉部毛孔清潔作業，針對閉鎖性與開放性粉刺進行處理，協助維持毛孔暢通。施作前後皆搭配舒緩護理，減少肌膚不適，維護肌膚健康狀態。個人膚況與體質有所差異，建議於諮詢後安排適合的護理計畫。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png'],
         hasCases: false
     },
     crystal: {
         tag: '問題肌．養膚',
         title: '矽晶煥膚',
-        desc: '矽晶煥膚是一項專為問題肌膚設計的調理護理課程，透過專業技術與精華成分的結合，協助肌膚代謝老廢物質，維護肌底的清爽與穩定。適合容易出油、毛孔阻塞或肌膚狀況不穩定的族群，建議持續護理以逐步改善肌膚狀態。每位客人的肌膚狀況各異，美容師將依個人需求提供客製化的護理建議。',
+        desc: '矽晶煥膚是一項專為問題肌膚設計的調理護理課程，透過專業手法與精華成分的結合，協助肌膚代謝老廢物質，維護肌底的清爽與穩定。適合容易出油、毛孔阻塞或肌膚狀況不穩定的族群，建議持續護理以逐步改善肌膚狀態。每位客人的肌膚狀況各異，美容師將依個人需求提供客製化的護理建議。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png'],
         hasCases: false
     },
     aqua: {
         tag: '水煮蛋肌',
-        title: '無創水光',
-        desc: '無創水光採用非侵入式的保濕導入技術，將高效保濕成分透過儀器輔助深入肌膚表層，協助肌膚維持充足水分，使肌膚看起來更加柔嫩光滑。整體過程溫和舒適，無須恢復期，適合肌膚乾燥或需要加強保濕的族群。建議配合日常護膚習慣，效果更加理想。',
-        imgs: [],
+        title: '女神無創水光',
+        desc: '女神無創水光採用非侵入式的保濕導入方式，將高效保濕成分輔助深入肌膚表層，協助肌膚維持充足水分，使肌膚看起來更加柔嫩光滑。整體過程溫和舒適，適合肌膚乾燥或需要加強保濕的族群。建議配合日常護膚習慣，效果更加理想。',
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/女神無創水光.png'],
         hasCases: false
     },
     plasma: {
         tag: '水煮蛋肌',
-        title: 'Plasma 電漿',
-        desc: 'Plasma 電漿護理運用電漿技術進行肌膚表面調理，協助維護肌膚屏障功能，改善肌膚表面粗糙感，使整體膚觸更加細緻。施作過程須依個人肌膚狀況調整，建議於諮詢後由專業美容師評估最適合的護理方式。',
+        title: 'Plasma',
+        desc: 'Plasma 護理透過專業操作進行肌膚表面調理，協助維護肌膚屏障功能，改善肌膚表面粗糙感，使整體膚觸更加細緻。施作過程須依個人肌膚狀況調整，建議於諮詢後由專業美容師評估最適合的護理方式。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png'],
         hasCases: false
     },
-    foundation: {
+    exosome_youth: {
         tag: '水煮蛋肌',
-        title: '駐顏粉底',
-        desc: '駐顏粉底護理結合養膚成分與調色技術，協助均勻肌膚色調，提升整體氣色與光澤感，讓肌膚呈現自然健康的視覺效果。護理過程溫和，適合追求自然素顏感的族群。建議諮詢後依膚色與需求選擇最適合的護理方案。',
-        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png'],
+        title: '外泌體幼態美膚',
+        desc: '外泌體幼態美膚以富含修護成分的外泌體精華進行臉部護理，協助肌膚在護理後快速舒緩，補充肌膚所需水分與養分，讓肌膚回復柔嫩飽滿的幼態感。適合希望加強修護、提升肌膚緊緻度與光澤感的族群。',
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png'],
         hasCases: false
     },
     contour: {
         tag: '彈力．輪廓',
         title: '輪廓管理',
-        desc: '輪廓管理透過專業的手法操作與儀器輔助，針對臉部輪廓進行整體性的調理與護理，協助維護肌膚的緊實感與線條清晰度。每次護理皆依個人臉部狀態進行評估，建議定期回診以維持最佳護理成效。',
+        desc: '輪廓管理透過專業的手法操作，針對臉部輪廓進行整體性的調理與護理，協助維護肌膚的緊實感與線條清晰度。每次護理皆依個人臉部狀態進行評估，建議定期回診以維持最佳護理成效。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png'],
         hasCases: false
     },
@@ -1379,13 +1386,13 @@ const courses = {
         tag: '彈力．輪廓',
         title: '汰酸排導',
         desc: '汰酸排導護理以專業手法協助促進臉部循環與代謝，搭配特定護理成分進行導入，有助於維護肌膚排毒機能，改善因循環不佳所造成的氣色黯沉或輕微浮腫感。課程前後搭配舒緩護理，全程輕柔操作。',
-        imgs: [],
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png'],
         hasCases: false
     },
     firming: {
         tag: '彈力．輪廓',
         title: '逆時彈力緊膚',
-        desc: '逆時彈力緊膚護理以提升肌膚緊緻感與彈力為主要目標，透過儀器與護理成分的搭配使用，協助肌膚維持緊實狀態。課程適合感受到肌膚緊緻度下降或輪廓感較不明顯的族群，建議諮詢後制定適合的護理週期。',
+        desc: '逆時彈力緊膚以黃金撥筋手法為核心，協助臉部排毒、疏通氣結，排除臉部廢物與堆積的廢液，讓輪廓線條更加清晰，肌膚恢復彈性與緊緻感。課程適合感受到臉部循環不佳或輪廓較不明顯的族群，建議定期護理以維持成效。',
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png'],
         hasCases: false
     },
@@ -1410,14 +1417,18 @@ const courses = {
         imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png'],
         hasCases: false
     },
+    foundation: {
+        tag: '其他',
+        title: '駐顏粉底',
+        desc: '駐顏粉底結合養膚成分與調色技術，協助均勻肌膚色調，提升整體氣色與光澤感，讓肌膚呈現自然健康的視覺效果。護理過程溫和，適合追求自然素顏感的族群。建議諮詢後依膚色與需求選擇最適合的護理方案。',
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png'],
+        hasCases: false
+    },
     exosome: {
         tag: '其他',
-        title: '外泌體凍膜',
-        desc: '外泌體凍膜以富含修護成分的凍膜進行臉部敷膜護理，協助肌膚在護理後快速舒緩，降低不適感，並補充肌膚所需水分與養分。適合護理後需要加強修護的肌膚，或作為日常保養的加強選項，與其他課程搭配使用效果更佳。',
-        imgs: [
-            'https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png',
-            'https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png'
-        ],
+        title: '外泌體膠原凍膜',
+        desc: '外泌體膠原凍膜以富含修護成分的凍膜進行臉部敷膜護理，協助肌膚在護理後快速舒緩，補充肌膚所需水分與養分。適合護理後需要加強修護的肌膚，或作為日常保養的加強選項，與其他課程搭配使用效果更佳。',
+        imgs: ['https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png'],
         hasCases: false
     }
 };
