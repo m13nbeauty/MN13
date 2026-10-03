@@ -329,6 +329,16 @@ dialog{width:calc(100vw - 24px);padding:22px;max-height:90vh}.dialog-content{dis
 .founder-visual .portrait img{position:static;display:block;width:100%;max-width:100%;height:auto;bottom:auto;left:auto}
 @media(max-width:1000px){.founder-visual{width:280px;height:auto}.founder-visual .portrait img{width:100%;left:auto}}
 @media(max-width:600px){.founder-visual{width:min(100%,320px);height:auto;align-self:center}.founder-visual .portrait img{width:100%;left:auto}}
+
+/* Larger founder portrait with a soft milk-tea arch */
+.founder-layout{grid-template-columns:minmax(0,1fr) 440px;gap:48px}
+.founder-visual{width:440px;max-width:100%;position:relative;isolation:isolate;padding-top:0}
+.founder-visual::before{content:"";position:absolute;z-index:-1;inset:20% 0 0;background:#e4d5c3;border-radius:220px 220px 12px 12px}
+.founder-visual .portrait{position:relative;aspect-ratio:1/1.57;overflow:hidden;border-radius:0 0 12px 12px}
+.founder-visual .portrait img{position:absolute;width:116%;max-width:none;height:auto;left:-8%;bottom:0}
+@media(max-width:1100px){.founder-layout{grid-template-columns:minmax(0,1fr) 360px;gap:32px}.founder-visual{width:360px}}
+@media(max-width:850px){.founder-layout{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.founder-visual{width:300px}.founder-lead{font-size:21px}}
+@media(max-width:600px){.founder-layout{display:flex;gap:28px}.founder-visual{width:min(100%,360px);height:auto}.founder-visual .portrait img{width:116%;max-width:none;left:-8%}.founder-visual::before{border-radius:180px 180px 10px 10px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
