@@ -755,7 +755,40 @@
             text-decoration: none;
             letter-spacing: 1px;
         }
-    </style>
+    
+/* MN13 responsive layout */
+.desktop-nav{display:none}
+@media(min-width:768px){
+body{background:var(--note-bg)}
+.phone-container{max-width:none;box-shadow:none}
+header{padding:42px 32px 30px}header h1{font-size:2.2rem}header p{font-size:.85rem}
+.menu-btn{display:none}
+.desktop-nav{display:flex;justify-content:center;gap:12px;padding:16px 24px;background:var(--primary-bg);flex-wrap:wrap}
+.desktop-nav button{font:inherit;font-size:1rem;padding:12px 24px;border:1px solid transparent;border-radius:8px;background:transparent;color:#FAF8F5;cursor:pointer}
+.desktop-nav button[aria-current="page"],.desktop-nav button:hover{border-color:var(--accent-gold);color:#e5d2ac}
+.desktop-nav button:focus-visible{outline:2px solid white;outline-offset:3px}
+.page-content{width:100%;max-width:1160px;margin:0 auto}
+.content-about{padding:40px 36px}.link-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.brand-story-section,.founder-intro,.cert-section{margin-top:48px}
+.story-text,.intro-p{max-width:760px;margin-left:auto;margin-right:auto;font-size:1rem;line-height:2}
+.core-value-item{max-width:760px;margin-left:auto;margin-right:auto}
+.course-cat-nav{justify-content:center;flex-wrap:wrap}
+.course-cat-item{font-size:.95rem;padding:18px 22px}
+.cat-page-header{padding:40px 24px 24px}.cat-page-header h2{font-size:1.8rem}.cat-page-header p{font-size:.95rem}
+.course-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:8px 36px 48px}
+.course-card{margin-bottom:0;min-height:112px}.course-card-name{font-size:1.2rem}.course-card-hint{font-size:.9rem}
+.care-subnav-item{font-size:1rem;padding:18px}.content-cleansing{max-width:820px;margin:auto}
+.video-wrapper{max-width:480px;margin-left:auto;margin-right:auto}
+.cases-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.case-card{margin-bottom:0;min-width:0}.case-label,.case-desc{font-size:.9rem;line-height:1.8}.case-date,.case-chip{font-size:.85rem}
+.modal-overlay{align-items:center;padding:32px}.modal-sheet{max-width:800px;max-height:85vh;border-radius:20px;animation:overlayIn .2s ease}
+.modal-handle{display:none}.modal-header{padding:24px 32px}.modal-title{font-size:1.6rem}
+.modal-content-inner{padding:28px 32px}.modal-desc{font-size:1rem}
+}
+@media(min-width:1100px){.course-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+</style>
 <body>
 <div class="phone-container">
     <header>
@@ -766,6 +799,7 @@
         <h1>MN13 Beauty</h1>
         <p>ESTABLISHED 2022</p>
     </header>
+<nav class="desktop-nav" aria-label="主選單"><button type="button" data-page="about" aria-current="page" onclick="switchPage('about','nav-about')">關於我們</button><button type="button" data-page="courses"  onclick="switchPage('courses','nav-courses')">課程介紹</button><button type="button" data-page="care"  onclick="switchPage('care','nav-care')">保養篇</button><button type="button" data-page="cases"  onclick="switchPage('cases','nav-cases')">專屬肌膚日誌</button></nav>
 
     <!-- 抽屜遮罩 -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
@@ -1488,6 +1522,9 @@ function closeDrawer() {
 
 /* 主頁籤切換 */
 function switchPage(pageId, navId) {
+document.querySelectorAll('.desktop-nav button').forEach(button=>{
+if(button.dataset.page===pageId)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+});
     document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.drawer-item').forEach(n => n.classList.remove('active'));
     document.getElementById(pageId).classList.add('active');
