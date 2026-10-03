@@ -874,7 +874,7 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 
 /* MN13 homepage alignment and reading rhythm */
 .content-about{--section-space:56px}
-.content-about h2,.content-about h4,.content-about .story-text,.content-about .intro-p{text-align:left}
+
 .brand-story-section{background:#fcfaf7;padding:var(--section-space) 24px;margin:0}
 .story-copy .story-text{max-width:620px;line-height:2;margin:0}
 .brand-story-section .image-row{margin:28px 0 0;gap:10px}
@@ -941,6 +941,40 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 .founder-intro{padding:48px 32px;gap:28px}.founder-photo{height:380px}
 .cert-section{padding:32px;gap:28px}.social-section{padding:40px 32px}
 .social-section .link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* MN13 fuller viewport composition; no fixed portrait-side rule */
+@media(min-width:768px){
+#about.page-content{max-width:none}
+#about .content-about{padding:0}
+#about .brand-hero{border-radius:0;min-height:540px;padding:48px clamp(32px,5vw,96px) 0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+#about .hero-photo{height:500px}
+#about .brand-story-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(32px,4vw,72px);padding:64px clamp(32px,5vw,96px)}
+#about .story-copy{max-width:none}
+#about .story-copy .story-text{max-width:640px}
+#about .brand-story-section .image-row{max-width:none;width:100%;margin:0;gap:16px}
+#about .brand-story-section .story-img-box{aspect-ratio:3/4;max-height:340px}
+#about .founder-intro{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-areas:"photo copy" "values values";padding:56px clamp(32px,5vw,96px);column-gap:clamp(32px,5vw,80px);row-gap:32px}
+#about .founder-photo{height:480px;max-height:480px}
+#about .founder-photo img{max-height:480px}
+#about .founder-copy{align-self:center;max-width:760px}
+#about .founder-values{gap:40px}
+#about .cert-section{padding:36px clamp(32px,5vw,96px);grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
+#about .cert-img{max-height:300px}
+#about .social-section{padding:40px clamp(32px,5vw,96px)}
+#about .social-section .section-title{text-align:center}
+#about .main-footer.about-style{margin:0}
+}
+@media(min-width:768px) and (max-width:959px){
+#about .brand-hero{padding:32px 32px 0;min-height:420px;gap:24px}
+#about .hero-photo{height:380px}
+#about .brand-story-section{grid-template-columns:1fr;padding:48px 32px;gap:28px}
+#about .brand-story-section .image-row{max-width:680px}
+#about .brand-story-section .story-img-box{aspect-ratio:5/3}
+#about .founder-intro{padding:48px 32px;gap:28px}
+#about .founder-photo{height:380px}
+#about .cert-section,#about .social-section{padding:32px}
 }
 
 </style>
