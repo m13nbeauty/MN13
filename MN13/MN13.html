@@ -757,239 +757,145 @@
             letter-spacing: 1px;
         }
     
-/* MN13 responsive layout */
-.desktop-nav{display:none}
+/* MN13 boutique editorial system */
+:root{--paper:#fcfaf7;--ink:#4b3d2b;--sand:#ece5da;--line:#ded4c5}
+body{background:var(--paper)}
+.phone-container{background:var(--paper)}
+.site-bar{position:relative}
+.desktop-nav,.nav-booking{display:none}
+.brand-hero{background:var(--ink);color:#fff;padding:40px 24px 0;overflow:hidden}
+.eyebrow{font:500 .7rem 'Noto Sans TC',sans-serif;letter-spacing:3px;color:#d6bb8f;margin-bottom:18px}
+.hero-copy h2{font-size:2rem;line-height:1.5;font-weight:500;letter-spacing:2px}
+.hero-description{font:.9rem 'Noto Sans TC',sans-serif;line-height:1.9;color:#e8ddcc;margin:16px 0 24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.primary-action,.secondary-action{font:.85rem 'Noto Sans TC',sans-serif;padding:13px 20px;text-decoration:none;border:1px solid #c4ab85;border-radius:0;cursor:pointer}
+.primary-action{background:#d5bd96;color:var(--ink)}
+.secondary-action{background:transparent;color:#fff}
+.hero-photo{height:320px;text-align:center;margin-top:24px}.hero-photo img{height:100%;max-width:100%;object-fit:contain;object-position:bottom}
+.brand-story-section{background:none;padding:48px 24px}
+.story-copy h2{font-size:1.6rem;line-height:1.5}
+.story-copy .story-text{line-height:2;text-align:left}
+.image-row{gap:8px;margin:24px 0 0}.story-img-box{border-radius:0;aspect-ratio:3/4}
+.founder-intro{background:var(--sand);padding:44px 24px}
+.founder-photo{display:none}
+.founder-copy h2{font-size:1.6rem}
+.founder-copy .quote{font-weight:400;border-left:2px solid var(--accent-gold);padding-left:16px;line-height:1.9}
+.founder-values{margin-top:32px}.core-value-item{align-items:flex-start}
+.core-circle{border:none;border-radius:0;width:auto;height:auto;min-width:64px;font-size:1rem;justify-content:flex-start;margin-right:16px}
+.course-preview{padding:44px 24px}
+.preview-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+.preview-heading h2{font-size:1.5rem;color:var(--ink);font-weight:500}
+.text-link{border:0;border-bottom:1px solid #b39766;background:none;color:var(--ink);font:.8rem 'Noto Sans TC',sans-serif;padding:8px 0;cursor:pointer}
+.preview-grid{display:grid;gap:16px}
+.preview-tile{display:block;text-align:left;padding:0 0 18px;background:#f1ebe1;border:0;color:var(--ink);cursor:pointer}
+.preview-tile img{width:100%;height:210px;object-fit:contain;background:#ebe4d9}
+.preview-name,.preview-hint{display:block;margin:16px 18px 0}.preview-name{font:500 1.2rem 'Noto Serif TC',serif}.preview-hint{font:.85rem 'Noto Sans TC',sans-serif;line-height:1.7;margin-top:8px}
+.cert-section{background:#f0e9de;padding:36px 24px;min-height:0}
+.cert-section .section-title{text-align:left;font-size:1.4rem;letter-spacing:1px}
+.cert-section .section-title:before,.cert-section .section-title:after{content:none}
+.cert-list{line-height:1.8}.cert-list li{width:100%}
+.cert-visual-box{height:auto;margin:0}.cert-single-img-container{position:static;width:100%}.cert-img{max-height:260px;object-fit:contain}
+.social-section{background:var(--ink);padding:40px 24px}
+.social-section .section-title{color:#fff;text-align:left;font-size:1.4rem;letter-spacing:1px}
+.social-section .section-title:before,.social-section .section-title:after{content:none}
+.social-section .link-grid{padding:0;gap:12px}
+.social-section .link-item{background:transparent;border:1px solid #8a7658;border-radius:0;text-align:left}
+.social-section .link-item span{color:white}.social-section .link-item small{color:#d5c8b4;font-size:.75rem;line-height:1.6}
+.main-footer.about-style{background:var(--ink);color:#d5c8b4;border-top:1px solid #71604a}
+.course-cover{display:none}
+button:focus-visible,a:focus-visible,[role="button"]:focus-visible{outline:2px solid #b39766;outline-offset:4px}
 @media(min-width:768px){
-body{background:var(--note-bg)}
-.phone-container{max-width:none;box-shadow:none}
-header{padding:42px 32px 30px}header h1{font-size:2.2rem}header p{font-size:.85rem}
-.menu-btn{display:none}
-.desktop-nav{display:flex;justify-content:center;gap:12px;padding:16px 24px;background:var(--primary-bg);flex-wrap:wrap}
-.desktop-nav button{font:inherit;font-size:1rem;padding:12px 24px;border:1px solid transparent;border-radius:8px;background:transparent;color:#FAF8F5;cursor:pointer}
-.desktop-nav button[aria-current="page"],.desktop-nav button:hover{border-color:var(--accent-gold);color:#e5d2ac}
-.desktop-nav button:focus-visible{outline:2px solid white;outline-offset:3px}
-.page-content{width:100%;max-width:1160px;margin:0 auto}
-.content-about{padding:40px 36px}.link-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.brand-story-section,.founder-intro,.cert-section{margin-top:48px}
-.story-text,.intro-p{max-width:760px;margin-left:auto;margin-right:auto;font-size:1rem;line-height:2}
-.core-value-item{max-width:760px;margin-left:auto;margin-right:auto}
-.course-cat-nav{justify-content:center;flex-wrap:wrap}
-.course-cat-item{font-size:.95rem;padding:18px 22px}
-.cat-page-header{padding:40px 24px 24px}.cat-page-header h2{font-size:1.8rem}.cat-page-header p{font-size:.95rem}
-.course-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:8px 36px 48px}
-.course-card{margin-bottom:0;min-height:112px}.course-card-name{font-size:1.2rem}.course-card-hint{font-size:.9rem}
-.care-subnav-item{font-size:1rem;padding:18px}.content-cleansing{max-width:820px;margin:auto}
-.video-wrapper{max-width:480px;margin-left:auto;margin-right:auto}
-.cases-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.case-card{margin-bottom:0;min-width:0}.case-label,.case-desc{font-size:.9rem;line-height:1.8}.case-date,.case-chip{font-size:.85rem}
-.modal-overlay{align-items:center;padding:32px}.modal-sheet{max-width:800px;max-height:85vh;border-radius:20px;animation:overlayIn .2s ease}
-.modal-handle{display:none}.modal-header{padding:24px 32px}.modal-title{font-size:1.6rem}
-.modal-content-inner{padding:28px 32px}.modal-desc{font-size:1rem}
+body{display:block}.phone-container{width:100%;max-width:none;box-shadow:none}
+.site-bar{display:flex;align-items:center;gap:32px;padding:20px clamp(24px,4vw,72px);background:var(--paper);border-bottom:1px solid var(--line)}
+header{padding:0;background:none;color:var(--ink);text-align:left;flex-shrink:0}
+header h1{font-size:1.4rem;letter-spacing:1px;margin:0}header p{display:none}.menu-btn{display:none}
+.desktop-nav{display:flex;gap:24px;margin-left:auto}
+.desktop-nav button{font:.9rem 'Noto Sans TC',sans-serif;color:#7e6e5a;background:none;border:0;border-bottom:1px solid transparent;padding:10px 0;cursor:pointer;white-space:nowrap}
+.desktop-nav button[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent-gold)}
+.nav-booking{display:block;white-space:nowrap;text-decoration:none;background:var(--ink);color:white;font:.85rem 'Noto Sans TC',sans-serif;padding:13px 20px}
+.page-content{width:100%;max-width:none;margin:0}
+.content-about{padding:0}
+.brand-hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:32px;padding:48px clamp(32px,5vw,90px) 0;min-height:530px}
+.hero-copy{padding-bottom:48px}.hero-copy h2{font-size:clamp(2.4rem,4vw,4.5rem);letter-spacing:3px}
+.hero-description{font-size:1.15rem;margin:22px 0 32px}
+.hero-photo{height:490px;margin:0;align-self:end}
+.brand-story-section{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,80px);align-items:center;padding:56px clamp(32px,5vw,90px)}
+.story-copy h2{font-size:2.2rem;max-width:420px}.story-text{font-size:.95rem;line-height:2;max-width:560px;margin-bottom:0}
+.image-row{grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:350px;margin:0}
+.story-img-box{aspect-ratio:auto}.story-img-box:first-child{grid-row:1/3}
+.img-overlay-text{font-size:1rem;line-height:1.7}
+.founder-intro{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"photo copy" "photo values";column-gap:clamp(32px,5vw,80px);row-gap:24px;align-items:center;padding:0}
+.founder-photo{display:flex;grid-area:photo;align-items:flex-end;justify-content:center;background:#e5dac9;height:100%;min-height:540px;overflow:hidden}
+.founder-photo img{display:block;max-width:100%;height:540px;object-fit:contain;object-position:bottom}
+.founder-copy{grid-area:copy;padding:48px clamp(32px,5vw,90px) 0 0;align-self:end}
+.founder-copy h2{font-size:2rem;margin-bottom:20px}.founder-copy .quote{font-size:1.1rem;margin-bottom:20px}.intro-p{font-size:.9rem;line-height:1.95;margin:0}
+.founder-values{grid-area:values;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0 clamp(32px,5vw,90px) 40px 0}
+.core-value-item{display:block;margin:0;padding-top:14px;border-top:1px solid #bda988}.core-circle{font-size:1.15rem;margin:0 0 10px}.core-text{font-size:.78rem;line-height:1.8}.core-text b{font-size:.85rem;line-height:1.6}
+.course-preview{padding:52px clamp(32px,5vw,90px)}.preview-heading h2{font-size:2rem}.text-link{font-size:.9rem}
+.preview-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.preview-tile img{height:240px}.preview-name{font-size:1.4rem}
+.cert-section{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:40px;padding:32px clamp(32px,5vw,90px)}
+.cert-section .section-title{font-size:1.8rem;margin-bottom:20px}.cert-list{font-size:.9rem;margin:0}.cert-list li{margin-bottom:6px}
+.cert-img{max-height:230px}
+.social-section{padding:44px clamp(32px,5vw,90px)}.social-section .section-title{font-size:1.8rem}
+.social-section .link-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.link-item{padding:24px}.link-item span{font-size:1.1rem}
+.main-footer{padding:24px;font-size:.8rem}
+.course-cat-nav,.care-subnav{padding:0 clamp(24px,4vw,72px);background:#f0e9de;top:0}
+.course-cat-item{font-size:.95rem;padding:18px 22px}.care-subnav-item{flex:none;padding:18px 28px;font-size:.95rem}
+.cat-page-header{text-align:left;padding:44px clamp(32px,5vw,90px) 28px}.cat-page-header h2{font-size:2.1rem;font-weight:500}.cat-page-header p{font-size:.95rem}
+.course-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:0 clamp(32px,5vw,90px) 56px}
+.course-card{display:grid;grid-template-columns:1fr 24px;border:1px solid var(--line);border-radius:0;border-left:1px solid var(--line);padding:0 0 22px;margin:0;background:#fff;overflow:hidden}
+.course-cover{display:block;grid-column:1/-1;width:100%;height:250px;object-fit:contain;background:#f0e9de;margin-bottom:20px}
+.course-card-left{padding:0 22px}.course-card-name{font-size:1.25rem}.course-card-hint{font-size:.9rem;line-height:1.7}.course-card-arrow{margin:0 20px 0 0}
+.course-card:hover{box-shadow:none;border-color:var(--accent-gold)}
+.content-cleansing{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;padding:48px clamp(32px,5vw,90px);align-items:start}
+.video-wrapper{border-radius:0;margin:0}.teaching-box{border-radius:0;margin-bottom:20px;padding:30px;background:#f0e9de}
+.product-section{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;border-radius:0;padding:32px}
+.product-section .title{grid-column:1/-1;margin-bottom:8px}.product-item{margin:0;border-radius:0}
+.line-call-to-action{grid-column:1/-1}.step-content{font-size:1rem}.important-note{font-size:.9rem}
+.content-crystal{padding:32px clamp(32px,5vw,90px)}
+.grid-box{font-size:.95rem;padding:22px;border-radius:0}.gradient-section{margin:0;background:#eee5d8;padding:28px}
+.gradient-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:0}.card{border-radius:0;margin:0;box-shadow:none}
+.precautions-block{max-width:860px;margin:40px auto;border-radius:0}.precaution-item{font-size:1rem}
+.cases-hero{background:var(--ink);text-align:left;padding:44px clamp(32px,5vw,90px)}
+.cases-hero:before,.cases-hero:after{display:none}.cases-hero h2{font-size:2.3rem;font-weight:500}.cases-hero p{font-size:1rem}
+.cases-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding:40px clamp(32px,5vw,90px)}
+.case-card{border:1px solid var(--line);border-radius:0;box-shadow:none;margin:0;background:white}
+.case-card-header{padding:22px}.case-chip{font-size:.8rem;border-radius:3px}.case-compare{padding:0 22px 22px;gap:12px}
+.case-img-box{aspect-ratio:4/5;border-radius:0;box-shadow:none}.case-date{font-size:.85rem;margin-bottom:10px}.case-label{font-size:.9rem;line-height:1.8}
+.case-desc{font-size:.95rem;line-height:1.9;padding:20px 22px}.cases-disclaimer{font-size:.8rem;color:#8b7c69;max-width:820px;margin:auto}
+.cases-cta{display:flex;justify-content:space-between;align-items:center;text-align:left;gap:24px;margin:24px clamp(32px,5vw,90px) 0;padding:32px 40px;background:var(--ink);border-radius:0}
+.cases-cta p{font-size:1.2rem;margin:0}.cases-cta a{font-size:.95rem;border-radius:0}
+.modal-overlay{align-items:center;padding:32px}.modal-sheet{max-width:800px;max-height:85vh;border-radius:4px;animation:overlayIn .2s ease}
+.modal-handle{display:none}.modal-header{padding:24px 32px}.modal-title{font-size:1.7rem}.modal-content-inner{padding:28px 32px}.modal-desc{font-size:1rem;line-height:2}
 }
-@media(min-width:1100px){.course-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:768px) and (max-width:1050px){
+.site-bar{gap:20px}.desktop-nav{gap:16px}.nav-booking{display:none}
+.hero-photo{height:420px}.brand-hero{min-height:460px}
+.brand-story-section{grid-template-columns:1fr;gap:28px}.image-row{height:300px}
+.founder-intro{grid-template-columns:.8fr 1.2fr;column-gap:28px}
+.founder-copy{padding:32px 32px 0 0}.founder-values{grid-template-columns:1fr;padding:0 32px 32px 0;gap:12px}
+.founder-photo{min-height:600px}.founder-photo img{height:450px}
+.core-text{font-size:.85rem}.core-value-item{padding-top:10px}
+.course-list{grid-template-columns:repeat(2,minmax(0,1fr))}.course-cover{height:220px}
+.preview-tile img{height:190px}.preview-name{font-size:1.1rem}
+.content-cleansing{grid-template-columns:1fr}.video-wrapper{max-width:420px;width:100%;margin:auto}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
-/* MN13 brand composition */
-.brand-hero{padding:44px 24px 0;background:#f3eee6;overflow:hidden}
-.eyebrow{font:500 .75rem 'Noto Sans TC',sans-serif;letter-spacing:3px;color:var(--accent-gold);margin-bottom:20px}
-.hero-copy h2{font-size:1.8rem;font-weight:500;color:var(--primary-brown);line-height:1.6}
-.hero-description{font: .9rem 'Noto Sans TC',sans-serif;line-height:1.9;color:#746655;margin:16px 0 24px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.primary-action,.secondary-action{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;font: .9rem 'Noto Sans TC',sans-serif;text-decoration:none;border-radius:4px;cursor:pointer}
-.primary-action{background:var(--primary-bg);color:white;border:1px solid var(--primary-bg)}
-.secondary-action{background:transparent;color:var(--primary-bg);border:1px solid #b9a68a}
-.hero-photo{height:320px;text-align:center;margin-top:24px}
-.hero-photo img{height:100%;max-width:100%;object-fit:contain;object-position:bottom}
-.founder-photo{display:none}
-.social-section{padding:40px 0 0}
-.course-cover{display:none}
-@media(min-width:768px){
-.phone-container{background:#fcfaf7}
-header{padding:22px max(32px,calc((100vw - 1080px)/2));text-align:left;display:flex;align-items:baseline;gap:24px;background:#fcfaf7;color:var(--primary-brown);border-bottom:1px solid #e9e2d8}
-header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65rem;letter-spacing:2px}
-.desktop-nav{background:#fcfaf7;border-bottom:1px solid #e9e2d8;padding:8px 24px;gap:24px}
-.desktop-nav button{color:#665744;font: .9rem 'Noto Sans TC',sans-serif;border-radius:0;padding:12px 8px}
-.desktop-nav button[aria-current="page"],.desktop-nav button:hover{color:var(--primary-brown);border-color:transparent;border-bottom-color:var(--accent-gold)}
-.desktop-nav button:focus-visible{outline-color:var(--primary-bg)}
-.page-content{max-width:1160px}
-.content-about{padding:32px 36px 0}
-.brand-hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;min-height:480px;padding:40px 60px 0;border-radius:4px;gap:40px}
-.hero-copy{padding-bottom:40px}.hero-copy h2{font-size:clamp(2rem,3.2vw,3rem);letter-spacing:2px}
-.hero-description{font-size:1rem}.hero-photo{height:440px;align-self:end;margin:0}
-.brand-story-section{display:grid;grid-template-columns:.9fr 1.2fr;gap:48px;align-items:center;background:none;padding:80px 0;margin:0;border-bottom:1px solid #e5ded3}
-.story-copy h2,.founder-copy h2{font-size:1.8rem;font-weight:500;margin:12px 0 24px}
-.story-text{margin:0;text-align:left;font-size:.95rem;line-height:2.1}
-.image-row{gap:12px;margin:0}.story-img-box{aspect-ratio:3/4;border-radius:3px}
-.img-overlay-text{font-size:1rem;line-height:1.8}.story-img-box:after{content:"";position:absolute;inset:0;background:rgba(40,30,20,.18)}
-.founder-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;padding:80px 0;margin:0}
-.founder-photo{display:block;background:#eee6da;max-height:520px;overflow:hidden}
-.founder-photo img{display:block;width:100%;height:100%;max-height:520px;object-fit:contain;object-position:bottom}
-.founder-copy .quote{font-size:1.1rem;line-height:1.9;font-weight:400;margin-bottom:24px}
-.founder-copy .intro-p{margin:0;font-size:.95rem;text-align:left}
-.founder-values{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-.core-value-item{display:block;margin:0;padding:24px 0;border-top:1px solid #c9b693}
-.core-circle{border:none;border-radius:0;width:auto;height:auto;justify-content:flex-start;margin:0 0 16px;color:var(--primary-brown);font-size:1.3rem}
-.core-text{font-size:.9rem;line-height:1.9}.core-text b{font-size:.95rem}
-.cert-section{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:48px;margin:0;padding:48px;background:#f1ebe1;min-height:0;overflow:visible}
-.cert-section .section-title{text-align:left;font-size:1.5rem;letter-spacing:2px}
-.cert-section .section-title:before,.cert-section .section-title:after{content:none}
-.cert-list{margin:0;font-size:.95rem;line-height:1.8}.cert-list li{width:100%}
-.cert-visual-box{height:auto;margin:0}.cert-single-img-container{position:static;width:100%}.cert-img{max-height:360px;object-fit:contain}
-.social-section{padding:64px 0 24px}.social-section .link-grid{padding:0;gap:16px}
-.link-item{padding:24px 12px;border-radius:4px;background:transparent}.link-item small{font-size:.8rem}
-.cat-page-header{text-align:left;padding:48px 36px 28px}.cat-page-header h2{font-size:2rem}
-.course-cat-nav{background:#f3eee6;justify-content:flex-start;padding:0 24px}
-.course-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.course-card{display:grid;grid-template-columns:1fr 24px;align-items:center;padding:0 0 24px;overflow:hidden;border:1px solid #e5ded3;border-radius:5px;background:white;box-shadow:none}
-.course-cover{display:block;grid-column:1/-1;width:100%;height:220px;object-fit:contain;background:#f4efe7;margin-bottom:22px}
-.course-card-left{padding:0 24px}.course-card-arrow{margin:0 20px 0 0}.course-card-hint{line-height:1.8}
-.cases-hero{text-align:left;background:var(--primary-bg);padding:48px 36px;margin:32px 36px;border-radius:4px}
-.cases-hero h2{font-size:2rem}.cases-hero p{font-size:.95rem}.cases-hero:before,.cases-hero:after{display:none}
-.cases-grid{padding:0 36px;gap:28px}.case-card{border-radius:5px;box-shadow:none;border:1px solid #e5ded3;background:white}
-.case-compare{padding:8px 20px 20px;gap:10px}.case-img-box{border-radius:3px;box-shadow:none}
-.case-card-header{padding:20px}.case-desc{padding:20px;line-height:1.9}
-.cases-disclaimer{max-width:760px;margin:32px auto 20px;font-size:.8rem;color:#867c6e}
-.cases-cta{margin:24px 36px 0;display:flex;align-items:center;justify-content:space-between;gap:32px;text-align:left;padding:32px 40px;background:var(--primary-bg);border-radius:4px}
-.cases-cta p{margin:0;font-size:1.15rem}.cases-cta a{border-radius:4px;font-size:.95rem}
-.content-cleansing{max-width:none;display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;padding:48px 36px;align-items:start}
-.video-wrapper{width:100%;margin:0;max-width:none;border-radius:5px}
-.cleansing-steps .teaching-box{padding:28px;border-radius:5px;margin:0 0 20px}
-.product-section{grid-column:1/-1;border-radius:5px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:32px}
-.product-section .title{grid-column:1/-1;margin:0 0 8px}.product-item{margin:0}.line-call-to-action{grid-column:1/-1}
-.content-crystal{padding:40px 36px}.grid-box{font-size:.95rem;padding:24px 12px}
-.gradient-section{margin:0;background:#f1ebe1;border-radius:5px;padding:28px}
-.gradient-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:0}
-.gradient-inner .card{margin:0;border-radius:5px;box-shadow:none}
-.precautions-block{max-width:850px;margin:40px auto}
-.main-footer.about-style{background:#fcfaf7;border-top:1px solid #e5ded3}
-}
-@media(min-width:1100px){.course-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(min-width:768px) and (max-width:959px){
-.brand-hero{padding:32px 32px 0;gap:20px;min-height:400px}.hero-photo{height:360px}
-.brand-story-section{grid-template-columns:1fr;gap:32px}.image-row{max-width:620px}
-.founder-intro{gap:28px}.founder-values{gap:20px}.cert-section{padding:32px;gap:28px}
-.content-cleansing{grid-template-columns:1fr}.video-wrapper{max-width:360px;margin:auto}
-}
-
-
-/* MN13 homepage alignment and reading rhythm */
-.content-about{--section-space:56px}
-
-.brand-story-section{background:#fcfaf7;padding:var(--section-space) 24px;margin:0}
-.story-copy .story-text{max-width:620px;line-height:2;margin:0}
-.brand-story-section .image-row{margin:28px 0 0;gap:10px}
-.founder-intro{background:#f3eee6;padding:var(--section-space) 24px;margin:0}
-.founder-copy .quote{font-weight:400;line-height:1.9;padding-left:16px;border-left:2px solid var(--accent-gold)}
-.founder-values{margin-top:32px}
-.founder-values .core-value-item{align-items:flex-start;margin-bottom:24px}
-.founder-values .core-circle{width:auto;height:auto;min-width:64px;border:none;border-radius:0;justify-content:flex-start;font-size:1rem;margin-right:16px}
-.cert-section{background:#ebe3d6;padding:40px 24px;min-height:0;margin:0}
-.cert-section .section-title{text-align:left;font-size:1.3rem;letter-spacing:2px;margin-bottom:24px}
-.cert-section .section-title::before,.cert-section .section-title::after{content:none}
-.cert-list{line-height:1.8;margin-bottom:24px}.cert-list li{width:100%}
-.cert-visual-box{height:auto;margin:0}.cert-single-img-container{position:static;width:100%}
-.cert-img{width:100%;max-height:300px;object-fit:contain}
-.social-section{background:var(--primary-bg);padding:44px 24px;margin:0}
-.social-section .section-title{text-align:left;color:#faf8f5;font-size:1.3rem;letter-spacing:2px;margin-bottom:24px}
-.social-section .section-title::before,.social-section .section-title::after{content:none}
-.social-section .link-grid{padding:0;gap:12px}
-.social-section .link-item{background:transparent;border-color:rgba(250,248,245,.25);border-radius:4px;padding:20px 12px;text-align:left}
-.social-section .link-item span{color:#faf8f5}
-.social-section .link-item small{color:#d9cbbb;font-size:.75rem;line-height:1.6}
-.social-section .link-item:hover{background:rgba(255,255,255,.06)}
-@media(max-width:767px){
-.brand-story-section h2,.founder-copy h2{font-size:1.5rem;margin:12px 0 24px}
-.brand-story-section .story-img-box{aspect-ratio:3/4}
-.brand-story-section .img-overlay-text{font-size:.78rem;line-height:1.7}
-.founder-copy .intro-p{margin-bottom:0}
-.main-footer.about-style{background:var(--primary-bg);color:#d9cbbb;border-top:1px solid rgba(255,255,255,.15)}
-}
-@media(min-width:768px){
-.content-about{padding:32px 36px 0}
-.brand-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:520px;padding:48px 48px 0;gap:48px}
-.hero-copy{padding-bottom:48px}.hero-photo{height:460px}
-.brand-story-section{display:block;padding:80px 48px 64px;border:none}
-.story-copy{max-width:680px}
-.story-copy h2{font-size:1.9rem;margin:12px 0 24px}
-.story-copy .story-text{max-width:680px;font-size:1rem;line-height:2}
-.brand-story-section .image-row{max-width:680px;gap:20px;margin:32px 0 0}
-.brand-story-section .story-img-box{aspect-ratio:5/3}
-.brand-story-section .img-overlay-text{font-size:.95rem}
-.founder-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"copy photo" "values values";column-gap:48px;row-gap:40px;padding:64px 48px;margin:0;align-items:start}
-.founder-copy{grid-area:copy}.founder-photo{grid-area:photo;background:#e7dccb;height:460px;max-height:460px}
-.founder-photo img{width:100%;height:100%;max-height:460px;object-fit:contain;object-position:bottom}
-.founder-copy h2{font-size:1.9rem}
-.founder-copy .intro-p{font-size:.95rem;line-height:2}
-.founder-values{grid-area:values;margin:0;gap:28px}
-.founder-values .core-value-item{margin:0;padding:24px 0 0}
-.founder-values .core-circle{font-size:1.3rem;margin:0 0 14px}
-.cert-section{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;padding:40px 48px;align-items:center}
-.cert-section .section-title{font-size:1.5rem}
-.cert-list{margin:0;font-size:.9rem}
-.cert-list li:last-child{margin-bottom:0}
-.cert-img{max-height:240px}
-.social-section{padding:48px;margin:0}
-.social-section .section-title{font-size:1.5rem}
-.social-section .link-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.social-section .link-item{padding:24px 16px}
-.main-footer.about-style{margin:0 36px;background:var(--primary-bg);color:#d9cbbb;border-top:1px solid rgba(255,255,255,.15)}
-}
-@media(min-width:768px) and (max-width:959px){
-.brand-hero{gap:28px;padding:32px 32px 0;min-height:430px}
-.hero-photo{height:380px}.hero-copy{padding-bottom:32px}
-.brand-story-section{padding:64px 32px 48px}
-.founder-intro{padding:48px 32px;gap:28px}.founder-photo{height:380px}
-.cert-section{padding:32px;gap:28px}.social-section{padding:40px 32px}
-.social-section .link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-
-
-/* MN13 fuller viewport composition; no fixed portrait-side rule */
-@media(min-width:768px){
-#about.page-content{max-width:none}
-#about .content-about{padding:0}
-#about .brand-hero{border-radius:0;min-height:540px;padding:48px clamp(32px,5vw,96px) 0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
-#about .hero-photo{height:500px}
-#about .brand-story-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(32px,4vw,72px);padding:64px clamp(32px,5vw,96px)}
-#about .story-copy{max-width:none}
-#about .story-copy .story-text{max-width:640px}
-#about .brand-story-section .image-row{max-width:none;width:100%;margin:0;gap:16px}
-#about .brand-story-section .story-img-box{aspect-ratio:3/4;max-height:340px}
-#about .founder-intro{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-areas:"photo copy" "values values";padding:56px clamp(32px,5vw,96px);column-gap:clamp(32px,5vw,80px);row-gap:32px}
-#about .founder-photo{height:480px;max-height:480px}
-#about .founder-photo img{max-height:480px}
-#about .founder-copy{align-self:center;max-width:760px}
-#about .founder-values{gap:40px}
-#about .cert-section{padding:36px clamp(32px,5vw,96px);grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
-#about .cert-img{max-height:300px}
-#about .social-section{padding:40px clamp(32px,5vw,96px)}
-#about .social-section .section-title{text-align:center}
-#about .main-footer.about-style{margin:0}
-}
-@media(min-width:768px) and (max-width:959px){
-#about .brand-hero{padding:32px 32px 0;min-height:420px;gap:24px}
-#about .hero-photo{height:380px}
-#about .brand-story-section{grid-template-columns:1fr;padding:48px 32px;gap:28px}
-#about .brand-story-section .image-row{max-width:680px}
-#about .brand-story-section .story-img-box{aspect-ratio:5/3}
-#about .founder-intro{padding:48px 32px;gap:28px}
-#about .founder-photo{height:380px}
-#about .cert-section,#about .social-section{padding:32px}
-}
-
+@media(min-width:768px){.gradient-inner>.section-header,.gradient-inner>.note-tan-card,.product-section>.prod-divider,.product-section>.line-call-to-action{grid-column:1/-1}.product-section>.prod-divider{width:100%;margin:0}}
 </style>
 </head>
 <body>
 <div class="phone-container">
-<header>
+<div class="site-bar"><header>
 <!-- 漢堡按鈕 -->
 <button aria-label="選單" class="menu-btn" id="menuBtn" onclick="toggleDrawer()">
 <span></span><span></span><span></span>
 </button>
 <h1>MN13 Beauty</h1>
 <p>ESTABLISHED 2022</p>
-</header>
-<nav aria-label="主選單" class="desktop-nav"><button aria-current="page" data-page="about" onclick="switchPage('about','nav-about')" type="button">關於我們</button><button data-page="courses" onclick="switchPage('courses','nav-courses')" type="button">課程介紹</button><button data-page="care" onclick="switchPage('care','nav-care')" type="button">保養篇</button><button data-page="cases" onclick="switchPage('cases','nav-cases')" type="button">專屬肌膚日誌</button></nav>
+</header><nav aria-label="主選單" class="desktop-nav"><button aria-current="page" data-page="about" onclick="switchPage('about','nav-about')" type="button">關於我們</button><button data-page="courses" onclick="switchPage('courses','nav-courses')" type="button">課程介紹</button><button data-page="care" onclick="switchPage('care','nav-care')" type="button">保養篇</button><button data-page="cases" onclick="switchPage('cases','nav-cases')" type="button">專屬肌膚日誌</button></nav><a class="nav-booking" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約</a></div>
+
 <!-- 抽屜遮罩 -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 <!-- 抽屜選單 -->
@@ -1019,12 +925,7 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
          ============================================= -->
 <div class="page-content active" id="about">
 <div class="content-about"><section class="brand-hero"><div class="hero-copy"><p class="eyebrow">MN13 BEAUTY</p><h2>回歸肌膚的本質</h2><p class="hero-description">專業皮膚管理 | 隱私客製化服務</p><div class="hero-actions"><a class="primary-action" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約</a><button class="secondary-action" onclick="switchPage('courses','nav-courses')" type="button">課程介紹</button></div></div><div class="hero-photo"><img alt="MN13 創辦人 潘昱如 Luru" src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png"/></div></section>
-
-
 <section class="brand-story-section"><div class="story-copy"><h4>BRAND STORY</h4><h2>回歸肌膚的本質</h2><p class="story-text">MN13 創立於 2022 年，源自於對完美的堅持與專業的追求。創辦人曾任職於大型連鎖體系並擔任資深業績第一店長，累積了深厚的實戰經驗，為了解決每位顧客獨特的肌膚問題，決定成立個人工作室，提供更具隱私且客製化的專業服務。</p></div>
-
-
-
 <div class="image-row">
 <div class="story-img-box">
 <img alt="MN13 Beauty" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/回歸1.png"/>
@@ -1041,13 +942,6 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 </div>
 </section>
 <section class="founder-intro">
-
-
-
-
-
-
-
 <div class="founder-photo"><img alt="潘昱如 Luru" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png"/></div><div class="founder-copy"><h4>FOUNDER</h4><h2>潘昱如 Luru</h2><div class="quote">「愛美的關鍵，不在擁有多少瓶罐，<br/>而在於理解肌膚的邏輯。」</div><div class="intro-p">
                     我是 Luru，你的「肌膚邏輯顧問」。<br/><br/>
                     我的角色不是告訴你該買什麼，而是運用皮膚科學，拆解你獨特的肌膚問題，找出最直接有效的路徑。我堅持說真話、重邏輯、求實效，目標只有一個：讓你用最對的方法，停止浪費，獲得「素顏也好看」的肌膚與自信。<br/><br/>
@@ -1062,25 +956,22 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <div class="core-circle">求實效</div>
 <div class="core-text"><b>美感不應該是一種負擔</b>我們的目標是「用最對的方法、最少的浪費」，讓你不再在護膚的彎路上面浪費金錢與心力，真正實現「素顏也好看」的從容與自信。</div>
 </div></div></section>
-<section class="cert-section"><div class="cert-copy"><h2 class="section-title">國際證照</h2><ul class="cert-list">
+<section class="course-preview"><div class="preview-heading"><h2>課程介紹</h2><button class="text-link" onclick="switchPage('courses','nav-courses')" type="button">查看全部課程 →</button></div><div class="preview-grid"><button class="preview-tile" onclick="openModal('bubble')" type="button"><img alt="小氣泡" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/><span class="preview-name">小氣泡</span><span class="preview-hint">深層清潔 · 舒緩調理</span></button><button class="preview-tile" onclick="openModal('crystal')" type="button"><img alt="矽晶煥膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"/><span class="preview-name">矽晶煥膚</span><span class="preview-hint">深層調理 · 養膚修護</span></button><button class="preview-tile" onclick="openModal('aqua')" type="button"><img alt="女神無創水光" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/女神無創水光.png"/><span class="preview-name">女神無創水光</span><span class="preview-hint">深層保濕 · 光澤感提升</span></button></div></section><section class="cert-section"><div class="cert-copy"><h2 class="section-title">國際證照</h2><ul class="cert-list">
 <li>第一屆ISO17024國際認證</li>
 <li>國際整形KISPA | 醫療交流 KMCA</li>
 <li>韓國K-BEAUTY國際美妝認證</li>
 </ul></div>
-
-
 <div class="cert-visual-box">
 <div class="cert-single-img-container">
 <img alt="國際證照合集" class="cert-img" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/證書.png"/>
 </div>
-
 </div>
 </section>
 <section class="social-section"><h2 class="section-title">品牌社群</h2><div class="link-grid">
-<a class="link-item" href="https://lin.ee/8NyVW9j" target="_blank"><span>LINE 官方</span><small>諮詢與預約</small></a>
-<a class="link-item" href="https://www.instagram.com/mn13_beauty/" target="_blank"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
-<a class="link-item" href="https://www.instagram.com/0421_luru/" target="_blank"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
-<a class="link-item" href="https://www.instagram.com/_moon_spa_/" target="_blank"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
+<a class="link-item" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank"><span>LINE 官方</span><small>諮詢與預約</small></a>
+<a class="link-item" href="https://www.instagram.com/mn13_beauty/" rel="noopener" target="_blank"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
+<a class="link-item" href="https://www.instagram.com/0421_luru/" rel="noopener" target="_blank"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
+<a class="link-item" href="https://www.instagram.com/_moon_spa_/" rel="noopener" target="_blank"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
 </div></section></div>
 <footer class="main-footer about-style">
             © MN13 Beauty Professional Skin Care<br/>
@@ -1107,14 +998,14 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>輕柔清潔，維持毛孔清爽舒適</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('bubble')"><img alt="小氣泡" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
+<div class="course-card" onclick="openModal('bubble')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="小氣泡" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
 <div class="course-card-left">
 <div class="course-card-name">小氣泡</div>
 <div class="course-card-hint">深層清潔 · 舒緩調理</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('extraction')"><img alt="手清粉刺" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
+<div class="course-card" onclick="openModal('extraction')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="手清粉刺" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
 <div class="course-card-left">
 <div class="course-card-name">手清粉刺</div>
 <div class="course-card-hint">專業清潔 · 毛孔護理</div>
@@ -1131,7 +1022,7 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>溫和呵護，陪伴肌膚逐步穩定</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('crystal')"><img alt="矽晶煥膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"/>
+<div class="course-card" onclick="openModal('crystal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="矽晶煥膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"/>
 <div class="course-card-left">
 <div class="course-card-name">矽晶煥膚</div>
 <div class="course-card-hint">深層調理 · 養膚修護</div>
@@ -1148,21 +1039,21 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>補水保濕，感受柔嫩光滑的觸感</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('aqua')"><img alt="女神無創水光" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/女神無創水光.png"/>
+<div class="course-card" onclick="openModal('aqua')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="女神無創水光" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/女神無創水光.png"/>
 <div class="course-card-left">
 <div class="course-card-name">女神無創水光</div>
 <div class="course-card-hint">深層保濕 · 光澤感提升</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('plasma')"><img alt="Plasma" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"/>
+<div class="course-card" onclick="openModal('plasma')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="Plasma" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"/>
 <div class="course-card-left">
 <div class="course-card-name">Plasma</div>
 <div class="course-card-hint">膚質調理 · 細緻護理</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('exosome_youth')"><img alt="外泌體幼態美膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"/>
+<div class="course-card" onclick="openModal('exosome_youth')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="外泌體幼態美膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"/>
 <div class="course-card-left">
 <div class="course-card-name">外泌體幼態美膚</div>
 <div class="course-card-hint">修護補水 · 幼態光澤</div>
@@ -1179,21 +1070,21 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>輪廓管理，感受緊緻彈力的肌膚</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('contour')"><img alt="輪廓管理" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"/>
+<div class="course-card" onclick="openModal('contour')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="輪廓管理" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"/>
 <div class="course-card-left">
 <div class="course-card-name">輪廓管理</div>
 <div class="course-card-hint">臉部塑形 · 輪廓調理</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('acid')"><img alt="汰酸排導" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"/>
+<div class="course-card" onclick="openModal('acid')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="汰酸排導" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"/>
 <div class="course-card-left">
 <div class="course-card-name">汰酸排導</div>
 <div class="course-card-hint">循環促進 · 代謝調理</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('firming')"><img alt="逆時彈力緊膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"/>
+<div class="course-card" onclick="openModal('firming')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="逆時彈力緊膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"/>
 <div class="course-card-left">
 <div class="course-card-name">逆時彈力緊膚</div>
 <div class="course-card-hint">彈力維護 · 肌膚調理</div>
@@ -1210,14 +1101,14 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>局部加強，給予肌膚細緻照護</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('eye')"><img alt="眼部三合一" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"/>
+<div class="course-card" onclick="openModal('eye')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="眼部三合一" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"/>
 <div class="course-card-left">
 <div class="course-card-name">眼部三合一</div>
 <div class="course-card-hint">眼周護理 · 複合式調理</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('spot')"><img alt="斑點剋星" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"/>
+<div class="course-card" onclick="openModal('spot')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="斑點剋星" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"/>
 <div class="course-card-left">
 <div class="course-card-name">斑點剋星</div>
 <div class="course-card-hint">膚色調理 · 均勻護理</div>
@@ -1234,21 +1125,21 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <p>從清潔到修護，完整護膚體驗</p>
 </div>
 <div class="course-list">
-<div class="course-card" onclick="openModal('cleansing-edu')"><img alt="卸洗教學" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"/>
+<div class="course-card" onclick="openModal('cleansing-edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="卸洗教學" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"/>
 <div class="course-card-left">
 <div class="course-card-name">卸洗教學</div>
 <div class="course-card-hint">清潔觀念 · 正確手法示範</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('exosome')"><img alt="外泌體膠原凍膜" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"/>
+<div class="course-card" onclick="openModal('exosome')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="外泌體膠原凍膜" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"/>
 <div class="course-card-left">
 <div class="course-card-name">外泌體膠原凍膜</div>
 <div class="course-card-hint">舒緩修護 · 補水保養</div>
 </div>
 <div class="course-card-arrow">›</div>
 </div>
-<div class="course-card" onclick="openModal('foundation')"><img alt="駐顏粉底" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"/>
+<div class="course-card" onclick="openModal('foundation')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0"><img alt="駐顏粉底" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"/>
 <div class="course-card-left">
 <div class="course-card-name">駐顏粉底</div>
 <div class="course-card-hint">均勻膚色 · 自然光澤</div>
@@ -1274,7 +1165,7 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 <div class="care-sub-content active" id="care-cleansing">
 <div class="content-cleansing">
 <div class="video-wrapper">
-<a class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" target="_blank">▶</a>
+<a class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" rel="noopener" target="_blank">▶</a>
 </div><div class="cleansing-steps"><div class="teaching-box">
 <h2>— 卸妝 —</h2>
 <span class="important-note">請將手部清潔乾淨後，手乾臉乾的情況下使用。</span>
@@ -1295,8 +1186,6 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
                         2. 搓出綿密泡泡後，再塗抹於臉上清潔
                     </div>
 </div></div>
-
-
 <div class="product-section">
 <h3 class="title">一切的保養從(好的)清潔開始</h3>
 <div class="product-item">
@@ -1502,7 +1391,7 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
             </p>
 <div class="cases-cta">
 <p>想了解適合您的<br/>客製化護膚方案？</p>
-<a href="https://lin.ee/8NyVW9j" target="_blank">LINE 免費諮詢</a>
+<a href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 免費諮詢</a>
 </div>
 </div>
 </div>
@@ -1724,5 +1613,5 @@ function filterCases(category, element) {
     });
 }
 </script>
-</body>
-</head></html>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeDrawer();}});</script></body>
+</html>
