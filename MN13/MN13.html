@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MN13 Beauty | 專業皮膚管理</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MN13 Beauty | 專業皮膚管理</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --primary-bg: #4B3D2B;
             --accent-gold: #B39766;
@@ -788,583 +789,636 @@ header{padding:42px 32px 30px}header h1{font-size:2.2rem}header p{font-size:.85r
 @media(min-width:1100px){.course-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
+/* MN13 brand composition */
+.brand-hero{padding:44px 24px 0;background:#f3eee6;overflow:hidden}
+.eyebrow{font:500 .75rem 'Noto Sans TC',sans-serif;letter-spacing:3px;color:var(--accent-gold);margin-bottom:20px}
+.hero-copy h2{font-size:1.8rem;font-weight:500;color:var(--primary-brown);line-height:1.6}
+.hero-description{font: .9rem 'Noto Sans TC',sans-serif;line-height:1.9;color:#746655;margin:16px 0 24px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.primary-action,.secondary-action{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;font: .9rem 'Noto Sans TC',sans-serif;text-decoration:none;border-radius:4px;cursor:pointer}
+.primary-action{background:var(--primary-bg);color:white;border:1px solid var(--primary-bg)}
+.secondary-action{background:transparent;color:var(--primary-bg);border:1px solid #b9a68a}
+.hero-photo{height:320px;text-align:center;margin-top:24px}
+.hero-photo img{height:100%;max-width:100%;object-fit:contain;object-position:bottom}
+.founder-photo{display:none}
+.social-section{padding:40px 0 0}
+.course-cover{display:none}
+@media(min-width:768px){
+.phone-container{background:#fcfaf7}
+header{padding:22px max(32px,calc((100vw - 1080px)/2));text-align:left;display:flex;align-items:baseline;gap:24px;background:#fcfaf7;color:var(--primary-brown);border-bottom:1px solid #e9e2d8}
+header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65rem;letter-spacing:2px}
+.desktop-nav{background:#fcfaf7;border-bottom:1px solid #e9e2d8;padding:8px 24px;gap:24px}
+.desktop-nav button{color:#665744;font: .9rem 'Noto Sans TC',sans-serif;border-radius:0;padding:12px 8px}
+.desktop-nav button[aria-current="page"],.desktop-nav button:hover{color:var(--primary-brown);border-color:transparent;border-bottom-color:var(--accent-gold)}
+.desktop-nav button:focus-visible{outline-color:var(--primary-bg)}
+.page-content{max-width:1160px}
+.content-about{padding:32px 36px 0}
+.brand-hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;min-height:480px;padding:40px 60px 0;border-radius:4px;gap:40px}
+.hero-copy{padding-bottom:40px}.hero-copy h2{font-size:clamp(2rem,3.2vw,3rem);letter-spacing:2px}
+.hero-description{font-size:1rem}.hero-photo{height:440px;align-self:end;margin:0}
+.brand-story-section{display:grid;grid-template-columns:.9fr 1.2fr;gap:48px;align-items:center;background:none;padding:80px 0;margin:0;border-bottom:1px solid #e5ded3}
+.story-copy h2,.founder-copy h2{font-size:1.8rem;font-weight:500;margin:12px 0 24px}
+.story-text{margin:0;text-align:left;font-size:.95rem;line-height:2.1}
+.image-row{gap:12px;margin:0}.story-img-box{aspect-ratio:3/4;border-radius:3px}
+.img-overlay-text{font-size:1rem;line-height:1.8}.story-img-box:after{content:"";position:absolute;inset:0;background:rgba(40,30,20,.18)}
+.founder-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;padding:80px 0;margin:0}
+.founder-photo{display:block;background:#eee6da;max-height:520px;overflow:hidden}
+.founder-photo img{display:block;width:100%;height:100%;max-height:520px;object-fit:contain;object-position:bottom}
+.founder-copy .quote{font-size:1.1rem;line-height:1.9;font-weight:400;margin-bottom:24px}
+.founder-copy .intro-p{margin:0;font-size:.95rem;text-align:left}
+.founder-values{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.core-value-item{display:block;margin:0;padding:24px 0;border-top:1px solid #c9b693}
+.core-circle{border:none;border-radius:0;width:auto;height:auto;justify-content:flex-start;margin:0 0 16px;color:var(--primary-brown);font-size:1.3rem}
+.core-text{font-size:.9rem;line-height:1.9}.core-text b{font-size:.95rem}
+.cert-section{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:48px;margin:0;padding:48px;background:#f1ebe1;min-height:0;overflow:visible}
+.cert-section .section-title{text-align:left;font-size:1.5rem;letter-spacing:2px}
+.cert-section .section-title:before,.cert-section .section-title:after{content:none}
+.cert-list{margin:0;font-size:.95rem;line-height:1.8}.cert-list li{width:100%}
+.cert-visual-box{height:auto;margin:0}.cert-single-img-container{position:static;width:100%}.cert-img{max-height:360px;object-fit:contain}
+.social-section{padding:64px 0 24px}.social-section .link-grid{padding:0;gap:16px}
+.link-item{padding:24px 12px;border-radius:4px;background:transparent}.link-item small{font-size:.8rem}
+.cat-page-header{text-align:left;padding:48px 36px 28px}.cat-page-header h2{font-size:2rem}
+.course-cat-nav{background:#f3eee6;justify-content:flex-start;padding:0 24px}
+.course-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.course-card{display:grid;grid-template-columns:1fr 24px;align-items:center;padding:0 0 24px;overflow:hidden;border:1px solid #e5ded3;border-radius:5px;background:white;box-shadow:none}
+.course-cover{display:block;grid-column:1/-1;width:100%;height:220px;object-fit:contain;background:#f4efe7;margin-bottom:22px}
+.course-card-left{padding:0 24px}.course-card-arrow{margin:0 20px 0 0}.course-card-hint{line-height:1.8}
+.cases-hero{text-align:left;background:var(--primary-bg);padding:48px 36px;margin:32px 36px;border-radius:4px}
+.cases-hero h2{font-size:2rem}.cases-hero p{font-size:.95rem}.cases-hero:before,.cases-hero:after{display:none}
+.cases-grid{padding:0 36px;gap:28px}.case-card{border-radius:5px;box-shadow:none;border:1px solid #e5ded3;background:white}
+.case-compare{padding:8px 20px 20px;gap:10px}.case-img-box{border-radius:3px;box-shadow:none}
+.case-card-header{padding:20px}.case-desc{padding:20px;line-height:1.9}
+.cases-disclaimer{max-width:760px;margin:32px auto 20px;font-size:.8rem;color:#867c6e}
+.cases-cta{margin:24px 36px 0;display:flex;align-items:center;justify-content:space-between;gap:32px;text-align:left;padding:32px 40px;background:var(--primary-bg);border-radius:4px}
+.cases-cta p{margin:0;font-size:1.15rem}.cases-cta a{border-radius:4px;font-size:.95rem}
+.content-cleansing{max-width:none;display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;padding:48px 36px;align-items:start}
+.video-wrapper{width:100%;margin:0;max-width:none;border-radius:5px}
+.cleansing-steps .teaching-box{padding:28px;border-radius:5px;margin:0 0 20px}
+.product-section{grid-column:1/-1;border-radius:5px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:32px}
+.product-section .title{grid-column:1/-1;margin:0 0 8px}.product-item{margin:0}.line-call-to-action{grid-column:1/-1}
+.content-crystal{padding:40px 36px}.grid-box{font-size:.95rem;padding:24px 12px}
+.gradient-section{margin:0;background:#f1ebe1;border-radius:5px;padding:28px}
+.gradient-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:0}
+.gradient-inner .card{margin:0;border-radius:5px;box-shadow:none}
+.precautions-block{max-width:850px;margin:40px auto}
+.main-footer.about-style{background:#fcfaf7;border-top:1px solid #e5ded3}
+}
+@media(min-width:1100px){.course-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:768px) and (max-width:959px){
+.brand-hero{padding:32px 32px 0;gap:20px;min-height:400px}.hero-photo{height:360px}
+.brand-story-section{grid-template-columns:1fr;gap:32px}.image-row{max-width:620px}
+.founder-intro{gap:28px}.founder-values{gap:20px}.cert-section{padding:32px;gap:28px}
+.content-cleansing{grid-template-columns:1fr}.video-wrapper{max-width:360px;margin:auto}
+}
+
 </style>
+</head>
 <body>
 <div class="phone-container">
-    <header>
-        <!-- 漢堡按鈕 -->
-        <button class="menu-btn" id="menuBtn" onclick="toggleDrawer()" aria-label="選單">
-            <span></span><span></span><span></span>
-        </button>
-        <h1>MN13 Beauty</h1>
-        <p>ESTABLISHED 2022</p>
-    </header>
-<nav class="desktop-nav" aria-label="主選單"><button type="button" data-page="about" aria-current="page" onclick="switchPage('about','nav-about')">關於我們</button><button type="button" data-page="courses"  onclick="switchPage('courses','nav-courses')">課程介紹</button><button type="button" data-page="care"  onclick="switchPage('care','nav-care')">保養篇</button><button type="button" data-page="cases"  onclick="switchPage('cases','nav-cases')">專屬肌膚日誌</button></nav>
-
-    <!-- 抽屜遮罩 -->
-    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
-
-    <!-- 抽屜選單 -->
-    <div class="drawer" id="drawer">
-        <div class="drawer-brand">
-            <h2>MN13 Beauty</h2>
-            <p>PROFESSIONAL SKIN CARE</p>
-        </div>
-        <nav class="drawer-nav">
-            <div class="drawer-item active" id="nav-about" onclick="switchPage('about','nav-about')">
-                <div class="drawer-item-icon">✦</div>關於我們
+<header>
+<!-- 漢堡按鈕 -->
+<button aria-label="選單" class="menu-btn" id="menuBtn" onclick="toggleDrawer()">
+<span></span><span></span><span></span>
+</button>
+<h1>MN13 Beauty</h1>
+<p>ESTABLISHED 2022</p>
+</header>
+<nav aria-label="主選單" class="desktop-nav"><button aria-current="page" data-page="about" onclick="switchPage('about','nav-about')" type="button">關於我們</button><button data-page="courses" onclick="switchPage('courses','nav-courses')" type="button">課程介紹</button><button data-page="care" onclick="switchPage('care','nav-care')" type="button">保養篇</button><button data-page="cases" onclick="switchPage('cases','nav-cases')" type="button">專屬肌膚日誌</button></nav>
+<!-- 抽屜遮罩 -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<!-- 抽屜選單 -->
+<div class="drawer" id="drawer">
+<div class="drawer-brand">
+<h2>MN13 Beauty</h2>
+<p>PROFESSIONAL SKIN CARE</p>
+</div>
+<nav class="drawer-nav">
+<div class="drawer-item active" id="nav-about" onclick="switchPage('about','nav-about')">
+<div class="drawer-item-icon">✦</div>關於我們
             </div>
-            <div class="drawer-item" id="nav-courses" onclick="switchPage('courses','nav-courses')">
-                <div class="drawer-item-icon">◈</div>課程介紹
+<div class="drawer-item" id="nav-courses" onclick="switchPage('courses','nav-courses')">
+<div class="drawer-item-icon">◈</div>課程介紹
             </div>
-            <div class="drawer-item" id="nav-care" onclick="switchPage('care','nav-care')">
-                <div class="drawer-item-icon">❋</div>保養篇
+<div class="drawer-item" id="nav-care" onclick="switchPage('care','nav-care')">
+<div class="drawer-item-icon">❋</div>保養篇
             </div>
-            <div class="drawer-item" id="nav-cases" onclick="switchPage('cases','nav-cases')">
-                <div class="drawer-item-icon">◎</div>專屬肌膚日誌
+<div class="drawer-item" id="nav-cases" onclick="switchPage('cases','nav-cases')">
+<div class="drawer-item-icon">◎</div>專屬肌膚日誌
             </div>
-        </nav>
-        <div class="drawer-footer">© 2022 MN13 Beauty<br>專業皮膚管理 | 隱私客製化服務</div>
-    </div>
-
-    <!-- =============================================
+</nav>
+<div class="drawer-footer">© 2022 MN13 Beauty<br/>專業皮膚管理 | 隱私客製化服務</div>
+</div>
+<!-- =============================================
          關於我們（首頁）
          ============================================= -->
-    <div id="about" class="page-content active">
-        <div class="content-about">
-            <h2 class="section-title">品牌社群</h2>
-            <div class="link-grid">
-                <a href="https://lin.ee/8NyVW9j" target="_blank" class="link-item"><span>LINE 官方</span><small>諮詢與預約</small></a>
-                <a href="https://www.instagram.com/mn13_beauty/" target="_blank" class="link-item"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
-                <a href="https://www.instagram.com/0421_luru/" target="_blank" class="link-item"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
-                <a href="https://www.instagram.com/_moon_spa_/" target="_blank" class="link-item"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
-            </div>
-            <section class="brand-story-section">
-                <h4>BRAND STORY</h4>
-                <h2>回歸肌膚的本質</h2>
-                <p class="story-text">MN13 創立於 2022 年，源自於對完美的堅持與專業的追求。創辦人曾任職於大型連鎖體系並擔任資深業績第一店長，累積了深厚的實戰經驗，為了解決每位顧客獨特的肌膚問題，決定成立個人工作室，提供更具隱私且客製化的專業服務。</p>
-                <div class="image-row">
-                    <div class="story-img-box">
-                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸1.png">
-                        <div class="img-overlay-text">找出適合<br>每一位客人<br>養膚模式</div>
-                    </div>
-                    <div class="story-img-box">
-                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸2.png">
-                        <div class="img-overlay-text">每一次諮詢<br>都基於<br>科學驗證</div>
-                    </div>
-                    <div class="story-img-box">
-                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/回歸3.png">
-                        <div class="img-overlay-text">不只解決當下<br>更建立<br>長期保養觀念</div>
-                    </div>
-                </div>
-            </section>
-            <section class="founder-intro">
-                <h4>FOUNDER</h4>
-                <h2>潘昱如 Luru</h2>
-                <div class="quote">「愛美的關鍵，不在擁有多少瓶罐，<br>而在於理解肌膚的邏輯。」</div>
-                <div class="intro-p">
-                    我是 Luru，你的「肌膚邏輯顧問」。<br><br>
-                    我的角色不是告訴你該買什麼，而是運用皮膚科學，拆解你獨特的肌膚問題，找出最直接有效的路徑。我堅持說真話、重邏輯、求實效，目標只有一個：讓你用最對的方法，停止浪費，獲得「素顏也好看」的肌膚與自信。<br><br>
+<div class="page-content active" id="about">
+<div class="content-about"><section class="brand-hero"><div class="hero-copy"><p class="eyebrow">MN13 BEAUTY</p><h2>回歸肌膚的本質</h2><p class="hero-description">專業皮膚管理 | 隱私客製化服務</p><div class="hero-actions"><a class="primary-action" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約</a><button class="secondary-action" onclick="switchPage('courses','nav-courses')" type="button">課程介紹</button></div></div><div class="hero-photo"><img alt="MN13 創辦人 潘昱如 Luru" src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png"/></div></section>
+
+
+<section class="brand-story-section"><div class="story-copy"><h4>BRAND STORY</h4><h2>回歸肌膚的本質</h2><p class="story-text">MN13 創立於 2022 年，源自於對完美的堅持與專業的追求。創辦人曾任職於大型連鎖體系並擔任資深業績第一店長，累積了深厚的實戰經驗，為了解決每位顧客獨特的肌膚問題，決定成立個人工作室，提供更具隱私且客製化的專業服務。</p></div>
+
+
+
+<div class="image-row">
+<div class="story-img-box">
+<img alt="MN13 Beauty" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/回歸1.png"/>
+<div class="img-overlay-text">找出適合<br/>每一位客人<br/>養膚模式</div>
+</div>
+<div class="story-img-box">
+<img alt="MN13 Beauty" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/回歸2.png"/>
+<div class="img-overlay-text">每一次諮詢<br/>都基於<br/>科學驗證</div>
+</div>
+<div class="story-img-box">
+<img alt="MN13 Beauty" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/回歸3.png"/>
+<div class="img-overlay-text">不只解決當下<br/>更建立<br/>長期保養觀念</div>
+</div>
+</div>
+</section>
+<section class="founder-intro">
+
+
+
+
+
+
+
+<div class="founder-photo"><img alt="潘昱如 Luru" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png"/></div><div class="founder-copy"><h4>FOUNDER</h4><h2>潘昱如 Luru</h2><div class="quote">「愛美的關鍵，不在擁有多少瓶罐，<br/>而在於理解肌膚的邏輯。」</div><div class="intro-p">
+                    我是 Luru，你的「肌膚邏輯顧問」。<br/><br/>
+                    我的角色不是告訴你該買什麼，而是運用皮膚科學，拆解你獨特的肌膚問題，找出最直接有效的路徑。我堅持說真話、重邏輯、求實效，目標只有一個：讓你用最對的方法，停止浪費，獲得「素顏也好看」的肌膚與自信。<br/><br/>
                     如果你都倦了在護膚迷宮裡打轉，我將為你點亮那盞遠離煩惱的燈。
-                </div>
-                <div class="core-value-item">
-                    <div class="core-circle">說真話</div>
-                    <div class="core-text"><b>拒絕華麗的話術與誇大的承諾</b>肌膚的改善有跡可循，我會告訴你真實的原理與可能的結果。</div>
-                </div>
-                <div class="core-value-item">
-                    <div class="core-circle">重邏輯</div>
-                    <div class="core-text"><b>所有的護膚行為，從清潔到修護</b>都必須建立在皮膚科學的邏輯之上。我們解決「為什麼」和「怎麼做」而不只是「做什麼」。</div>
-                </div>
-                <div class="core-value-item">
-                    <div class="core-circle">求實效</div>
-                    <div class="core-text"><b>美感不應該是一種負擔</b>我們的目標是「用最對的方法、最少的浪費」，讓你不再在護膚的彎路上面浪費金錢與心力，真正實現「素顏也好看」的從容與自信。</div>
-                </div>
-            </section>
-            <section class="cert-section">
-                <h2 class="section-title">國際證照</h2>
-                <ul class="cert-list">
-                    <li>第一屆ISO17024國際認證</li>
-                    <li>國際整形KISPA | 醫療交流 KMCA</li>
-                    <li>韓國K-BEAUTY國際美妝認證</li>
-                </ul>
-                <div class="cert-visual-box">
-                    <div class="cert-single-img-container">
-                        <img src="https://m13nbeauty.github.io/MN13/MN13/image/證書.png" class="cert-img" alt="國際證照合集">
-                    </div>
-                    <img src="https://m13nbeauty.github.io/MN13/MN13/image/店長.png" class="founder-portrait" alt="店長">
-                </div>
-            </section>
-        </div>
-        <footer class="main-footer about-style">
-            © MN13 Beauty Professional Skin Care<br>
+                </div></div><div class="founder-values"><div class="core-value-item">
+<div class="core-circle">說真話</div>
+<div class="core-text"><b>拒絕華麗的話術與誇大的承諾</b>肌膚的改善有跡可循，我會告訴你真實的原理與可能的結果。</div>
+</div><div class="core-value-item">
+<div class="core-circle">重邏輯</div>
+<div class="core-text"><b>所有的護膚行為，從清潔到修護</b>都必須建立在皮膚科學的邏輯之上。我們解決「為什麼」和「怎麼做」而不只是「做什麼」。</div>
+</div><div class="core-value-item">
+<div class="core-circle">求實效</div>
+<div class="core-text"><b>美感不應該是一種負擔</b>我們的目標是「用最對的方法、最少的浪費」，讓你不再在護膚的彎路上面浪費金錢與心力，真正實現「素顏也好看」的從容與自信。</div>
+</div></div></section>
+<section class="cert-section"><div class="cert-copy"><h2 class="section-title">國際證照</h2><ul class="cert-list">
+<li>第一屆ISO17024國際認證</li>
+<li>國際整形KISPA | 醫療交流 KMCA</li>
+<li>韓國K-BEAUTY國際美妝認證</li>
+</ul></div>
+
+
+<div class="cert-visual-box">
+<div class="cert-single-img-container">
+<img alt="國際證照合集" class="cert-img" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/證書.png"/>
+</div>
+
+</div>
+</section>
+<section class="social-section"><h2 class="section-title">品牌社群</h2><div class="link-grid">
+<a class="link-item" href="https://lin.ee/8NyVW9j" target="_blank"><span>LINE 官方</span><small>諮詢與預約</small></a>
+<a class="link-item" href="https://www.instagram.com/mn13_beauty/" target="_blank"><span>MN13 Beauty</span><small>專業皮膚管理</small></a>
+<a class="link-item" href="https://www.instagram.com/0421_luru/" target="_blank"><span>小如如 Luru</span><small>MN13 創辦人</small></a>
+<a class="link-item" href="https://www.instagram.com/_moon_spa_/" target="_blank"><span>Moon SPA</span><small>身體療癒放鬆</small></a>
+</div></section></div>
+<footer class="main-footer about-style">
+            © MN13 Beauty Professional Skin Care<br/>
             專業皮膚管理 | 隱私客製化服務
         </footer>
-    </div>
-
-
-    <!-- =============================================
+</div>
+<!-- =============================================
          課程介紹
          ============================================= -->
-    <div id="courses" class="page-content">
-        <div class="course-cat-nav">
-            <div class="course-cat-item active" onclick="switchCat('pore', this)">淨化毛孔</div>
-            <div class="course-cat-item" onclick="switchCat('problem', this)">問題肌．養膚</div>
-            <div class="course-cat-item" onclick="switchCat('egg', this)">水煮蛋肌</div>
-            <div class="course-cat-item" onclick="switchCat('elastic', this)">彈力．輪廓</div>
-            <div class="course-cat-item" onclick="switchCat('focus', this)">重點呵護</div>
-            <div class="course-cat-item" onclick="switchCat('other', this)">其他</div>
-        </div>
-
-        <!-- 淨化毛孔 -->
-        <div id="cat-pore" class="course-cat-content active">
-            <div class="cat-page-header">
-                <h4>PORE PURIFYING</h4>
-                <h2>淨化毛孔</h2>
-                <p>輕柔清潔，維持毛孔清爽舒適</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('bubble')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">小氣泡</div>
-                        <div class="course-card-hint">深層清潔 · 舒緩調理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('extraction')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">手清粉刺</div>
-                        <div class="course-card-hint">專業清潔 · 毛孔護理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 問題肌．養膚 -->
-        <div id="cat-problem" class="course-cat-content">
-            <div class="cat-page-header">
-                <h4>SKIN RESTORATION</h4>
-                <h2>問題肌．養膚</h2>
-                <p>溫和呵護，陪伴肌膚逐步穩定</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('crystal')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">矽晶煥膚</div>
-                        <div class="course-card-hint">深層調理 · 養膚修護</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 水煮蛋肌 -->
-        <div id="cat-egg" class="course-cat-content">
-            <div class="cat-page-header">
-                <h4>EGG SKIN</h4>
-                <h2>水煮蛋肌</h2>
-                <p>補水保濕，感受柔嫩光滑的觸感</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('aqua')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">女神無創水光</div>
-                        <div class="course-card-hint">深層保濕 · 光澤感提升</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('plasma')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">Plasma</div>
-                        <div class="course-card-hint">膚質調理 · 細緻護理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('exosome_youth')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">外泌體幼態美膚</div>
-                        <div class="course-card-hint">修護補水 · 幼態光澤</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 彈力．輪廓 -->
-        <div id="cat-elastic" class="course-cat-content">
-            <div class="cat-page-header">
-                <h4>LIFT & CONTOUR</h4>
-                <h2>彈力．輪廓</h2>
-                <p>輪廓管理，感受緊緻彈力的肌膚</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('contour')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">輪廓管理</div>
-                        <div class="course-card-hint">臉部塑形 · 輪廓調理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('acid')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">汰酸排導</div>
-                        <div class="course-card-hint">循環促進 · 代謝調理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('firming')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">逆時彈力緊膚</div>
-                        <div class="course-card-hint">彈力維護 · 肌膚調理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 重點呵護 -->
-        <div id="cat-focus" class="course-cat-content">
-            <div class="cat-page-header">
-                <h4>TARGETED CARE</h4>
-                <h2>重點呵護</h2>
-                <p>局部加強，給予肌膚細緻照護</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('eye')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">眼部三合一</div>
-                        <div class="course-card-hint">眼周護理 · 複合式調理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('spot')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">斑點剋星</div>
-                        <div class="course-card-hint">膚色調理 · 均勻護理</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 其他 -->
-        <div id="cat-other" class="course-cat-content">
-            <div class="cat-page-header">
-                <h4>MORE SERVICES</h4>
-                <h2>其他</h2>
-                <p>從清潔到修護，完整護膚體驗</p>
-            </div>
-            <div class="course-list">
-                <div class="course-card" onclick="openModal('cleansing-edu')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">卸洗教學</div>
-                        <div class="course-card-hint">清潔觀念 · 正確手法示範</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('exosome')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">外泌體膠原凍膜</div>
-                        <div class="course-card-hint">舒緩修護 · 補水保養</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-                <div class="course-card" onclick="openModal('foundation')">
-                    <div class="course-card-left">
-                        <div class="course-card-name">駐顏粉底</div>
-                        <div class="course-card-hint">均勻膚色 · 自然光澤</div>
-                    </div>
-                    <div class="course-card-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="main-footer about-style">
-            © MN13 Beauty Professional Skin Care<br>
+<div class="page-content" id="courses">
+<div class="course-cat-nav">
+<div class="course-cat-item active" onclick="switchCat('pore', this)">淨化毛孔</div>
+<div class="course-cat-item" onclick="switchCat('problem', this)">問題肌．養膚</div>
+<div class="course-cat-item" onclick="switchCat('egg', this)">水煮蛋肌</div>
+<div class="course-cat-item" onclick="switchCat('elastic', this)">彈力．輪廓</div>
+<div class="course-cat-item" onclick="switchCat('focus', this)">重點呵護</div>
+<div class="course-cat-item" onclick="switchCat('other', this)">其他</div>
+</div>
+<!-- 淨化毛孔 -->
+<div class="course-cat-content active" id="cat-pore">
+<div class="cat-page-header">
+<h4>PORE PURIFYING</h4>
+<h2>淨化毛孔</h2>
+<p>輕柔清潔，維持毛孔清爽舒適</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('bubble')"><img alt="小氣泡" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
+<div class="course-card-left">
+<div class="course-card-name">小氣泡</div>
+<div class="course-card-hint">深層清潔 · 舒緩調理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('extraction')"><img alt="手清粉刺" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"/>
+<div class="course-card-left">
+<div class="course-card-name">手清粉刺</div>
+<div class="course-card-hint">專業清潔 · 毛孔護理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<!-- 問題肌．養膚 -->
+<div class="course-cat-content" id="cat-problem">
+<div class="cat-page-header">
+<h4>SKIN RESTORATION</h4>
+<h2>問題肌．養膚</h2>
+<p>溫和呵護，陪伴肌膚逐步穩定</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('crystal')"><img alt="矽晶煥膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"/>
+<div class="course-card-left">
+<div class="course-card-name">矽晶煥膚</div>
+<div class="course-card-hint">深層調理 · 養膚修護</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<!-- 水煮蛋肌 -->
+<div class="course-cat-content" id="cat-egg">
+<div class="cat-page-header">
+<h4>EGG SKIN</h4>
+<h2>水煮蛋肌</h2>
+<p>補水保濕，感受柔嫩光滑的觸感</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('aqua')"><img alt="女神無創水光" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/女神無創水光.png"/>
+<div class="course-card-left">
+<div class="course-card-name">女神無創水光</div>
+<div class="course-card-hint">深層保濕 · 光澤感提升</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('plasma')"><img alt="Plasma" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"/>
+<div class="course-card-left">
+<div class="course-card-name">Plasma</div>
+<div class="course-card-hint">膚質調理 · 細緻護理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('exosome_youth')"><img alt="外泌體幼態美膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"/>
+<div class="course-card-left">
+<div class="course-card-name">外泌體幼態美膚</div>
+<div class="course-card-hint">修護補水 · 幼態光澤</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<!-- 彈力．輪廓 -->
+<div class="course-cat-content" id="cat-elastic">
+<div class="cat-page-header">
+<h4>LIFT &amp; CONTOUR</h4>
+<h2>彈力．輪廓</h2>
+<p>輪廓管理，感受緊緻彈力的肌膚</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('contour')"><img alt="輪廓管理" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"/>
+<div class="course-card-left">
+<div class="course-card-name">輪廓管理</div>
+<div class="course-card-hint">臉部塑形 · 輪廓調理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('acid')"><img alt="汰酸排導" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"/>
+<div class="course-card-left">
+<div class="course-card-name">汰酸排導</div>
+<div class="course-card-hint">循環促進 · 代謝調理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('firming')"><img alt="逆時彈力緊膚" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"/>
+<div class="course-card-left">
+<div class="course-card-name">逆時彈力緊膚</div>
+<div class="course-card-hint">彈力維護 · 肌膚調理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<!-- 重點呵護 -->
+<div class="course-cat-content" id="cat-focus">
+<div class="cat-page-header">
+<h4>TARGETED CARE</h4>
+<h2>重點呵護</h2>
+<p>局部加強，給予肌膚細緻照護</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('eye')"><img alt="眼部三合一" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"/>
+<div class="course-card-left">
+<div class="course-card-name">眼部三合一</div>
+<div class="course-card-hint">眼周護理 · 複合式調理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('spot')"><img alt="斑點剋星" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"/>
+<div class="course-card-left">
+<div class="course-card-name">斑點剋星</div>
+<div class="course-card-hint">膚色調理 · 均勻護理</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<!-- 其他 -->
+<div class="course-cat-content" id="cat-other">
+<div class="cat-page-header">
+<h4>MORE SERVICES</h4>
+<h2>其他</h2>
+<p>從清潔到修護，完整護膚體驗</p>
+</div>
+<div class="course-list">
+<div class="course-card" onclick="openModal('cleansing-edu')"><img alt="卸洗教學" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"/>
+<div class="course-card-left">
+<div class="course-card-name">卸洗教學</div>
+<div class="course-card-hint">清潔觀念 · 正確手法示範</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('exosome')"><img alt="外泌體膠原凍膜" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"/>
+<div class="course-card-left">
+<div class="course-card-name">外泌體膠原凍膜</div>
+<div class="course-card-hint">舒緩修護 · 補水保養</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+<div class="course-card" onclick="openModal('foundation')"><img alt="駐顏粉底" class="course-cover" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"/>
+<div class="course-card-left">
+<div class="course-card-name">駐顏粉底</div>
+<div class="course-card-hint">均勻膚色 · 自然光澤</div>
+</div>
+<div class="course-card-arrow">›</div>
+</div>
+</div>
+</div>
+<footer class="main-footer about-style">
+            © MN13 Beauty Professional Skin Care<br/>
             專業皮膚管理 | 隱私客製化服務
         </footer>
-    </div>
-
-
-    <!-- =============================================
+</div>
+<!-- =============================================
          保養篇
          ============================================= -->
-    <div id="care" class="page-content">
-        <div class="care-subnav">
-            <div class="care-subnav-item active" onclick="switchCare('cleansing', this)">卸洗教學</div>
-            <div class="care-subnav-item" onclick="switchCare('crystal', this)">矽晶保養</div>
-        </div>
-
-        <!-- 卸洗教學 -->
-        <div id="care-cleansing" class="care-sub-content active">
-            <div class="content-cleansing">
-                <div class="video-wrapper">
-                    <a href="https://www.instagram.com/reel/DIQhIO5ya0p/" target="_blank" class="play-overlay">▶</a>
-                </div>
-                <div class="teaching-box">
-                    <h2>— 卸妝 —</h2>
-                    <span class="important-note">請將手部清潔乾淨後，手乾臉乾的情況下使用。</span>
-                    <div class="step-content">
-                        1. 將卸妝乳均勻塗抹於臉上，按摩至「出油」<br>
+<div class="page-content" id="care">
+<div class="care-subnav">
+<div class="care-subnav-item active" onclick="switchCare('cleansing', this)">卸洗教學</div>
+<div class="care-subnav-item" onclick="switchCare('crystal', this)">矽晶保養</div>
+</div>
+<!-- 卸洗教學 -->
+<div class="care-sub-content active" id="care-cleansing">
+<div class="content-cleansing">
+<div class="video-wrapper">
+<a class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" target="_blank">▶</a>
+</div><div class="cleansing-steps"><div class="teaching-box">
+<h2>— 卸妝 —</h2>
+<span class="important-note">請將手部清潔乾淨後，手乾臉乾的情況下使用。</span>
+<div class="step-content">
+                        1. 將卸妝乳均勻塗抹於臉上，按摩至「出油」<br/>
                         2. <b>將手上剛卸妝的油脂洗乾淨</b>
-                        <ul class="sub-steps">
-                            <li>手微濕的情況下再按摩臉部一次</li>
-                            <li>臉上會慢慢出現白色水狀（乳化過程）</li>
-                        </ul>
+<ul class="sub-steps">
+<li>手微濕的情況下再按摩臉部一次</li>
+<li>臉上會慢慢出現白色水狀（乳化過程）</li>
+</ul>
                         3. 乳化重複 3 次即可用清水洗淨臉部
                     </div>
-                </div>
-                <div class="teaching-box">
-                    <h2>— 洗臉 —</h2>
-                    <span class="important-note">請確保於手部清潔乾淨的情況下使用。</span>
-                    <div class="step-content" style="text-align: center;">
-                        1. 將洗面乳擠於手上，搭配些許的水<br>
+</div><div class="teaching-box">
+<h2>— 洗臉 —</h2>
+<span class="important-note">請確保於手部清潔乾淨的情況下使用。</span>
+<div class="step-content" style="text-align: center;">
+                        1. 將洗面乳擠於手上，搭配些許的水<br/>
                         2. 搓出綿密泡泡後，再塗抹於臉上清潔
                     </div>
-                </div>
-                <div class="product-section">
-                    <h3 class="title">一切的保養從(好的)清潔開始</h3>
-                    <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png');"></div>
-                        <div class="prod-info">
-                            <span class="prod-tag">卸妝乳</span>
-                            <div class="prod-name">玫瑰水淨顏卸妝乳</div>
-                            <div class="prod-desc">清爽的水乳質地，<br>能溫和帶走彩妝髒污，<br>讓肌膚感受不油不膩的清爽。</div>
-                        </div>
+</div></div>
+
+
+<div class="product-section">
+<h3 class="title">一切的保養從(好的)清潔開始</h3>
+<div class="product-item">
+<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png');"></div>
+<div class="prod-info">
+<span class="prod-tag">卸妝乳</span>
+<div class="prod-name">玫瑰水淨顏卸妝乳</div>
+<div class="prod-desc">清爽的水乳質地，<br/>能溫和帶走彩妝髒污，<br/>讓肌膚感受不油不膩的清爽。</div>
+</div>
+</div>
+<div class="product-item">
+<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/洗面乳.png');"></div>
+<div class="prod-info">
+<span class="prod-tag">洗面乳</span>
+<div class="prod-name">極透亮妍鑽白潔膚霜</div>
+<div class="prod-desc">富含 28% 胺基酸，<br/>給予肌膚最溫和的清潔，<br/>洗後保濕有感、絕不緊繃。</div>
+</div>
+</div>
+<hr class="prod-divider"/>
+<div class="product-item">
+<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png');"></div>
+<div class="prod-info">
+<span class="prod-tag">卸妝液</span>
+<div class="prod-name">玫瑰水漾淨顏卸妝液</div>
+<div class="prod-desc">若您較常使用眼唇強效彩妝，<br/>建議搭配卸妝液進行「分區卸妝」，<br/>達到深層潔淨效果。</div>
+</div>
+</div>
+<div class="line-call-to-action">
+                        以上產品皆有販售，<br/>如有喜歡，請洽官方 Line 諮詢購買。
                     </div>
-                    <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/洗面乳.png');"></div>
-                        <div class="prod-info">
-                            <span class="prod-tag">洗面乳</span>
-                            <div class="prod-name">極透亮妍鑽白潔膚霜</div>
-                            <div class="prod-desc">富含 28% 胺基酸，<br>給予肌膚最溫和的清潔，<br>洗後保濕有感、絕不緊繃。</div>
-                        </div>
-                    </div>
-                    <hr class="prod-divider">
-                    <div class="product-item">
-                        <div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png');"></div>
-                        <div class="prod-info">
-                            <span class="prod-tag">卸妝液</span>
-                            <div class="prod-name">玫瑰水漾淨顏卸妝液</div>
-                            <div class="prod-desc">若您較常使用眼唇強效彩妝，<br>建議搭配卸妝液進行「分區卸妝」，<br>達到深層潔淨效果。</div>
-                        </div>
-                    </div>
-                    <div class="line-call-to-action">
-                        以上產品皆有販售，<br>如有喜歡，請洽官方 Line 諮詢購買。
-                    </div>
-                </div>
-            </div>
-            <footer class="main-footer about-style">
-                © MN13 Beauty Professional Skin Care<br>
+</div>
+</div>
+<footer class="main-footer about-style">
+                © MN13 Beauty Professional Skin Care<br/>
                 專業皮膚管理 | 隱私客製化服務
             </footer>
-        </div>
-
-        <!-- 矽晶保養 -->
-        <div id="care-crystal" class="care-sub-content">
-            <div class="content-crystal">
-                <h2 class="section-header">黃金修復期</h2>
-                <div class="grid-5">
-                    <div class="grid-box"><div>8~12小時內<br>請勿碰水</div></div>
-                    <div class="grid-box"><div>前3天<br>避免熱水洗臉<br>與用力擦拭</div></div>
-                    <div class="grid-box"><div>7天<br>隨時噴修護液</div></div>
-                    <div class="grid-box grid-box-wide"><div>一週<br>無需塗抹<br>其他護膚品</div></div>
-                    <div class="grid-box grid-box-wide"><div>做好防曬<br>防曬後須卸妝</div></div>
-                </div>
-                <div class="gradient-section">
-                    <div class="gradient-inner">
-                        <h2 class="section-header">居家保養流程</h2>
-                        <div class="card">
-                            <span class="day-label">DAY 1~3</span>
-                            <p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ (防曬)</p>
-                            <p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ 面膜 ➝ 清水洗臉 ➝ 修護液 ➝ EGF*2~5</p>
-                        </div>
-                        <div class="card">
-                            <span class="day-label">DAY 4~7</span>
-                            <p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ 防曬</p>
-                            <p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ (面膜) ➝ EGF*2~5</p>
-                        </div>
-                        <div class="card">
-                            <span class="day-label">DAY 8</span>
-                            <p class="routine-p" style="color:#666; font-size:0.85rem;">建議回到 MN13 進行養膚課程，開始全方位保養，使肌膚完整更新，效果加倍。</p>
-                        </div>
-                        <div class="note-tan-card">
-                            <b style="color:var(--text-main); display:block; margin-bottom:10px; font-size:0.9rem;">無購買產品者步驟：</b>
-                            <p style="color:#666;">• 無妝時：清水洗臉 ➝ 保濕面膜</p>
-                            <p style="color:#666;">• 有妝時：卸妝清潔 ➝ 保濕面膜</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="precautions-block">
-                    <div class="title">— 注意事項 —</div>
-                    <div class="precaution-item" data-index="1.">泛紅溫熱：循環加重、微刺感屬正常現象。</div>
-                    <div class="precaution-item" data-index="2.">黑色點狀：矽晶代謝在毛孔中，過幾天會自然消失。</div>
-                    <div class="precaution-item" data-index="3.">禁止除毛：勿進行挽臉、刀片除毛等行為。</div>
-                    <div class="precaution-item" data-index="4.">特殊反應：曾用藥者可能會有紅疹發癢感，請多補水。</div>
-                    <div class="precaution-item" data-index="5.">深層代謝(排淨期)：激發粉刺痘痘為排淨過程，「切勿擠壓」！若感不適可用修護液 or EGF 舒緩。</div>
-                </div>
-            </div>
-            <footer class="footer-crystal">
-                請遵守 MN13 Beauty 術後修護保養流程，以達到最佳效果<br>
+</div>
+<!-- 矽晶保養 -->
+<div class="care-sub-content" id="care-crystal">
+<div class="content-crystal">
+<h2 class="section-header">黃金修復期</h2>
+<div class="grid-5">
+<div class="grid-box"><div>8~12小時內<br/>請勿碰水</div></div>
+<div class="grid-box"><div>前3天<br/>避免熱水洗臉<br/>與用力擦拭</div></div>
+<div class="grid-box"><div>7天<br/>隨時噴修護液</div></div>
+<div class="grid-box grid-box-wide"><div>一週<br/>無需塗抹<br/>其他護膚品</div></div>
+<div class="grid-box grid-box-wide"><div>做好防曬<br/>防曬後須卸妝</div></div>
+</div>
+<div class="gradient-section">
+<div class="gradient-inner">
+<h2 class="section-header">居家保養流程</h2>
+<div class="card">
+<span class="day-label">DAY 1~3</span>
+<p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ (防曬)</p>
+<p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ 面膜 ➝ 清水洗臉 ➝ 修護液 ➝ EGF*2~5</p>
+</div>
+<div class="card">
+<span class="day-label">DAY 4~7</span>
+<p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ 防曬</p>
+<p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ (面膜) ➝ EGF*2~5</p>
+</div>
+<div class="card">
+<span class="day-label">DAY 8</span>
+<p class="routine-p" style="color:#666; font-size:0.85rem;">建議回到 MN13 進行養膚課程，開始全方位保養，使肌膚完整更新，效果加倍。</p>
+</div>
+<div class="note-tan-card">
+<b style="color:var(--text-main); display:block; margin-bottom:10px; font-size:0.9rem;">無購買產品者步驟：</b>
+<p style="color:#666;">• 無妝時：清水洗臉 ➝ 保濕面膜</p>
+<p style="color:#666;">• 有妝時：卸妝清潔 ➝ 保濕面膜</p>
+</div>
+</div>
+</div>
+<div class="precautions-block">
+<div class="title">— 注意事項 —</div>
+<div class="precaution-item" data-index="1.">泛紅溫熱：循環加重、微刺感屬正常現象。</div>
+<div class="precaution-item" data-index="2.">黑色點狀：矽晶代謝在毛孔中，過幾天會自然消失。</div>
+<div class="precaution-item" data-index="3.">禁止除毛：勿進行挽臉、刀片除毛等行為。</div>
+<div class="precaution-item" data-index="4.">特殊反應：曾用藥者可能會有紅疹發癢感，請多補水。</div>
+<div class="precaution-item" data-index="5.">深層代謝(排淨期)：激發粉刺痘痘為排淨過程，「切勿擠壓」！若感不適可用修護液 or EGF 舒緩。</div>
+</div>
+</div>
+<footer class="footer-crystal">
+                請遵守 MN13 Beauty 術後修護保養流程，以達到最佳效果<br/>
                 課程完成後需 7-14 天修復期，即可看見煥然一新的肌膚
             </footer>
-        </div>
-    </div>
-
-
-    <!-- =============================================
+</div>
+</div>
+<!-- =============================================
          客製化案例
          ============================================= -->
-    <div id="cases" class="page-content">
-        <div class="cases-page">
-            <div class="cases-hero">
-                <h4>SKIN JOURNAL</h4>
-                <h2>專屬肌膚日誌</h2>
-                <p>每一張臉都有自己的故事<br>真實記錄每位客人的施作前後歷程</p>
-            </div>
-
-            <div class="cases-grid" id="cases-grid" style="padding-top:20px;">
-
-                <!-- 案例 1 -->
-                <div class="case-card">
-                    <div class="case-card-header">
-                        <div class="case-tag-group">
-                            <span class="case-chip type">手清粉刺</span>
-                            <span class="case-chip type">矽晶</span>
-                            <span class="case-chip duration">約 6 週</span>
-                        </div>
-                    </div>
-                    <div class="case-compare">
-                        <div class="case-side">
-                            <div class="case-date">施作前 113.11.22</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前1.png" alt="施作前"></div>
-                            <div class="case-label">肌膚多處泛紅、<br>痘痘較多</div>
-                        </div>
-                        <div class="case-arrow-center">→</div>
-                        <div class="case-side">
-                            <div class="case-date">施作後 114.01.04</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後1.png" alt="施作後"></div>
-                            <div class="case-label">膚況看起來更穩定、<br>泛紅感減少</div>
-                        </div>
-                    </div>
-                    <div class="case-desc">長期在意肌膚狀態的客人，持續回來護理，一點一點地在乎自己的肌膚。</div>
-                </div>
-
-                <!-- 案例 2 -->
-                <div class="case-card">
-                    <div class="case-card-header">
-                        <div class="case-tag-group">
-                            <span class="case-chip type">水光</span>
-                            <span class="case-chip type">矽晶</span>
-                            <span class="case-chip type">手清粉刺</span>
-                            <span class="case-chip duration">約 10 週</span>
-                        </div>
-                    </div>
-                    <div class="case-compare">
-                        <div class="case-side">
-                            <div class="case-date">施作前 114.05.23</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前2.png" alt="施作前"></div>
-                            <div class="case-label">泛紅、<br>閉鎖粉刺較多</div>
-                        </div>
-                        <div class="case-arrow-center">→</div>
-                        <div class="case-side">
-                            <div class="case-date">施作後 114.07.28</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後2.png" alt="施作後"></div>
-                            <div class="case-label">膚況視覺上更穩定、<br>閉鎖粉刺明顯減少</div>
-                        </div>
-                    </div>
-                    <div class="case-desc">一位願意給自己時間、耐心陪伴肌膚慢慢調整的客人，每一次回來都帶著對自己肌膚更多的了解。</div>
-                </div>
-
-                <!-- 案例 3 -->
-                <div class="case-card">
-                    <div class="case-card-header">
-                        <div class="case-tag-group">
-                            <span class="case-chip type">水光</span>
-                            <span class="case-chip type">矽晶</span>
-                            <span class="case-chip type">Plasma</span>
-                            <span class="case-chip type">手清粉刺</span>
-                        </div>
-                    </div>
-                    <div class="case-compare">
-                        <div class="case-side">
-                            <div class="case-date">施作前 114.04.07</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前3.png" alt="施作前"></div>
-                            <div class="case-label">過敏肌、肌膚敏感、<br>膚況較不穩定</div>
-                        </div>
-                        <div class="case-arrow-center">→</div>
-                        <div class="case-side">
-                            <div class="case-date">施作後 115.01.20</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後3.png" alt="施作後"></div>
-                            <div class="case-label">膚況視覺上逐漸穩定、<br>肌膚看起來更舒適、更細緻</div>
-                        </div>
-                    </div>
-                    <div class="case-desc">試過很多方式都沒有太大變化的客人，願意給自己一段時間，慢慢找到適合自己肌膚的節奏。</div>
-                </div>
-
-                <!-- 案例 4 -->
-                <div class="case-card">
-                    <div class="case-card-header">
-                        <div class="case-tag-group">
-                            <span class="case-chip type">矽晶</span>
-                            <span class="case-chip type">燈泡肌</span>
-                            <span class="case-chip duration">約 5 個月</span>
-                        </div>
-                    </div>
-                    <div class="case-compare">
-                        <div class="case-side">
-                            <div class="case-date">施作前 113.07.07</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/前4.png" alt="施作前"></div>
-                            <div class="case-label">工作環境影響、<br>肌膚紋理較不均勻</div>
-                        </div>
-                        <div class="case-arrow-center">→</div>
-                        <div class="case-side">
-                            <div class="case-date">施作後 113.11.24</div>
-                            <div class="case-img-box"><img src="https://m13nbeauty.github.io/MN13/MN13/image/後4.png" alt="施作後"></div>
-                            <div class="case-label">膚質視覺上逐漸細緻、<br>肌膚看起來更均勻</div>
-                        </div>
-                    </div>
-                    <div class="case-desc">工作性質特殊、長時間處於特定環境的客人，在忙碌之中仍願意撥出時間好好照顧自己的肌膚。</div>
-                </div>
-
-            </div>
-
-            <p class="cases-disclaimer">
-                ✦ 本作品為實際施作紀錄，已取得當事人同意公開 ✦ <br>
-                效果因個人膚況、體質、年齡及保養習慣而有所差異<br>
-                不保證每位客人皆達到完全相同之視覺成果<br>
+<div class="page-content" id="cases">
+<div class="cases-page">
+<div class="cases-hero">
+<h4>SKIN JOURNAL</h4>
+<h2>專屬肌膚日誌</h2>
+<p>每一張臉都有自己的故事<br/>真實記錄每位客人的施作前後歷程</p>
+</div>
+<div class="cases-grid" id="cases-grid" style="padding-top:20px;">
+<!-- 案例 1 -->
+<div class="case-card">
+<div class="case-card-header">
+<div class="case-tag-group">
+<span class="case-chip type">手清粉刺</span>
+<span class="case-chip type">矽晶</span>
+<span class="case-chip duration">約 6 週</span>
+</div>
+</div>
+<div class="case-compare">
+<div class="case-side">
+<div class="case-date">施作前 113.11.22</div>
+<div class="case-img-box"><img alt="施作前" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/前1.png"/></div>
+<div class="case-label">肌膚多處泛紅、<br/>痘痘較多</div>
+</div>
+<div class="case-arrow-center">→</div>
+<div class="case-side">
+<div class="case-date">施作後 114.01.04</div>
+<div class="case-img-box"><img alt="施作後" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/後1.png"/></div>
+<div class="case-label">膚況看起來更穩定、<br/>泛紅感減少</div>
+</div>
+</div>
+<div class="case-desc">長期在意肌膚狀態的客人，持續回來護理，一點一點地在乎自己的肌膚。</div>
+</div>
+<!-- 案例 2 -->
+<div class="case-card">
+<div class="case-card-header">
+<div class="case-tag-group">
+<span class="case-chip type">水光</span>
+<span class="case-chip type">矽晶</span>
+<span class="case-chip type">手清粉刺</span>
+<span class="case-chip duration">約 10 週</span>
+</div>
+</div>
+<div class="case-compare">
+<div class="case-side">
+<div class="case-date">施作前 114.05.23</div>
+<div class="case-img-box"><img alt="施作前" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/前2.png"/></div>
+<div class="case-label">泛紅、<br/>閉鎖粉刺較多</div>
+</div>
+<div class="case-arrow-center">→</div>
+<div class="case-side">
+<div class="case-date">施作後 114.07.28</div>
+<div class="case-img-box"><img alt="施作後" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/後2.png"/></div>
+<div class="case-label">膚況視覺上更穩定、<br/>閉鎖粉刺明顯減少</div>
+</div>
+</div>
+<div class="case-desc">一位願意給自己時間、耐心陪伴肌膚慢慢調整的客人，每一次回來都帶著對自己肌膚更多的了解。</div>
+</div>
+<!-- 案例 3 -->
+<div class="case-card">
+<div class="case-card-header">
+<div class="case-tag-group">
+<span class="case-chip type">水光</span>
+<span class="case-chip type">矽晶</span>
+<span class="case-chip type">Plasma</span>
+<span class="case-chip type">手清粉刺</span>
+</div>
+</div>
+<div class="case-compare">
+<div class="case-side">
+<div class="case-date">施作前 114.04.07</div>
+<div class="case-img-box"><img alt="施作前" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/前3.png"/></div>
+<div class="case-label">過敏肌、肌膚敏感、<br/>膚況較不穩定</div>
+</div>
+<div class="case-arrow-center">→</div>
+<div class="case-side">
+<div class="case-date">施作後 115.01.20</div>
+<div class="case-img-box"><img alt="施作後" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/後3.png"/></div>
+<div class="case-label">膚況視覺上逐漸穩定、<br/>肌膚看起來更舒適、更細緻</div>
+</div>
+</div>
+<div class="case-desc">試過很多方式都沒有太大變化的客人，願意給自己一段時間，慢慢找到適合自己肌膚的節奏。</div>
+</div>
+<!-- 案例 4 -->
+<div class="case-card">
+<div class="case-card-header">
+<div class="case-tag-group">
+<span class="case-chip type">矽晶</span>
+<span class="case-chip type">燈泡肌</span>
+<span class="case-chip duration">約 5 個月</span>
+</div>
+</div>
+<div class="case-compare">
+<div class="case-side">
+<div class="case-date">施作前 113.07.07</div>
+<div class="case-img-box"><img alt="施作前" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/前4.png"/></div>
+<div class="case-label">工作環境影響、<br/>肌膚紋理較不均勻</div>
+</div>
+<div class="case-arrow-center">→</div>
+<div class="case-side">
+<div class="case-date">施作後 113.11.24</div>
+<div class="case-img-box"><img alt="施作後" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/後4.png"/></div>
+<div class="case-label">膚質視覺上逐漸細緻、<br/>肌膚看起來更均勻</div>
+</div>
+</div>
+<div class="case-desc">工作性質特殊、長時間處於特定環境的客人，在忙碌之中仍願意撥出時間好好照顧自己的肌膚。</div>
+</div>
+</div>
+<p class="cases-disclaimer">
+                ✦ 本作品為實際施作紀錄，已取得當事人同意公開 ✦ <br/>
+                效果因個人膚況、體質、年齡及保養習慣而有所差異<br/>
+                不保證每位客人皆達到完全相同之視覺成果<br/>
                 本服務屬一般美容業範疇，非醫療行為，亦不能取代專業醫療診斷或建議
             </p>
-
-            <div class="cases-cta">
-                <p>想了解適合您的<br>客製化護膚方案？</p>
-                <a href="https://lin.ee/8NyVW9j" target="_blank">LINE 免費諮詢</a>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- =============================================
+<div class="cases-cta">
+<p>想了解適合您的<br/>客製化護膚方案？</p>
+<a href="https://lin.ee/8NyVW9j" target="_blank">LINE 免費諮詢</a>
+</div>
+</div>
+</div>
+<!-- =============================================
          Modal 彈跳視窗
          ============================================= -->
-    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
-        <div class="modal-sheet" id="modal-sheet">
-            <div class="modal-handle"></div>
-            <div class="modal-header">
-                <div class="modal-title-group">
-                    <div class="modal-tag" id="modal-tag"></div>
-                    <div class="modal-title" id="modal-title"></div>
-                </div>
-                <button class="modal-close" onclick="closeModal()">✕</button>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <!-- 動態內容 -->
-            </div>
-        </div>
-    </div>
-
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+<div class="modal-sheet" id="modal-sheet">
+<div class="modal-handle"></div>
+<div class="modal-header">
+<div class="modal-title-group">
+<div class="modal-tag" id="modal-tag"></div>
+<div class="modal-title" id="modal-title"></div>
+</div>
+<button class="modal-close" onclick="closeModal()">✕</button>
+</div>
+<div class="modal-body" id="modal-body">
+<!-- 動態內容 -->
+</div>
+</div>
+</div>
 </div><!-- /phone-container -->
-
 <script>
 /* ── 課程資料 ── */
 const courses = {
@@ -1565,4 +1619,4 @@ function filterCases(category, element) {
 }
 </script>
 </body>
-</html>
+</head></html>
