@@ -378,6 +378,17 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 @media(max-width:1000px){.certificate-section{gap:32px}.certificate-gallery{height:280px}}
 @media(max-width:700px){.certificate-section{grid-template-columns:1fr;gap:30px}.certificate-gallery{max-width:500px;height:300px}.certificate-section .cert-list{margin-bottom:0}}
 @media(max-width:400px){.certificate-gallery{height:240px}}
+
+/* Upright staircase composition with restrained overlap */
+.certificate-gallery{height:340px;max-width:620px}
+.certificate-entry:nth-child(1){left:0;top:0;width:29%;height:67%;transform:none;z-index:1}
+.certificate-entry:nth-child(2){left:24%;top:9%;width:29%;height:67%;transform:none;z-index:2}
+.certificate-entry:nth-child(4){left:48%;top:18%;width:29%;height:67%;transform:none;z-index:3}
+.certificate-entry:nth-child(5){left:72%;top:27%;width:28%;height:67%;transform:none;z-index:4}
+.certificate-entry:nth-child(3){left:13%;top:54%;width:42%;height:44%;transform:none;z-index:5}
+@media(max-width:1000px){.certificate-gallery{height:290px}}
+@media(max-width:700px){.certificate-gallery{height:320px;max-width:500px}}
+@media(max-width:400px){.certificate-gallery{height:250px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
