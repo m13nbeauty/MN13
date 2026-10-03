@@ -361,6 +361,23 @@ img,.hero,.certificate-paper{-webkit-touch-callout:none}
 img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 .certificate-entry{cursor:default}
 .certificate-entry:hover .certificate-paper{border-color:#e5d8c8}
+
+/* Five documents grouped beside the qualification text */
+.certificate-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.certificate-section .cert-list{display:block;margin:24px 0 0}
+.certificate-section .cert-list li{padding:18px 0}
+.certificate-gallery{position:relative;display:block;height:320px;width:100%;max-width:620px;margin:0 auto}
+.certificate-entry{position:absolute;width:32%;height:76%;top:8%}
+.certificate-paper{padding:0;border:0;background:transparent;height:100%;width:100%}
+.certificate-paper img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 3px 3px rgba(80,58,39,.13))}
+.certificate-entry:nth-child(1){left:0;transform:rotate(-13deg);z-index:1}
+.certificate-entry:nth-child(2){left:19%;top:2%;transform:rotate(-5deg);z-index:2}
+.certificate-entry:nth-child(4){left:47%;top:2%;transform:rotate(5deg);z-index:3}
+.certificate-entry:nth-child(5){left:68%;transform:rotate(13deg);z-index:4}
+.certificate-entry:nth-child(3){left:23%;top:43%;width:54%;height:54%;transform:none;z-index:5}
+@media(max-width:1000px){.certificate-section{gap:32px}.certificate-gallery{height:280px}}
+@media(max-width:700px){.certificate-section{grid-template-columns:1fr;gap:30px}.certificate-gallery{max-width:500px;height:300px}.certificate-section .cert-list{margin-bottom:0}}
+@media(max-width:400px){.certificate-gallery{height:240px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
