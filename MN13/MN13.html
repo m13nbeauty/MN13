@@ -871,6 +871,78 @@ header h1{font-size:1.45rem;margin:0;letter-spacing:2px}header p{font-size:.65re
 .content-cleansing{grid-template-columns:1fr}.video-wrapper{max-width:360px;margin:auto}
 }
 
+
+/* MN13 homepage alignment and reading rhythm */
+.content-about{--section-space:56px}
+.content-about h2,.content-about h4,.content-about .story-text,.content-about .intro-p{text-align:left}
+.brand-story-section{background:#fcfaf7;padding:var(--section-space) 24px;margin:0}
+.story-copy .story-text{max-width:620px;line-height:2;margin:0}
+.brand-story-section .image-row{margin:28px 0 0;gap:10px}
+.founder-intro{background:#f3eee6;padding:var(--section-space) 24px;margin:0}
+.founder-copy .quote{font-weight:400;line-height:1.9;padding-left:16px;border-left:2px solid var(--accent-gold)}
+.founder-values{margin-top:32px}
+.founder-values .core-value-item{align-items:flex-start;margin-bottom:24px}
+.founder-values .core-circle{width:auto;height:auto;min-width:64px;border:none;border-radius:0;justify-content:flex-start;font-size:1rem;margin-right:16px}
+.cert-section{background:#ebe3d6;padding:40px 24px;min-height:0;margin:0}
+.cert-section .section-title{text-align:left;font-size:1.3rem;letter-spacing:2px;margin-bottom:24px}
+.cert-section .section-title::before,.cert-section .section-title::after{content:none}
+.cert-list{line-height:1.8;margin-bottom:24px}.cert-list li{width:100%}
+.cert-visual-box{height:auto;margin:0}.cert-single-img-container{position:static;width:100%}
+.cert-img{width:100%;max-height:300px;object-fit:contain}
+.social-section{background:var(--primary-bg);padding:44px 24px;margin:0}
+.social-section .section-title{text-align:left;color:#faf8f5;font-size:1.3rem;letter-spacing:2px;margin-bottom:24px}
+.social-section .section-title::before,.social-section .section-title::after{content:none}
+.social-section .link-grid{padding:0;gap:12px}
+.social-section .link-item{background:transparent;border-color:rgba(250,248,245,.25);border-radius:4px;padding:20px 12px;text-align:left}
+.social-section .link-item span{color:#faf8f5}
+.social-section .link-item small{color:#d9cbbb;font-size:.75rem;line-height:1.6}
+.social-section .link-item:hover{background:rgba(255,255,255,.06)}
+@media(max-width:767px){
+.brand-story-section h2,.founder-copy h2{font-size:1.5rem;margin:12px 0 24px}
+.brand-story-section .story-img-box{aspect-ratio:3/4}
+.brand-story-section .img-overlay-text{font-size:.78rem;line-height:1.7}
+.founder-copy .intro-p{margin-bottom:0}
+.main-footer.about-style{background:var(--primary-bg);color:#d9cbbb;border-top:1px solid rgba(255,255,255,.15)}
+}
+@media(min-width:768px){
+.content-about{padding:32px 36px 0}
+.brand-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:520px;padding:48px 48px 0;gap:48px}
+.hero-copy{padding-bottom:48px}.hero-photo{height:460px}
+.brand-story-section{display:block;padding:80px 48px 64px;border:none}
+.story-copy{max-width:680px}
+.story-copy h2{font-size:1.9rem;margin:12px 0 24px}
+.story-copy .story-text{max-width:680px;font-size:1rem;line-height:2}
+.brand-story-section .image-row{max-width:680px;gap:20px;margin:32px 0 0}
+.brand-story-section .story-img-box{aspect-ratio:5/3}
+.brand-story-section .img-overlay-text{font-size:.95rem}
+.founder-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"copy photo" "values values";column-gap:48px;row-gap:40px;padding:64px 48px;margin:0;align-items:start}
+.founder-copy{grid-area:copy}.founder-photo{grid-area:photo;background:#e7dccb;height:460px;max-height:460px}
+.founder-photo img{width:100%;height:100%;max-height:460px;object-fit:contain;object-position:bottom}
+.founder-copy h2{font-size:1.9rem}
+.founder-copy .intro-p{font-size:.95rem;line-height:2}
+.founder-values{grid-area:values;margin:0;gap:28px}
+.founder-values .core-value-item{margin:0;padding:24px 0 0}
+.founder-values .core-circle{font-size:1.3rem;margin:0 0 14px}
+.cert-section{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;padding:40px 48px;align-items:center}
+.cert-section .section-title{font-size:1.5rem}
+.cert-list{margin:0;font-size:.9rem}
+.cert-list li:last-child{margin-bottom:0}
+.cert-img{max-height:240px}
+.social-section{padding:48px;margin:0}
+.social-section .section-title{font-size:1.5rem}
+.social-section .link-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.social-section .link-item{padding:24px 16px}
+.main-footer.about-style{margin:0 36px;background:var(--primary-bg);color:#d9cbbb;border-top:1px solid rgba(255,255,255,.15)}
+}
+@media(min-width:768px) and (max-width:959px){
+.brand-hero{gap:28px;padding:32px 32px 0;min-height:430px}
+.hero-photo{height:380px}.hero-copy{padding-bottom:32px}
+.brand-story-section{padding:64px 32px 48px}
+.founder-intro{padding:48px 32px;gap:28px}.founder-photo{height:380px}
+.cert-section{padding:32px;gap:28px}.social-section{padding:40px 32px}
+.social-section .link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
 </style>
 </head>
 <body>
