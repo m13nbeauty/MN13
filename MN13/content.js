@@ -18,7 +18,7 @@ function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.
  categories.forEach((category,i)=>{const b=el('button','filter'+(i===0?' active':''),category==='all'?'全部'+(type==='beauty'?'美容':'美體'):category);b.type='button';b.dataset.filter=category;b.setAttribute('aria-pressed',String(i===0));b.onclick=()=>filterCourses(b);filters.append(b)});filters.hidden=type==='body'||!group.length;
  group.forEach(c=>{const b=el('button','service-card');b.type='button';b.dataset.category=c.category;b.onclick=()=>openCourse(c.id);const cover=image(c.images?.[0],c.title,'course-cover');if(cover)b.append(cover);else b.append(el('span','course-cover course-cover-empty','MN13'));b.append(el('span','service-category',c.category),el('span','service-name',c.title),el('span','service-hint',c.summary),el('span','service-link','了解課程 ↗'));grid.append(b)});
  if(!group.length)grid.append(el('p','course-empty',(type==='beauty'?'美容':'美體')+'課程整理中，歡迎聯繫我們。'));}
- visible.forEach(c=>{courses[c.id]={tag:c.category,title:c.title,hint:c.summary,desc:c.description,imgs:(c.images||[]).filter(safeImage)}});
+ visible.forEach(c=>{courses[c.id]={tag:c.category,title:c.title,hint:c.summary,desc:c.description,feeling:c.feeling,imgs:(c.images||[]).filter(safeImage)}});
  for(const [type,label] of [['beauty','美容'],['body','美體']]){const b=el('button','course-type-button',label);b.type='button';b.dataset.serviceType=type;b.onclick=()=>renderGroup(type);typeTabs.append(b)}renderGroup(selectedType);
  const originalSetCategory=setCategory;setCategory=function(category){if(selectedType!=='beauty')renderGroup('beauty');return originalSetCategory(category)};
  const diary=document.querySelector('#diary .diary-grid');if(!diary)return;diary.replaceChildren();
