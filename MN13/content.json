@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-04T00:00:00Z",
+  "courses": [
+    {
+      "id": "bubble",
+      "category": "淨化毛孔",
+      "title": "小氣泡",
+      "summary": "清潔保養 · 毛孔清潔",
+      "description": "以水流與負壓方式進行肌膚清潔，著重清除肌膚表面的髒污與多餘油脂。實際護理內容依當次諮詢確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"
+      ],
+      "visible": true,
+      "sortOrder": 0,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "extraction",
+      "category": "淨化毛孔",
+      "title": "手清粉刺",
+      "summary": "粉刺清潔 · 肌膚清潔",
+      "description": "以手工方式進行粉刺清潔，並搭配後續保養。護理前先了解目前膚況，再確認適合的清潔安排。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"
+      ],
+      "visible": true,
+      "sortOrder": 1,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "crystal",
+      "category": "問題肌．養膚",
+      "title": "矽晶保養",
+      "summary": "肌膚保養 · 日常照護",
+      "description": "矽晶保養著重肌膚護理與後續居家照護。課程前會確認當次膚況與保養安排；護理後請依保養篇的步驟照顧肌膚。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"
+      ],
+      "visible": true,
+      "sortOrder": 2,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "aqua",
+      "category": "水煮蛋肌",
+      "title": "女神水光保養",
+      "summary": "保濕護理 · 肌膚光澤",
+      "description": "以保濕保養為主的臉部護理，著重肌膚的潤澤感與光澤感。實際使用產品及護理方式，請於預約時確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/水光.png"
+      ],
+      "visible": true,
+      "sortOrder": 3,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "plasma",
+      "category": "水煮蛋肌",
+      "title": "Plasma 保養",
+      "summary": "肌膚護理 · 諮詢安排",
+      "description": "Plasma 課程的實際內容與護理安排，請於預約前與美容師確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"
+      ],
+      "visible": true,
+      "sortOrder": 4,
+      "reviewNote": "待確認設備型號、用途及操作資格；文字調整不能替代設備合法性確認。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "exosome_youth",
+      "category": "水煮蛋肌",
+      "title": "外泌體幼態美膚",
+      "summary": "臉部保養 · 潤澤呵護",
+      "description": "以臉部保養為主，著重肌膚的潤澤感。實際使用產品及成分，以現場產品標示與諮詢說明為準。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"
+      ],
+      "visible": true,
+      "sortOrder": 5,
+      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "contour",
+      "category": "彈力．輪廓",
+      "title": "輪廓保養",
+      "summary": "按摩保養 · 臉部呵護",
+      "description": "透過原有臉部按摩與保養步驟進行護理。實際手法與課程安排，請於預約時與美容師確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"
+      ],
+      "visible": true,
+      "sortOrder": 6,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "acid",
+      "category": "彈力．輪廓",
+      "title": "汰酸保養",
+      "summary": "臉部保養 · 按摩呵護",
+      "description": "以臉部按摩與保養為主的護理課程。實際使用產品及護理步驟，請於預約時確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"
+      ],
+      "visible": true,
+      "sortOrder": 7,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "firming",
+      "category": "彈力．輪廓",
+      "title": "彈力緊膚保養",
+      "summary": "臉部按摩 · 保養呵護",
+      "description": "以原有撥筋按摩手法搭配臉部保養。課程內容以實際諮詢說明為準，護理感受與肌膚外觀因人而異。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"
+      ],
+      "visible": true,
+      "sortOrder": 8,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "eye",
+      "category": "重點呵護",
+      "title": "眼部三合一",
+      "summary": "眼周保養 · 潤澤呵護",
+      "description": "針對眼周肌膚進行保養，搭配原有眼周按摩與精華保養步驟。著重眼周肌膚的潤澤感，實際安排依當次諮詢確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"
+      ],
+      "visible": true,
+      "sortOrder": 9,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "spot",
+      "category": "重點呵護",
+      "title": "膚色保養",
+      "summary": "膚色保養 · 防曬觀念",
+      "description": "以膚色保養為主，搭配日常防曬觀念。實際使用產品依諮詢確認，不保證斑點消除；持續在意的色素或肌膚問題，宜向醫師諮詢。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"
+      ],
+      "visible": true,
+      "sortOrder": 10,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "cleansing-edu",
+      "category": "其他",
+      "title": "卸洗教學",
+      "summary": "清潔觀念 · 手法示範",
+      "description": "由美容師示範卸妝與洗臉步驟，協助建立日常清潔觀念。依目前使用產品與清潔習慣說明，讓居家保養更容易理解與執行。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"
+      ],
+      "visible": true,
+      "sortOrder": 11,
+      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "foundation",
+      "category": "其他",
+      "title": "駐顏粉底",
+      "summary": "膚色外觀 · 諮詢說明",
+      "description": "著重膚色外觀的保養需求。實際使用產品與護理方式，請於預約前與美容師確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"
+      ],
+      "visible": true,
+      "sortOrder": 12,
+      "reviewNote": "待確認是否涉及針具、侵入性操作及產品使用方式。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "exosome",
+      "category": "其他",
+      "title": "外泌體膠原凍膜",
+      "summary": "敷膜保養 · 補水呵護",
+      "description": "以凍膜進行臉部敷膜保養，著重保濕與肌膚潤澤感。實際使用產品及成分，以現場產品標示與諮詢說明為準。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"
+      ],
+      "visible": true,
+      "sortOrder": 13,
+      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+    }
+  ],
+  "journals": [
+    {
+      "id": "journal-1",
+      "title": "肌膚日誌 1",
+      "tags": [
+        "手清粉刺",
+        "矽晶"
+      ],
+      "duration": "約 6 週",
+      "beforeDate": "113.11.22",
+      "afterDate": "114.01.04",
+      "beforeImage": "https://m13nbeauty.github.io/MN13/MN13/image/前1.png",
+      "afterImage": "https://m13nbeauty.github.io/MN13/MN13/image/後1.png",
+      "beforeLabel": "肌膚多處泛紅、痘痘較多",
+      "afterLabel": "膚況看起來更穩定、泛紅感減少",
+      "description": "長期在意肌膚狀態的客人，持續回來護理，一點一點地在乎自己的肌膚。",
+      "consent": true,
+      "visible": true,
+      "sortOrder": 0
+    },
+    {
+      "id": "journal-2",
+      "title": "肌膚日誌 2",
+      "tags": [
+        "水光",
+        "矽晶",
+        "手清粉刺"
+      ],
+      "duration": "約 10 週",
+      "beforeDate": "114.05.23",
+      "afterDate": "114.07.28",
+      "beforeImage": "https://m13nbeauty.github.io/MN13/MN13/image/前2.png",
+      "afterImage": "https://m13nbeauty.github.io/MN13/MN13/image/後2.png",
+      "beforeLabel": "泛紅、閉鎖粉刺較多",
+      "afterLabel": "膚況視覺上更穩定、閉鎖粉刺明顯減少",
+      "description": "一位願意給自己時間、耐心陪伴肌膚慢慢調整的客人，每一次回來都帶著對自己肌膚更多的了解。",
+      "consent": true,
+      "visible": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "journal-3",
+      "title": "肌膚日誌 3",
+      "tags": [
+        "水光",
+        "矽晶",
+        "Plasma",
+        "手清粉刺"
+      ],
+      "duration": "",
+      "beforeDate": "114.04.07",
+      "afterDate": "115.01.20",
+      "beforeImage": "https://m13nbeauty.github.io/MN13/MN13/image/前3.png",
+      "afterImage": "https://m13nbeauty.github.io/MN13/MN13/image/後3.png",
+      "beforeLabel": "肌膚敏感、膚況較不穩定",
+      "afterLabel": "膚況視覺上逐漸穩定、肌膚看起來更舒適、更細緻",
+      "description": "試過很多方式都沒有太大變化的客人，願意給自己一段時間，慢慢找到適合自己肌膚的節奏。",
+      "consent": true,
+      "visible": true,
+      "sortOrder": 2
+    },
+    {
+      "id": "journal-4",
+      "title": "肌膚日誌 4",
+      "tags": [
+        "矽晶",
+        "燈泡肌"
+      ],
+      "duration": "約 5 個月",
+      "beforeDate": "113.07.07",
+      "afterDate": "113.11.24",
+      "beforeImage": "https://m13nbeauty.github.io/MN13/MN13/image/前4.png",
+      "afterImage": "https://m13nbeauty.github.io/MN13/MN13/image/後4.png",
+      "beforeLabel": "工作環境影響、肌膚紋理較不均勻",
+      "afterLabel": "膚質視覺上逐漸細緻、肌膚看起來更均勻",
+      "description": "工作性質特殊、長時間處於特定環境的客人，在忙碌之中仍願意撥出時間好好照顧自己的肌膚。",
+      "consent": true,
+      "visible": true,
+      "sortOrder": 3
+    }
+  ]
+}
