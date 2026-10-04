@@ -721,11 +721,15 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <dialog aria-labelledby="dialog-title" id="course-dialog"><div class="dialog-head"><span class="eyebrow" id="dialog-tag"></span><button aria-label="關閉課程資訊" class="dialog-close" onclick="closeCourse()">✕</button></div><h2 id="dialog-title"></h2><div class="dialog-content"><div id="dialog-image"></div><div><p id="dialog-desc"></p><a class="btn dark" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></div></div></dialog>
 <script>const courses={"bubble": {"tag": "淨化毛孔", "title": "小氣泡", "desc": "小氣泡以水流與溫和負壓搭配進行臉部清潔護理，透過旋渦水流方式協助帶走毛孔內的老廢角質與多餘皮脂，並同步補充調理精華，讓肌膚維持清爽舒適的感受。適合平日肌膚保養，建議定期進行以維持毛孔暢通。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"], "hasCases": false, "hint": "深層清潔 · 舒緩調理"}, "extraction": {"tag": "淨化毛孔", "title": "手清粉刺", "desc": "手清粉刺由受過專業訓練的美容師，在嚴格的衛生規範下進行臉部毛孔清潔作業，針對閉鎖性與開放性粉刺進行處理，協助維持毛孔暢通。施作前後皆搭配舒緩護理，減少肌膚不適，維護肌膚健康狀態。個人膚況與體質有所差異，建議於諮詢後安排適合的護理計畫。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"], "hasCases": false, "hint": "專業清潔 · 毛孔護理"}, "crystal": {"tag": "問題肌．養膚", "title": "矽晶煥膚", "desc": "矽晶煥膚是一項專為問題肌膚設計的調理護理課程，透過專業手法與精華成分的結合，協助肌膚代謝老廢物質，維護肌底的清爽與穩定。適合容易出油、毛孔阻塞或肌膚狀況不穩定的族群，建議持續護理以逐步改善肌膚狀態。每位客人的肌膚狀況各異，美容師將依個人需求提供客製化的護理建議。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"], "hasCases": false, "hint": "深層調理 · 養膚修護"}, "aqua": {"tag": "水煮蛋肌", "title": "女神無創水光", "desc": "女神無創水光採用非侵入式的保濕導入方式，將高效保濕成分輔助深入肌膚表層，協助肌膚維持充足水分，使肌膚看起來更加柔嫩光滑。整體過程溫和舒適，適合肌膚乾燥或需要加強保濕的族群。建議配合日常護膚習慣，效果更加理想。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/水光.png"], "hasCases": false, "hint": "深層保濕 · 光澤感提升"}, "plasma": {"tag": "水煮蛋肌", "title": "Plasma", "desc": "Plasma 護理透過專業操作進行肌膚表面調理，協助維護肌膚屏障功能，改善肌膚表面粗糙感，使整體膚觸更加細緻。施作過程須依個人肌膚狀況調整，建議於諮詢後由專業美容師評估最適合的護理方式。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"], "hasCases": false, "hint": "膚質調理 · 細緻護理"}, "exosome_youth": {"tag": "水煮蛋肌", "title": "外泌體幼態美膚", "desc": "外泌體幼態美膚以富含修護成分的外泌體精華進行臉部護理，協助肌膚在護理後快速舒緩，補充肌膚所需水分與養分，讓肌膚回復柔嫩飽滿的幼態感。適合希望加強修護、提升肌膚緊緻度與光澤感的族群。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"], "hasCases": false, "hint": "修護補水 · 幼態光澤"}, "contour": {"tag": "彈力．輪廓", "title": "輪廓管理", "desc": "輪廓管理透過專業的手法操作，針對臉部輪廓進行整體性的調理與護理，協助維護肌膚的緊實感與線條清晰度。每次護理皆依個人臉部狀態進行評估，建議定期回診以維持最佳護理成效。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"], "hasCases": false, "hint": "臉部塑形 · 輪廓調理"}, "acid": {"tag": "彈力．輪廓", "title": "汰酸排導", "desc": "汰酸排導護理以專業手法協助促進臉部循環與代謝，搭配特定護理成分進行導入，有助於維護肌膚排毒機能，改善因循環不佳所造成的氣色黯沉或輕微浮腫感。課程前後搭配舒緩護理，全程輕柔操作。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"], "hasCases": false, "hint": "循環促進 · 代謝調理"}, "firming": {"tag": "彈力．輪廓", "title": "逆時彈力緊膚", "desc": "逆時彈力緊膚以黃金撥筋手法為核心，協助臉部排毒、疏通氣結，排除臉部廢物與堆積的廢液，讓輪廓線條更加清晰，肌膚恢復彈性與緊緻感。課程適合感受到臉部循環不佳或輪廓較不明顯的族群，建議定期護理以維持成效。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"], "hasCases": false, "hint": "彈力維護 · 肌膚調理"}, "eye": {"tag": "重點呵護", "title": "眼部三合一", "desc": "眼部三合一是專為眼周脆弱肌膚設計的複合式護理課程，針對眼周常見的疲勞感、水分不足及細紋進行全面性調理，以溫和手法進行眼周按摩與精華導入，讓眼周肌膚恢復放鬆與明亮感。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"], "hasCases": false, "hint": "眼周護理 · 複合式調理"}, "spot": {"tag": "重點呵護", "title": "斑點剋星", "desc": "斑點剋星護理針對肌膚局部色素不均的問題進行調理，搭配具有美白輔助功效的護理成分，協助肌膚維持均勻色調。課程效果因個人肌膚狀況、體質及生活習慣而有所差異，建議配合防曬習慣，效果更加穩定持久。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"], "hasCases": false, "hint": "膚色調理 · 均勻護理"}, "cleansing-edu": {"tag": "其他", "title": "卸洗教學", "desc": "卸洗教學由專業美容師親自示範正確的卸妝與洗臉步驟，協助客人建立完整的清潔概念。正確的清潔習慣是所有後續保養的基礎，錯誤的卸洗方式可能造成肌膚負擔。課程內容依個人使用產品與膚況進行調整，讓每位客人都能找到最適合自己的清潔方式。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"], "hasCases": false, "hint": "清潔觀念 · 正確手法示範"}, "foundation": {"tag": "其他", "title": "駐顏粉底", "desc": "駐顏粉底結合養膚成分與調色技術，協助均勻肌膚色調，提升整體氣色與光澤感，讓肌膚呈現自然健康的視覺效果。護理過程溫和，適合追求自然素顏感的族群。建議諮詢後依膚色與需求選擇最適合的護理方案。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"], "hasCases": false, "hint": "均勻膚色 · 自然光澤"}, "exosome": {"tag": "其他", "title": "外泌體膠原凍膜", "desc": "外泌體膠原凍膜以富含修護成分的凍膜進行臉部敷膜護理，協助肌膚在護理後快速舒緩，補充肌膚所需水分與養分。適合護理後需要加強修護的肌膚，或作為日常保養的加強選項，與其他課程搭配使用效果更佳。", "imgs": ["https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"], "hasCases": false, "hint": "舒緩修護 · 補水保養"}};const validPages=['about','courses','care','diary'];
 function showPage(id,scroll=true){
+ const careTab=id==='care-crystal'?'crystal':id==='care-cleansing'?'cleansing':null;
+ if(careTab)id='care';
  if(!validPages.includes(id))id='about';
  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
  document.querySelectorAll('.main-nav a').forEach(a=>{if(a.dataset.page===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  document.querySelector('.main-nav').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
- if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+ if(careTab)showCare(careTab,document.querySelectorAll('.care-tabs button')[careTab==='crystal'?1:0],false);
+ const route=careTab?'care-'+careTab:id;
+ if(location.hash!=='#'+route)history.replaceState(null,'','#'+route);
  if(scroll)window.scrollTo({top:0,behavior:'instant'});
 }
 function toggleMenu(){const open=document.querySelector('.main-nav').classList.toggle('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded',String(open))}
@@ -734,7 +738,7 @@ function filterCourses(button){
  document.querySelectorAll('.service-card').forEach(card=>card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter);
 }
 function setCategory(tag){const button=[...document.querySelectorAll('[data-filter]')].find(b=>b.dataset.filter===tag);if(button)filterCourses(button)}
-function showCare(id,button){document.querySelectorAll('.care-panel').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.care-tabs button').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))})}
+function showCare(id,button,updateUrl=true){document.querySelectorAll('.care-panel').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.care-tabs button').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});if(updateUrl&&document.querySelector('#care').classList.contains('active'))history.replaceState(null,'','#care-'+id)}
 let lastCourseTrigger;
 function openCourse(id){
  const c=courses[id];if(!c)return;
@@ -749,10 +753,10 @@ const dialog=document.querySelector('#course-dialog');
 dialog.addEventListener('close',()=>{document.body.style.overflow='';lastCourseTrigger?.focus()});
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeCourse()}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelector('.main-nav').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false')}});
-window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(validPages.includes(id))showPage(id)});
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(validPages.includes(id)||['care-cleansing','care-crystal'].includes(id))showPage(id)});
 document.querySelectorAll('a[target="_blank"]').forEach(a=>a.rel='noopener');
 filterCourses(document.querySelector('[data-filter="all"]'));
-showCare('cleansing',document.querySelector('.care-tabs button'));
+showCare('cleansing',document.querySelector('.care-tabs button'),false);
 showPage(location.hash.slice(1)||'about',false);
 </script><script>
 (function(){
