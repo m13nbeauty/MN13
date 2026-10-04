@@ -432,6 +432,17 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 #cleansing .prod-desc{font-size:13px;line-height:1.9}
 #cleansing .line-call-to-action{flex-wrap:wrap;gap:12px;font-size:13px}
 @media(max-width:700px){#cleansing .product-section{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}#cleansing .prod-name{font-size:16px;line-height:1.7}#cleansing .prod-desc{font-size:13px;line-height:1.8}#cleansing .prod-tag{font-size:11px}#cleansing .prod-info{padding-top:12px}#cleansing .product-section .title{font-size:25px}#cleansing .line-call-to-action{grid-column:1/-1}}
+
+/* Soft arches and consistent product typography */
+#cleansing .product-section{column-gap:24px}
+#cleansing .product-photo{border-radius:50% 50% 18px 18px;isolation:isolate}
+#cleansing .product-photo img{object-fit:contain}
+#cleansing .prod-info{padding:20px 4px 0;display:grid;grid-template-rows:auto minmax(58px,auto) auto;gap:8px;align-content:start}
+#cleansing .prod-tag{font:12px/1.8 var(--sans);letter-spacing:.08em;color:#987e65}
+#cleansing .prod-name{font:400 19px/1.6 var(--serif);color:#6d513e;margin:0;text-wrap:pretty;align-self:start}
+#cleansing .prod-desc{font:14px/1.9 var(--sans);color:#826e5c;margin:0;padding-top:12px;border-top:1px solid #e3d6c6;text-wrap:pretty}
+@media(max-width:1000px) and (min-width:701px){#cleansing .product-section{column-gap:16px}#cleansing .prod-info{padding:16px 0 0;grid-template-rows:auto minmax(80px,auto) auto}#cleansing .prod-name{font-size:17px}#cleansing .prod-desc{font-size:13px}}
+@media(max-width:700px){#cleansing .product-section{column-gap:14px}#cleansing .product-photo{border-radius:50% 50% 12px 12px}#cleansing .prod-info{padding:14px 0 0;gap:7px;grid-template-rows:auto minmax(84px,auto) auto}#cleansing .prod-tag{font-size:11px}#cleansing .prod-name{font-size:16px;line-height:1.7}#cleansing .prod-desc{font-size:13px;line-height:1.9;padding-top:10px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
@@ -467,7 +478,7 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="prod-info">
 <span class="prod-tag">卸妝乳</span>
 <h3 class="prod-name">玫瑰水淨顏卸妝乳</h3>
-<div class="prod-desc">清爽的水乳質地，能溫和帶走彩妝髒污，讓肌膚感受不油不膩的清爽。</div>
+<div class="prod-desc">清爽水乳質地，溫和帶走彩妝與髒污，洗後不油不膩。</div>
 </div>
 </article>
 <article class="product-item">
@@ -475,7 +486,7 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="prod-info">
 <span class="prod-tag">洗面乳</span>
 <h3 class="prod-name">極透亮妍鑽白潔膚霜</h3>
-<div class="prod-desc">富含 28% 胺基酸，給予肌膚最溫和的清潔，洗後保濕有感、絕不緊繃。</div>
+<div class="prod-desc">含 28% 胺基酸，溫和清潔，洗後保濕、不緊繃。</div>
 </div>
 </article>
 <article class="product-item">
@@ -483,12 +494,11 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="prod-info">
 <span class="prod-tag">卸妝液</span>
 <h3 class="prod-name">玫瑰水漾淨顏卸妝液</h3>
-<div class="prod-desc">若您較常使用眼唇強效彩妝，建議搭配卸妝液進行「分區卸妝」，達到深層潔淨效果。</div>
+<div class="prod-desc">常用眼唇強效彩妝時，可搭配分區卸妝，加強清潔。</div>
 </div>
 </article>
 <div class="line-call-to-action"><span>以上產品皆有販售，歡迎透過官方 LINE 諮詢購買。</span><a class="under-link" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 諮詢產品 ↗</a></div>
 </div></div>
-
 </div></section><section class="care-panel section-wrap" id="crystal"><div class="content-crystal">
 <h2 class="section-header">黃金修復期</h2>
 <div class="grid-5">
