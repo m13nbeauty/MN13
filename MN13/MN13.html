@@ -389,6 +389,37 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 @media(max-width:1000px){.certificate-gallery{height:290px}}
 @media(max-width:700px){.certificate-gallery{height:320px;max-width:500px}}
 @media(max-width:400px){.certificate-gallery{height:250px}}
+
+/* Client-facing cleansing guide and full-size existing product photographs */
+#cleansing .content-cleansing{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start}
+#cleansing .video-wrapper{aspect-ratio:3/4;width:100%;max-height:none;position:sticky;top:100px}
+#cleansing .play-overlay{position:relative;width:70px;height:70px}
+.teaching-video-caption{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);font:14px/1.8 var(--sans);white-space:nowrap;background:#faf6ef;color:#6d513e;padding:8px 16px}
+#cleansing .cleansing-steps{display:grid;gap:24px;min-width:0}
+#cleansing .teaching-box{padding:28px 32px;margin:0;background:#f4eee5;border-top:1px solid #d5c2ac}
+.teaching-heading{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+.teaching-heading .teaching-index{font:13px/1.8 var(--sans);color:#987e65}
+#cleansing .teaching-heading h2{font:400 30px/1.5 var(--serif);margin:0}
+#cleansing .important-note{font:14px/1.9 var(--sans);color:#70543e;border-left:2px solid #b69c80;padding-left:14px;margin:0 0 22px}
+.instruction-list{list-style:none;counter-reset:instruction;margin:0;padding:0}
+.instruction-list>li{counter-increment:instruction;position:relative;padding:0 0 16px 38px;margin-bottom:16px;border-bottom:1px solid #e2d7c9;font:16px/1.9 var(--sans);color:#705c4c}
+.instruction-list>li:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.instruction-list>li::before{content:counter(instruction);position:absolute;left:0;top:2px;font:14px/1.9 var(--sans);color:#987e65}
+.instruction-list p{margin:0;text-wrap:pretty}.instruction-list strong{font-weight:600;color:#6d513e}
+#cleansing .sub-steps{font-size:14px;line-height:1.9;margin-top:10px;padding-left:18px;color:#826e5c}
+#cleansing .product-section{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:16px;padding-top:36px}
+#cleansing .product-section .title{font:400 30px/1.5 var(--serif);margin:0 0 4px}
+#cleansing .product-item{display:block;padding:0;background:transparent}
+.product-photo{width:100%;aspect-ratio:1;background:#faf6ef;overflow:hidden}
+.product-photo img{display:block;width:100%;height:100%;object-fit:contain}
+#cleansing .prod-info{padding:20px 0 0}
+#cleansing .prod-tag{font:12px/1.8 var(--sans);color:#987e65}
+#cleansing .prod-name{font:400 22px/1.6 var(--serif);margin:8px 0 12px;text-wrap:pretty}
+#cleansing .prod-desc{font:15px/1.9 var(--sans);color:#826e5c;text-wrap:pretty}
+#cleansing .line-call-to-action{display:flex;justify-content:space-between;gap:20px;align-items:center;text-align:left;border-top:1px solid #ddccb9;padding-top:24px;margin-top:8px;font:14px/1.9 var(--sans)}
+#cleansing .line-call-to-action a{flex-shrink:0}
+@media(max-width:1000px){#cleansing .content-cleansing{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:28px}#cleansing .teaching-box{padding:24px}.instruction-list>li{font-size:15px}#cleansing .product-section{gap:20px}#cleansing .prod-name{font-size:20px}}
+@media(max-width:700px){#cleansing .content-cleansing{display:block}#cleansing .video-wrapper{position:relative;top:auto;aspect-ratio:3/4;max-width:420px;margin:0 auto 28px}#cleansing .teaching-box{padding:24px}#cleansing .cleansing-steps{gap:20px}#cleansing .product-section{display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px}.product-photo{max-width:420px;margin:auto}#cleansing .prod-info{padding-top:18px}#cleansing .prod-name{font-size:23px}#cleansing .prod-desc{font-size:15px}#cleansing .line-call-to-action{display:flex;flex-direction:column;align-items:flex-start;gap:14px}#cleansing .important-note{font-size:14px}.instruction-list>li{font-size:16px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
@@ -416,57 +447,36 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="page" id="courses"><section class="page-heading section-wrap"><p class="eyebrow">THE CARE COLLECTION</p><h1>課程介紹<span>。</span></h1><p>深層清潔 · 養膚修護 · 重點呵護</p></section><section class="section-wrap course-section"><div aria-label="課程分類" class="filters"><button class="filter active" data-filter="all" onclick="filterCourses(this)">全部課程</button><button class="filter" data-filter="淨化毛孔" onclick="filterCourses(this)">淨化毛孔</button><button class="filter" data-filter="問題肌．養膚" onclick="filterCourses(this)">問題肌．養膚</button><button class="filter" data-filter="水煮蛋肌" onclick="filterCourses(this)">水煮蛋肌</button><button class="filter" data-filter="彈力．輪廓" onclick="filterCourses(this)">彈力．輪廓</button><button class="filter" data-filter="重點呵護" onclick="filterCourses(this)">重點呵護</button><button class="filter" data-filter="其他" onclick="filterCourses(this)">其他</button></div><div class="services-grid"><button class="service-card" data-category="淨化毛孔" onclick="openCourse('bubble')"><span class="service-category">淨化毛孔</span><span class="service-name">小氣泡</span><span class="service-hint">深層清潔 · 舒緩調理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="淨化毛孔" onclick="openCourse('extraction')"><span class="service-category">淨化毛孔</span><span class="service-name">手清粉刺</span><span class="service-hint">專業清潔 · 毛孔護理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="問題肌．養膚" onclick="openCourse('crystal')"><span class="service-category">問題肌．養膚</span><span class="service-name">矽晶煥膚</span><span class="service-hint">深層調理 · 養膚修護</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="水煮蛋肌" onclick="openCourse('aqua')"><span class="service-category">水煮蛋肌</span><span class="service-name">女神無創水光</span><span class="service-hint">深層保濕 · 光澤感提升</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="水煮蛋肌" onclick="openCourse('plasma')"><span class="service-category">水煮蛋肌</span><span class="service-name">Plasma</span><span class="service-hint">膚質調理 · 細緻護理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="水煮蛋肌" onclick="openCourse('exosome_youth')"><span class="service-category">水煮蛋肌</span><span class="service-name">外泌體幼態美膚</span><span class="service-hint">修護補水 · 幼態光澤</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="彈力．輪廓" onclick="openCourse('contour')"><span class="service-category">彈力．輪廓</span><span class="service-name">輪廓管理</span><span class="service-hint">臉部塑形 · 輪廓調理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="彈力．輪廓" onclick="openCourse('acid')"><span class="service-category">彈力．輪廓</span><span class="service-name">汰酸排導</span><span class="service-hint">循環促進 · 代謝調理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="彈力．輪廓" onclick="openCourse('firming')"><span class="service-category">彈力．輪廓</span><span class="service-name">逆時彈力緊膚</span><span class="service-hint">彈力維護 · 肌膚調理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="重點呵護" onclick="openCourse('eye')"><span class="service-category">重點呵護</span><span class="service-name">眼部三合一</span><span class="service-hint">眼周護理 · 複合式調理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="重點呵護" onclick="openCourse('spot')"><span class="service-category">重點呵護</span><span class="service-name">斑點剋星</span><span class="service-hint">膚色調理 · 均勻護理</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="其他" onclick="openCourse('cleansing-edu')"><span class="service-category">其他</span><span class="service-name">卸洗教學</span><span class="service-hint">清潔觀念 · 正確手法示範</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="其他" onclick="openCourse('foundation')"><span class="service-category">其他</span><span class="service-name">駐顏粉底</span><span class="service-hint">均勻膚色 · 自然光澤</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button><button class="service-card" data-category="其他" onclick="openCourse('exosome')"><span class="service-category">其他</span><span class="service-name">外泌體膠原凍膜</span><span class="service-hint">舒緩修護 · 補水保養</span><span class="service-link">了解課程 <span aria-hidden="true">↗</span></span></button></div></section><section class="mini-cta section-wrap"><h2>想了解適合您的客製化護膚方案？</h2><a class="btn dark" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 免費諮詢 ↗</a></section></div>
 <div class="page" id="care"><section class="page-heading section-wrap"><p class="eyebrow">EVERYDAY SKIN RITUALS</p><h1>保養篇<span>。</span></h1><p>一切的保養，從好的清潔開始。</p></section><div class="care-tabs section-wrap"><button class="filter active" onclick="showCare('cleansing',this)">卸洗教學</button><button class="filter" onclick="showCare('crystal',this)">矽晶保養</button></div><section class="care-panel active section-wrap" id="cleansing"><div class="content-cleansing">
 <div class="video-wrapper">
-<a class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" rel="noopener" target="_blank">▶</a>
-</div><div class="cleansing-steps"><div class="teaching-box">
-<h2>— 卸妝 —</h2>
-<span class="important-note">請將手部清潔乾淨後，手乾臉乾的情況下使用。</span>
-<div class="step-content">
-                        1. 將卸妝乳均勻塗抹於臉上，按摩至「出油」<br/>
-                        2. <b>將手上剛卸妝的油脂洗乾淨</b>
-<ul class="sub-steps">
-<li>手微濕的情況下再按摩臉部一次</li>
-<li>臉上會慢慢出現白色水狀（乳化過程）</li>
-</ul>
-                        3. 乳化重複 3 次即可用清水洗淨臉部
-                    </div>
-</div><div class="teaching-box">
-<h2>— 洗臉 —</h2>
-<span class="important-note">請確保於手部清潔乾淨的情況下使用。</span>
-<div class="step-content" style="text-align: center;">
-                        1. 將洗面乳擠於手上，搭配些許的水<br/>
-                        2. 搓出綿密泡泡後，再塗抹於臉上清潔
-                    </div>
-</div></div>
+<a aria-label="在 Instagram 觀看卸洗教學影片（另開分頁）" class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" rel="noopener" target="_blank">▶<span class="teaching-video-caption">觀看卸洗示範 ↗</span></a>
+</div><div class="cleansing-steps"><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">01</span><h2>卸妝</h2></div><p class="important-note">先將手部清潔乾淨，在手乾、臉乾的狀態下使用。</p><ol class="instruction-list"><li><p>將卸妝乳均勻塗抹於臉上，按摩至「出油」。</p></li><li><p><strong>將手上剛卸妝的油脂洗乾淨。</strong></p><ul class="sub-steps"><li>手微濕後，再按摩臉部一次。</li><li>臉上會逐漸出現白色水狀，這是乳化過程。</li></ul></li><li><p>重複乳化 3 次後，用清水洗淨臉部。</p></li></ol></article><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">02</span><h2>洗臉</h2></div><p class="important-note">使用前，請先將手部清潔乾淨。</p><ol class="instruction-list"><li><p>將洗面乳擠於手上，加入少量清水。</p></li><li><p>搓出綿密泡泡後，再塗抹於臉上清潔。</p></li></ol></article></div>
 <div class="product-section">
-<h3 class="title">一切的保養從(好的)清潔開始</h3>
-<div class="product-item">
-<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png');"></div>
+<h3 class="title">清潔保養產品</h3>
+<article class="product-item">
+<div class="product-photo"><img alt="玫瑰水淨顏卸妝乳產品圖" decoding="async" draggable="false" height="640" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png" width="640"/></div>
 <div class="prod-info">
 <span class="prod-tag">卸妝乳</span>
-<div class="prod-name">玫瑰水淨顏卸妝乳</div>
+<h3 class="prod-name">玫瑰水淨顏卸妝乳</h3>
 <div class="prod-desc">清爽的水乳質地，能溫和帶走彩妝髒污，讓肌膚感受不油不膩的清爽。</div>
 </div>
-</div>
-<div class="product-item">
-<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/洗面乳.png');"></div>
+</article>
+<article class="product-item">
+<div class="product-photo"><img alt="極透亮妍鑽白潔膚霜產品圖" decoding="async" draggable="false" height="640" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/洗面乳.png" width="640"/></div>
 <div class="prod-info">
 <span class="prod-tag">洗面乳</span>
-<div class="prod-name">極透亮妍鑽白潔膚霜</div>
+<h3 class="prod-name">極透亮妍鑽白潔膚霜</h3>
 <div class="prod-desc">富含 28% 胺基酸，給予肌膚最溫和的清潔，洗後保濕有感、絕不緊繃。</div>
 </div>
-</div>
-<hr class="prod-divider"/>
-<div class="product-item">
-<div class="prod-img-placeholder" style="background-image: url('https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png');"></div>
+</article>
+
+<article class="product-item">
+<div class="product-photo"><img alt="玫瑰水漾淨顏卸妝液產品圖" decoding="async" draggable="false" height="640" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png" width="640"/></div>
 <div class="prod-info">
 <span class="prod-tag">卸妝液</span>
-<div class="prod-name">玫瑰水漾淨顏卸妝液</div>
+<h3 class="prod-name">玫瑰水漾淨顏卸妝液</h3>
 <div class="prod-desc">若您較常使用眼唇強效彩妝，建議搭配卸妝液進行「分區卸妝」，達到深層潔淨效果。</div>
 </div>
-</div>
-<div class="line-call-to-action">
-                        以上產品皆有販售，如有喜歡，請洽官方 Line 諮詢購買。
-                    </div>
+</article>
+<div class="line-call-to-action"><span>以上產品皆有販售，歡迎透過官方 LINE 諮詢購買。</span><a class="under-link" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 諮詢產品 ↗</a></div>
 </div>
 </div></section><section class="care-panel section-wrap" id="crystal"><div class="content-crystal">
 <h2 class="section-header">黃金修復期</h2>
