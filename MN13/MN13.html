@@ -508,6 +508,15 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 @media(min-width:901px) and (max-height:760px){#cleansing .care-video-card{padding:0 12px 0 0}#cleansing .care-video-card h2{font-size:28px;margin:6px 0}#cleansing .care-video-intro{margin-bottom:10px}#cleansing .care-video-frame{height:calc(100dvh - 265px);max-height:none}#cleansing .care-video-link{margin-top:12px;padding-top:10px}#cleansing .cleansing-steps{padding:20px}}
 @media(max-width:900px){#cleansing{padding-top:24px;padding-bottom:36px}#cleansing .content-cleansing{display:block}#cleansing .care-video-card{padding:0;max-width:480px;margin:0 auto 28px}#cleansing .care-video-frame{height:auto;aspect-ratio:3/4;width:100%;max-height:none}#cleansing .cleansing-steps{height:auto;min-height:0;overflow:visible;padding:24px;gap:20px}#cleansing .prod-info{grid-template-rows:auto minmax(84px,auto) auto}#cleansing .prod-name{font-size:16px}#cleansing .product-section{column-gap:14px}}
 @media(max-width:450px){#cleansing .cleansing-steps{padding:22px 18px}#cleansing .product-section{column-gap:12px}#cleansing .teaching-heading h2{font-size:28px}}
+
+/* Full cover image and neutral outer canvas */
+#cleansing{background:transparent}
+#cleansing .care-video-frame{width:min(100%,calc((100dvh - 295px)*.79888));height:auto;aspect-ratio:1144/1432;max-height:none;margin:0 auto}
+#cleansing .care-video-frame img{object-fit:contain;background:transparent}
+#cleansing .care-video-link{width:min(100%,calc((100dvh - 295px)*.79888));margin-left:auto;margin-right:auto}
+#cleansing .cleansing-steps{background-color:#fffdf8;background-image:url('https://m13nbeauty.github.io/MN13/MN13/image/tutorial-paper-texture-v1.webp');background-size:640px 640px;background-repeat:repeat}
+@media(min-width:901px) and (max-height:760px){#cleansing .care-video-frame{width:min(100%,calc((100dvh - 265px)*.79888));height:auto;max-height:none}#cleansing .care-video-link{width:min(100%,calc((100dvh - 265px)*.79888))}}
+@media(max-width:900px){#cleansing{background:transparent}#cleansing .care-video-frame{width:100%;height:auto;aspect-ratio:1144/1432}#cleansing .care-video-link{width:100%}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
