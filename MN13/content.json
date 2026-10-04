@@ -32,7 +32,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 1,
       "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
@@ -87,7 +87,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/Plasma.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 4,
       "reviewNote": "待確認設備型號、用途及操作資格；文字調整不能替代設備合法性確認。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
@@ -116,14 +116,22 @@
       "id": "contour",
       "category": "彈力．輪廓",
       "title": "輪廓保養",
-      "summary": "按摩保養 · 臉部呵護",
-      "description": "透過原有臉部按摩與保養步驟進行護理。實際手法與課程安排，請於預約時與美容師確認。",
+      "summary": "輪廓保養 · 臉部呵護",
+      "description": "著重臉部輪廓的保養需求，護理內容依當次諮詢確認。肌膚外觀與保養感受因人而異。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/輪廓保養管理.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-facial-device-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 6,
-      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "作品集全臉類音波與輪廓保養為同一課程；官網使用輪廓保養名稱，不描述儀器。實際操作內容仍由業主確認。",
+      "sourceNames": [
+        "全臉類音波"
+      ],
+      "sourceImageFilenames": [
+        "類音波.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "acid",
@@ -134,7 +142,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/汰酸排導.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 7,
       "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
       "sourceNames": [
@@ -197,7 +205,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/斑點剋星.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 10,
       "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
       "sourceNames": [
@@ -216,7 +224,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/卸洗.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 11,
       "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
@@ -229,7 +237,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/駐顏粉底.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 12,
       "reviewNote": "待確認是否涉及針具、侵入性操作及產品使用方式。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
       "sourceNames": [
@@ -248,7 +256,7 @@
       "images": [
         "https://m13nbeauty.github.io/MN13/MN13/image/外泌體膠原凍膜.png"
       ],
-      "visible": true,
+      "visible": false,
       "sortOrder": 13,
       "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
@@ -291,27 +299,6 @@
         "mts.jpg"
       ],
       "reviewNote": "待確認 MTS 的實際設備、是否使用針具或涉及侵入性操作，以及操作資格；不能只換文字就認定是一般美容服務。\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
-      "imageWidth": 128,
-      "imageHeight": 128
-    },
-    {
-      "id": "facial-device",
-      "category": "肌膚保養",
-      "title": "全臉類音波保養",
-      "summary": "臉部保養 · 諮詢安排",
-      "description": "全臉類音波保養的實際設備與課程安排，請於預約前與美容師確認。",
-      "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/media/course-facial-device-20261004-v1.webp"
-      ],
-      "visible": false,
-      "sortOrder": 16,
-      "sourceNames": [
-        "全臉類音波"
-      ],
-      "sourceImageFilenames": [
-        "類音波.jpg"
-      ],
-      "reviewNote": "待確認設備完整名稱、型號、許可資訊及操作方式。「類音波」名稱本身不能判定器材種類或合法操作資格。\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
       "imageWidth": 128,
       "imageHeight": 128
     },
