@@ -539,6 +539,11 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 .care-booklet{background:#f0eee8}
 .care-booklet::before{content:"";position:absolute;inset:0;z-index:-1;background:#f0eee8 url('https://m13nbeauty.github.io/MN13/MN13/image/tutorial-paper-texture-v1.webp') repeat;background-size:440px 440px;background-blend-mode:normal;filter:grayscale(1) brightness(.97) contrast(1.12);pointer-events:none}
 .care-booklet::after{width:24px;background:linear-gradient(90deg,transparent,rgba(109,81,62,.04) 35%,rgba(109,81,62,.14) 50%,rgba(255,255,255,.45) 60%,transparent)}
+
+/* Crystal aftercare: a calm, readable guide, scoped to this tab. */
+#crystal .crystal-guide{max-width:1120px;margin:auto}#crystal h2{font-family:var(--serif);font-size:clamp(26px,3vw,36px);font-weight:400;line-height:1.5}#crystal h3{font-size:21px;font-weight:500;line-height:1.6}#crystal p{line-height:1.9;text-wrap:pretty}#crystal .crystal-intro{padding:18px 0 40px}#crystal .crystal-intro h2{font-size:clamp(30px,4vw,46px);margin:12px 0}#crystal .crystal-intro>p:last-of-type{font-size:16px}#crystal .crystal-jumps{display:flex;gap:26px;flex-wrap:wrap;margin-top:25px;font-size:14px}#crystal .crystal-jumps a{padding-bottom:7px;border-bottom:1px solid #cbbcaf}#crystal .crystal-reminders{background:#fff;border-radius:22px;padding:28px 32px;box-shadow:0 5px 25px rgba(109,81,62,.035)}#crystal .crystal-reminders h2{font-size:26px;margin:0 0 22px}#crystal .crystal-reminder-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}#crystal .crystal-reminder-grid article+article{border-left:1px solid #e7ded5;padding-left:20px}#crystal .crystal-reminder-grid span{font-size:14px;color:#9c7d63}#crystal .crystal-reminder-grid p{font-size:16px;margin-top:8px}#crystal .crystal-routines,#crystal .crystal-notes{padding-top:54px;scroll-margin-top:110px}#crystal-reminders{scroll-margin-top:110px}#crystal .crystal-section-heading{margin-bottom:24px}#crystal .crystal-section-heading h2{margin-top:8px}#crystal .crystal-stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}#crystal .crystal-stage{border-top:2px solid #b99b83;padding-top:20px}#crystal .crystal-stage>h3{font-family:var(--serif);font-size:30px;margin:0 0 24px}#crystal .crystal-routine{display:grid;grid-template-columns:56px 1fr;gap:18px;margin-bottom:25px}#crystal .crystal-routine h4{font-size:15px;font-weight:500;padding-top:9px}#crystal .crystal-steps{list-style:none;counter-reset:carestep;margin:0;padding:0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px 8px}#crystal .crystal-steps li{counter-increment:carestep;background:#fff;border-radius:11px;padding:9px 12px;font-size:15px;line-height:1.6;display:flex;align-items:baseline;gap:8px}#crystal .crystal-steps li::before{content:counter(carestep,decimal-leading-zero);font-size:11px;color:#aa8a70}#crystal .crystal-return{display:flex;gap:28px;padding:24px 0;border-top:1px solid #ded2c6;border-bottom:1px solid #ded2c6;margin-top:20px}#crystal .crystal-return>span{font-size:18px;white-space:nowrap;padding-top:3px}#crystal .crystal-return h3{margin:0 0 5px}#crystal .crystal-return p{font-size:15px}#crystal .crystal-alternative{display:grid;grid-template-columns:1fr 1.6fr;gap:28px;padding-top:28px}#crystal .crystal-alternative h3{font-size:18px}#crystal .crystal-alternative p{font-size:15px;margin-bottom:12px}#crystal .crystal-alternative strong{display:inline-block;margin-right:20px;font-weight:500}#crystal .crystal-note-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}#crystal .crystal-note-list article{display:flex;gap:18px;border-top:1px solid #ded2c6;padding:22px 0}#crystal .crystal-note-list article:last-child{grid-column:1/-1}#crystal .crystal-note-number{font-family:var(--serif);font-size:24px;color:#b3947b}#crystal .crystal-note-list h3{font-size:18px;margin-bottom:6px}#crystal .crystal-note-list p{font-size:15px}#crystal .crystal-contact{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid #ded2c6;font-size:16px}#crystal .crystal-contact span{font-size:22px}
+@media(max-width:900px){#crystal .crystal-reminder-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#crystal .crystal-reminder-grid article+article{border:0;padding-left:0}#crystal .crystal-stage-grid{gap:24px}#crystal .crystal-routine{grid-template-columns:1fr;gap:10px}}
+@media(max-width:600px){#crystal .crystal-intro{padding-top:4px;padding-bottom:30px}#crystal .crystal-jumps{gap:16px;font-size:13px}#crystal .crystal-reminders{padding:24px 20px}#crystal .crystal-reminder-grid{grid-template-columns:1fr 1fr;gap:20px}#crystal .crystal-reminder-grid p{font-size:15px}#crystal .crystal-reminder-grid article:last-child{grid-column:1/-1}#crystal .crystal-stage-grid,#crystal .crystal-note-list,#crystal .crystal-alternative{grid-template-columns:1fr}#crystal .crystal-stage-grid{gap:22px}#crystal .crystal-routine{grid-template-columns:42px 1fr;gap:10px}#crystal .crystal-steps li{font-size:14px;padding:8px 10px}#crystal .crystal-return{gap:18px}#crystal .crystal-alternative{gap:12px}#crystal .crystal-routines,#crystal .crystal-notes{padding-top:36px}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
@@ -593,48 +598,13 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 </article>
 <div class="line-call-to-action"><span>以上產品皆有販售，歡迎透過官方 LINE 諮詢購買。</span><a class="under-link" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 諮詢產品 ↗</a></div>
 </div></div>
-</div></section><section class="care-panel section-wrap" id="crystal"><div class="content-crystal">
-<h2 class="section-header">黃金修復期</h2>
-<div class="grid-5">
-<div class="grid-box"><div>8~12小時內請勿碰水</div></div>
-<div class="grid-box"><div>前3天避免熱水洗臉與用力擦拭</div></div>
-<div class="grid-box"><div>7天隨時噴修護液</div></div>
-<div class="grid-box grid-box-wide"><div>一週無需塗抹其他護膚品</div></div>
-<div class="grid-box grid-box-wide"><div>做好防曬防曬後須卸妝</div></div>
-</div>
-<div class="gradient-section">
-<div class="gradient-inner">
-<h2 class="section-header">居家保養流程</h2>
-<div class="card">
-<span class="day-label">DAY 1~3</span>
-<p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ (防曬)</p>
-<p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ 面膜 ➝ 清水洗臉 ➝ 修護液 ➝ EGF*2~5</p>
-</div>
-<div class="card">
-<span class="day-label">DAY 4~7</span>
-<p class="routine-p">早：洗面乳 ➝ 修護液 ➝ EGF*1~2 ➝ 防曬</p>
-<p class="routine-p">晚：卸妝 ➝ 洗面乳 ➝ 修護液 ➝ (面膜) ➝ EGF*2~5</p>
-</div>
-<div class="card">
-<span class="day-label">DAY 8</span>
-<p class="routine-p" style="color:#666; font-size:0.85rem;">建議回到 MN13 進行養膚課程，開始全方位保養，使肌膚完整更新，效果加倍。</p>
-</div>
-<div class="note-tan-card">
-<b style="color:var(--text-main); display:block; margin-bottom:10px; font-size:0.9rem;">無購買產品者步驟：</b>
-<p style="color:#666;">• 無妝時：清水洗臉 ➝ 保濕面膜</p>
-<p style="color:#666;">• 有妝時：卸妝清潔 ➝ 保濕面膜</p>
-</div>
-</div>
-</div>
-<div class="precautions-block">
-<div class="title">— 注意事項 —</div>
-<div class="precaution-item" data-index="1.">泛紅溫熱：循環加重、微刺感屬正常現象。</div>
-<div class="precaution-item" data-index="2.">黑色點狀：矽晶代謝在毛孔中，過幾天會自然消失。</div>
-<div class="precaution-item" data-index="3.">禁止除毛：勿進行挽臉、刀片除毛等行為。</div>
-<div class="precaution-item" data-index="4.">特殊反應：曾用藥者可能會有紅疹發癢感，請多補水。</div>
-<div class="precaution-item" data-index="5.">深層代謝(排淨期)：激發粉刺痘痘為排淨過程，「切勿擠壓」！若感不適可用修護液 or EGF 舒緩。</div>
-</div>
-</div></section></div>
+</div></section><section class="care-panel section-wrap" id="crystal"><div class="crystal-guide">
+<header class="crystal-intro"><p class="eyebrow">YOUR AFTERCARE GUIDE</p><h2>矽晶後，這樣照顧肌膚。</h2><p>先看修復期提醒，再依照天數查看早晚保養順序。</p><nav class="crystal-jumps" aria-label="矽晶保養內容"><a href="#crystal-reminders">修復期提醒 ↓</a><a href="#crystal-routines">早晚保養 ↓</a><a href="#crystal-notes">注意事項 ↓</a></nav></header>
+<section class="crystal-reminders" id="crystal-reminders"><h2>修復期，先記住這些</h2><div class="crystal-reminder-grid">
+<article><span>8–12 小時內</span><p>請勿碰水</p></article><article><span>前 3 天</span><p>避免熱水洗臉與用力擦拭</p></article><article><span>7 天內</span><p>隨時噴修護液</p></article><article><span>一週內</span><p>無需塗抹其他護膚品</p></article><article><span>防曬與清潔</span><p>做好防曬，使用防曬後須卸妝</p></article></div></section>
+<section class="crystal-routines" id="crystal-routines"><div class="crystal-section-heading"><p class="eyebrow">DAILY ROUTINE</p><h2>找到今天的保養順序</h2></div><div class="crystal-stage-grid"><article class="crystal-stage"><h3>第 1–3 天</h3><div class="crystal-routine"><h4>早上</h4><ol class="crystal-steps"><li>洗面乳</li><li>修護液</li><li>EGF × 1–2</li><li>（防曬）</li></ol></div><div class="crystal-routine"><h4>晚上</h4><ol class="crystal-steps"><li>卸妝</li><li>洗面乳</li><li>修護液</li><li>面膜</li><li>清水洗臉</li><li>修護液</li><li>EGF × 2–5</li></ol></div></article><article class="crystal-stage"><h3>第 4–7 天</h3><div class="crystal-routine"><h4>早上</h4><ol class="crystal-steps"><li>洗面乳</li><li>修護液</li><li>EGF × 1–2</li><li>防曬</li></ol></div><div class="crystal-routine"><h4>晚上</h4><ol class="crystal-steps"><li>卸妝</li><li>洗面乳</li><li>修護液</li><li>（面膜）</li><li>EGF × 2–5</li></ol></div></article></div><div class="crystal-return"><span>第 8 天</span><div><h3>回到 MN13，接續養膚</h3><p>建議回到 MN13 進行養膚課程，開始全方位保養。</p></div></div>
+<aside class="crystal-alternative"><h3>未購買產品的保養步驟</h3><div><p><strong>無妝時</strong>清水洗臉 → 保濕面膜</p><p><strong>有妝時</strong>卸妝清潔 → 保濕面膜</p></div></aside></section>
+<section class="crystal-notes" id="crystal-notes"><div class="crystal-section-heading"><p class="eyebrow">PLEASE KEEP IN MIND</p><h2>保養時的注意事項</h2></div><div class="crystal-note-list"><article><span class="crystal-note-number">01</span><div><h3>泛紅溫熱</h3><p>循環加重、微刺感屬正常現象。</p></div></article><article><span class="crystal-note-number">02</span><div><h3>黑色點狀</h3><p>矽晶代謝在毛孔中，過幾天會自然消失。</p></div></article><article><span class="crystal-note-number">03</span><div><h3>禁止除毛</h3><p>勿進行挽臉、刀片除毛等行為。</p></div></article><article><span class="crystal-note-number">04</span><div><h3>特殊反應</h3><p>曾用藥者可能會有紅疹發癢感，請多補水。</p></div></article><article><span class="crystal-note-number">05</span><div><h3>深層代謝(排淨期)</h3><p>激發粉刺痘痘為排淨過程，「切勿擠壓」！若感不適可用修護液 或 EGF 舒緩。</p></div></article></div><a class="crystal-contact" href="https://lin.ee/8NyVW9j" target="_blank" rel="noopener">有保養問題？聯繫小如如 <span>↗</span></a></section></div></section></div>
 <div class="page" id="diary"><section class="page-heading section-wrap"><p class="eyebrow">REAL SKIN STORIES</p><h1>專屬肌膚日誌<span>。</span></h1><p>實際施作紀錄，每一次回來，都更了解自己的肌膚。</p></section><section class="section-wrap"><div class="diary-grid"><div class="case-card">
 <div class="case-card-header">
 <div class="case-tag-group">
