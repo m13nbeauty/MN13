@@ -14,6 +14,8 @@ function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.
  order(data.journals).filter(j=>j.consent===true).forEach(j=>{const card=el('article','case-card'),head=el('div','case-card-header'),tags=el('div','case-tag-group');for(const tag of j.tags||[])tags.append(el('span','case-chip type',tag));if(j.duration)tags.append(el('span','case-chip duration',j.duration));head.append(tags);const compare=el('div','case-compare');['before','after'].forEach((side,i)=>{if(i)compare.append(el('div','case-arrow-center','→'));const box=el('div','case-side'),holder=el('div','case-img-box'),im=image(j[side+'Image'],j.title+' '+(i?'護理後':'護理前'));if(im)holder.append(im);box.append(el('div','case-date',(i?'紀錄後 ':'紀錄前 ')+j[side+'Date']),holder,el('div','case-label',j[side+'Label']));compare.append(box)});card.append(head,compare,el('div','case-desc',j.description));diary.append(card)});
  if(!diary.children.length)diary.append(el('p','','肌膚日誌整理中。'));
 }
-fetch('content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('讀取失敗');return r.json()}).then(render).catch(()=>{/* Existing HTML remains available on a network failure. */});
+const config=window.MN13_BACKEND;
+for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料載入中…'))}
+if(!config)return;
+fetch(config.url+'/rest/v1/mn13_public_content?id=eq.main&select=document',{cache:'no-store',headers:{apikey:config.key}}).then(r=>{if(!r.ok)throw Error('讀取失敗');return r.json()}).then(rows=>{if(!rows[0]?.document)throw Error('資料尚未建立');render(rows[0].document)}).catch(()=>{for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料暫時無法載入，請稍後重新整理。'))}});
 })();
-
