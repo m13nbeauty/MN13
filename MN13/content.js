@@ -4,7 +4,12 @@ function el(tag,cls,value){const node=document.createElement(tag);if(cls)node.cl
 function safeImage(src){try{const u=new URL(src,location.href);return u.protocol==='https:'||(u.origin===location.origin&&u.protocol==='http:')}catch{return false}}
 function image(src,alt,cls){if(!safeImage(src))return null;const im=el('img',cls);im.src=src;im.alt=alt;im.loading='lazy';im.draggable=false;im.addEventListener('error',()=>im.remove(),{once:true});return im}
 function order(items){return [...items].filter(x=>x.visible===true).sort((a,b)=>a.sortOrder-b.sortOrder)}
+let pageVisibility={courses:false,diary:false};
+const originalShowPage=showPage;
+showPage=function(id,...args){if((id==='courses'||id==='diary')&&pageVisibility[id]===false)id='about';return originalShowPage(id,...args)};
+function applyPageVisibility(settings){pageVisibility={courses:true,diary:true,...settings};for(const key of ['courses','diary']){const hidden=pageVisibility[key]===false;document.querySelectorAll('a[href="#'+key+'"],a[data-page="'+key+'"],#'+key).forEach(n=>n.hidden=hidden);if(key==='courses')document.querySelectorAll('#about .services-section').forEach(n=>n.hidden=hidden)}if(pageVisibility[location.hash.slice(1)]===false)showPage('about',false)}
 function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.isArray(data.journals))throw Error('資料格式不符');
+ applyPageVisibility(data.pageVisibility);
  const grid=document.querySelector('#courses .services-grid'),filters=document.querySelector('#courses .filters');grid.replaceChildren();filters.replaceChildren();Object.keys(courses).forEach(k=>delete courses[k]);
  const visible=order(data.courses),categories=['all',...new Set(visible.map(c=>c.category))];
  categories.forEach((category,i)=>{const b=el('button','filter'+(i===0?' active':''),category==='all'?'全部課程':category);b.type='button';b.dataset.filter=category;b.setAttribute('aria-pressed',String(i===0));b.onclick=()=>filterCourses(b);filters.append(b)});
@@ -17,5 +22,6 @@ function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.
 const config=window.MN13_BACKEND;
 for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料載入中…'))}
 if(!config)return;
-fetch(config.url+'/rest/v1/mn13_public_content?id=eq.main&select=document',{cache:'no-store',headers:{apikey:config.key}}).then(r=>{if(!r.ok)throw Error('讀取失敗');return r.json()}).then(rows=>{if(!rows[0]?.document)throw Error('資料尚未建立');render(rows[0].document)}).catch(()=>{for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料暫時無法載入，請稍後重新整理。'))}});
+fetch(config.url+'/rest/v1/mn13_public_content?id=eq.main&select=document',{cache:'no-store',headers:{apikey:config.key}}).then(r=>{if(!r.ok)throw Error('讀取失敗');return r.json()}).then(rows=>{if(!rows[0]?.document)throw Error('資料尚未建立');render(rows[0].document)}).catch(()=>{applyPageVisibility({courses:false,diary:false});for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料暫時無法載入，請稍後重新整理。'))}});
 })();
+
