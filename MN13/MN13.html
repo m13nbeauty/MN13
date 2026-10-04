@@ -420,6 +420,18 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 #cleansing .line-call-to-action a{flex-shrink:0}
 @media(max-width:1000px){#cleansing .content-cleansing{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:28px}#cleansing .teaching-box{padding:24px}.instruction-list>li{font-size:15px}#cleansing .product-section{gap:20px}#cleansing .prod-name{font-size:20px}}
 @media(max-width:700px){#cleansing .content-cleansing{display:block}#cleansing .video-wrapper{position:relative;top:auto;aspect-ratio:3/4;max-width:420px;margin:0 auto 28px}#cleansing .teaching-box{padding:24px}#cleansing .cleansing-steps{gap:20px}#cleansing .product-section{display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px}.product-photo{max-width:420px;margin:auto}#cleansing .prod-info{padding-top:18px}#cleansing .prod-name{font-size:23px}#cleansing .prod-desc{font-size:15px}#cleansing .line-call-to-action{display:flex;flex-direction:column;align-items:flex-start;gap:14px}#cleansing .important-note{font-size:14px}.instruction-list>li{font-size:16px}}
+
+/* Keep the demonstration in normal flow; products share the lesson column */
+#cleansing .video-wrapper{position:relative;top:auto;align-self:start}
+#cleansing .cleansing-steps{min-width:0}
+#cleansing .product-section{grid-column:auto;width:100%;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:8px;padding-top:28px}
+#cleansing .product-section .title{font-size:25px}
+#cleansing .product-photo{width:100%;max-width:none;margin:0;aspect-ratio:1}
+#cleansing .prod-info{padding-top:14px}
+#cleansing .prod-name{font-size:18px;line-height:1.6;margin:6px 0 10px}
+#cleansing .prod-desc{font-size:13px;line-height:1.9}
+#cleansing .line-call-to-action{flex-wrap:wrap;gap:12px;font-size:13px}
+@media(max-width:700px){#cleansing .product-section{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}#cleansing .prod-name{font-size:16px;line-height:1.7}#cleansing .prod-desc{font-size:13px;line-height:1.8}#cleansing .prod-tag{font-size:11px}#cleansing .prod-info{padding-top:12px}#cleansing .product-section .title{font-size:25px}#cleansing .line-call-to-action{grid-column:1/-1}}
 </style></head><body>
 <a class="skip-link" href="#main">跳至主要內容</a>
 <header class="site-header"><a class="logo" href="#about" onclick="showPage('about')">MN13 <span>Beauty</span></a><button aria-expanded="false" aria-label="開啟選單" class="menu-toggle" onclick="toggleMenu()">選單 <span>☰</span></button><nav aria-label="主選單" class="main-nav"><a data-page="about" href="#about" onclick="showPage('about')">關於我們</a><a data-page="courses" href="#courses" onclick="showPage('courses')">課程介紹</a><a data-page="care" href="#care" onclick="showPage('care')">保養篇</a><a data-page="diary" href="#diary" onclick="showPage('diary')">肌膚日誌</a></nav><a class="header-book" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">諮詢與預約 ↗</a></header>
@@ -448,8 +460,7 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="page" id="care"><section class="page-heading section-wrap"><p class="eyebrow">EVERYDAY SKIN RITUALS</p><h1>保養篇<span>。</span></h1><p>一切的保養，從好的清潔開始。</p></section><div class="care-tabs section-wrap"><button class="filter active" onclick="showCare('cleansing',this)">卸洗教學</button><button class="filter" onclick="showCare('crystal',this)">矽晶保養</button></div><section class="care-panel active section-wrap" id="cleansing"><div class="content-cleansing">
 <div class="video-wrapper">
 <a aria-label="在 Instagram 觀看卸洗教學影片（另開分頁）" class="play-overlay" href="https://www.instagram.com/reel/DIQhIO5ya0p/" rel="noopener" target="_blank">▶<span class="teaching-video-caption">觀看卸洗示範 ↗</span></a>
-</div><div class="cleansing-steps"><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">01</span><h2>卸妝</h2></div><p class="important-note">先將手部清潔乾淨，在手乾、臉乾的狀態下使用。</p><ol class="instruction-list"><li><p>將卸妝乳均勻塗抹於臉上，按摩至「出油」。</p></li><li><p><strong>將手上剛卸妝的油脂洗乾淨。</strong></p><ul class="sub-steps"><li>手微濕後，再按摩臉部一次。</li><li>臉上會逐漸出現白色水狀，這是乳化過程。</li></ul></li><li><p>重複乳化 3 次後，用清水洗淨臉部。</p></li></ol></article><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">02</span><h2>洗臉</h2></div><p class="important-note">使用前，請先將手部清潔乾淨。</p><ol class="instruction-list"><li><p>將洗面乳擠於手上，加入少量清水。</p></li><li><p>搓出綿密泡泡後，再塗抹於臉上清潔。</p></li></ol></article></div>
-<div class="product-section">
+</div><div class="cleansing-steps"><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">01</span><h2>卸妝</h2></div><p class="important-note">先將手部清潔乾淨，在手乾、臉乾的狀態下使用。</p><ol class="instruction-list"><li><p>將卸妝乳均勻塗抹於臉上，按摩至「出油」。</p></li><li><p><strong>將手上剛卸妝的油脂洗乾淨。</strong></p><ul class="sub-steps"><li>手微濕後，再按摩臉部一次。</li><li>臉上會逐漸出現白色水狀，這是乳化過程。</li></ul></li><li><p>重複乳化 3 次後，用清水洗淨臉部。</p></li></ol></article><article class="teaching-box"><div class="teaching-heading"><span class="teaching-index">02</span><h2>洗臉</h2></div><p class="important-note">使用前，請先將手部清潔乾淨。</p><ol class="instruction-list"><li><p>將洗面乳擠於手上，加入少量清水。</p></li><li><p>搓出綿密泡泡後，再塗抹於臉上清潔。</p></li></ol></article><div class="product-section">
 <h3 class="title">清潔保養產品</h3>
 <article class="product-item">
 <div class="product-photo"><img alt="玫瑰水淨顏卸妝乳產品圖" decoding="async" draggable="false" height="640" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸妝乳.png" width="640"/></div>
@@ -467,7 +478,6 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 <div class="prod-desc">富含 28% 胺基酸，給予肌膚最溫和的清潔，洗後保濕有感、絕不緊繃。</div>
 </div>
 </article>
-
 <article class="product-item">
 <div class="product-photo"><img alt="玫瑰水漾淨顏卸妝液產品圖" decoding="async" draggable="false" height="640" loading="lazy" src="https://m13nbeauty.github.io/MN13/MN13/image/卸妝液.png" width="640"/></div>
 <div class="prod-info">
@@ -477,7 +487,8 @@ img{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
 </div>
 </article>
 <div class="line-call-to-action"><span>以上產品皆有販售，歡迎透過官方 LINE 諮詢購買。</span><a class="under-link" href="https://lin.ee/8NyVW9j" rel="noopener" target="_blank">LINE 諮詢產品 ↗</a></div>
-</div>
+</div></div>
+
 </div></section><section class="care-panel section-wrap" id="crystal"><div class="content-crystal">
 <h2 class="section-header">黃金修復期</h2>
 <div class="grid-5">
