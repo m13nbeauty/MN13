@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-04T00:00:00Z",
+  "updatedAt": "2026-10-04T06:44:47.350721+00:00",
   "courses": [
     {
       "id": "bubble",
@@ -9,11 +9,19 @@
       "summary": "清潔保養 · 毛孔清潔",
       "description": "以水流與負壓方式進行肌膚清潔，著重清除肌膚表面的髒污與多餘油脂。實際護理內容依當次諮詢確認。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/淨化毛孔.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-bubble-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 0,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "韓國小氣泡"
+      ],
+      "sourceImageFilenames": [
+        "小氣泡.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "extraction",
@@ -26,7 +34,7 @@
       ],
       "visible": true,
       "sortOrder": 1,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
     {
       "id": "crystal",
@@ -35,11 +43,19 @@
       "summary": "肌膚保養 · 日常照護",
       "description": "矽晶保養著重肌膚護理與後續居家照護。課程前會確認當次膚況與保養安排；護理後請依保養篇的步驟照顧肌膚。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/矽晶【養膚過程】.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-crystal-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 2,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "黑科技矽晶煥膚"
+      ],
+      "sourceImageFilenames": [
+        "矽晶.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "aqua",
@@ -48,11 +64,19 @@
       "summary": "保濕護理 · 肌膚光澤",
       "description": "以保濕保養為主的臉部護理，著重肌膚的潤澤感與光澤感。實際使用產品及護理方式，請於預約時確認。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/水光.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-aqua-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 3,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "女神無創水光"
+      ],
+      "sourceImageFilenames": [
+        "水光.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "plasma",
@@ -65,7 +89,7 @@
       ],
       "visible": true,
       "sortOrder": 4,
-      "reviewNote": "待確認設備型號、用途及操作資格；文字調整不能替代設備合法性確認。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "待確認設備型號、用途及操作資格；文字調整不能替代設備合法性確認。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
     {
       "id": "exosome_youth",
@@ -74,11 +98,19 @@
       "summary": "臉部保養 · 潤澤呵護",
       "description": "以臉部保養為主，著重肌膚的潤澤感。實際使用產品及成分，以現場產品標示與諮詢說明為準。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/外泌體幼態美膚.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-exosome-youth-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 5,
-      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "外泌體幼態美膚"
+      ],
+      "sourceImageFilenames": [
+        "plasma外泌體.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "contour",
@@ -91,7 +123,7 @@
       ],
       "visible": true,
       "sortOrder": 6,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
     {
       "id": "acid",
@@ -104,7 +136,15 @@
       ],
       "visible": true,
       "sortOrder": 7,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
+      "sourceNames": [
+        "青春之泉汰酸排導",
+        "青春之泉 汰酸排導"
+      ],
+      "sourceImageFilenames": [
+        "青春之泉.jpg",
+        "汰酸.jpg"
+      ]
     },
     {
       "id": "firming",
@@ -113,11 +153,19 @@
       "summary": "臉部按摩 · 保養呵護",
       "description": "以原有撥筋按摩手法搭配臉部保養。課程內容以實際諮詢說明為準，護理感受與肌膚外觀因人而異。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/逆時彈力緊膚.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-firming-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 8,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "逆時彈力緊膚管理"
+      ],
+      "sourceImageFilenames": [
+        "逆時彈力緊膚.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "eye",
@@ -126,11 +174,19 @@
       "summary": "眼周保養 · 潤澤呵護",
       "description": "針對眼周肌膚進行保養，搭配原有眼周按摩與精華保養步驟。著重眼周肌膚的潤澤感，實際安排依當次諮詢確認。",
       "images": [
-        "https://m13nbeauty.github.io/MN13/MN13/image/眼部三合一.png"
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-eye-20261004-v1.webp"
       ],
       "visible": true,
       "sortOrder": 9,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "sourceNames": [
+        "眼部三合一"
+      ],
+      "sourceImageFilenames": [
+        "眼週護理.jpg"
+      ],
+      "imageWidth": 128,
+      "imageHeight": 128
     },
     {
       "id": "spot",
@@ -143,7 +199,13 @@
       ],
       "visible": true,
       "sortOrder": 10,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
+      "sourceNames": [
+        "斑點剋星"
+      ],
+      "sourceImageFilenames": [
+        "IG_臉貼文.png"
+      ]
     },
     {
       "id": "cleansing-edu",
@@ -156,7 +218,7 @@
       ],
       "visible": true,
       "sortOrder": 11,
-      "reviewNote": "課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
     },
     {
       "id": "foundation",
@@ -169,7 +231,13 @@
       ],
       "visible": true,
       "sortOrder": 12,
-      "reviewNote": "待確認是否涉及針具、侵入性操作及產品使用方式。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "待確認是否涉及針具、侵入性操作及產品使用方式。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。",
+      "sourceNames": [
+        "駐顏粉底"
+      ],
+      "sourceImageFilenames": [
+        "駐顏粉底.jpg"
+      ]
     },
     {
       "id": "exosome",
@@ -182,7 +250,155 @@
       ],
       "visible": true,
       "sortOrder": 13,
-      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待 Notion 作品集可讀取後更換；圖片內的文字宣稱需一併檢查。"
+      "reviewNote": "待確認產品完整名稱、成分來源、合法供應及相應文件。\n課程圖片目前沿用舊圖，待補齊課程原圖後更換；圖片內的文字宣稱需一併檢查。"
+    },
+    {
+      "id": "five-elements",
+      "category": "彈力．輪廓",
+      "title": "臉部撥筋保養",
+      "summary": "臉部撥筋 · 按摩保養",
+      "description": "以臉部撥筋手法進行按摩保養。課程內容依當次諮詢確認，護理感受因人而異。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-five-elements-20261004-v1.webp"
+      ],
+      "visible": true,
+      "sortOrder": 14,
+      "sourceNames": [
+        "臉部能量五行"
+      ],
+      "sourceImageFilenames": [
+        "五行.jpg"
+      ],
+      "reviewNote": "\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "imageWidth": 128,
+      "imageHeight": 128
+    },
+    {
+      "id": "mts",
+      "category": "肌膚保養",
+      "title": "MTS 保養",
+      "summary": "保養諮詢 · 課程安排",
+      "description": "MTS 保養的實際操作方式、使用產品與課程安排，請於預約前與美容師確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-mts-20261004-v1.webp"
+      ],
+      "visible": false,
+      "sortOrder": 15,
+      "sourceNames": [
+        "MTS肌底賦活"
+      ],
+      "sourceImageFilenames": [
+        "mts.jpg"
+      ],
+      "reviewNote": "待確認 MTS 的實際設備、是否使用針具或涉及侵入性操作，以及操作資格；不能只換文字就認定是一般美容服務。\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "imageWidth": 128,
+      "imageHeight": 128
+    },
+    {
+      "id": "facial-device",
+      "category": "肌膚保養",
+      "title": "全臉類音波保養",
+      "summary": "臉部保養 · 諮詢安排",
+      "description": "全臉類音波保養的實際設備與課程安排，請於預約前與美容師確認。",
+      "images": [
+        "https://m13nbeauty.github.io/MN13/MN13/media/course-facial-device-20261004-v1.webp"
+      ],
+      "visible": false,
+      "sortOrder": 16,
+      "sourceNames": [
+        "全臉類音波"
+      ],
+      "sourceImageFilenames": [
+        "類音波.jpg"
+      ],
+      "reviewNote": "待確認設備完整名稱、型號、許可資訊及操作方式。「類音波」名稱本身不能判定器材種類或合法操作資格。\n已配對使用者提供的操作照片；目前為 128 × 128 縮圖，待補高解析原檔。",
+      "imageWidth": 128,
+      "imageHeight": 128
+    },
+    {
+      "id": "abdominal-warm-care",
+      "category": "美體 SPA",
+      "title": "腹部溫感保養",
+      "summary": "腹部保養 · 諮詢安排",
+      "description": "腹部保養的實際使用材料與操作方式，待諮詢確認後安排。",
+      "images": [],
+      "visible": false,
+      "sortOrder": 17,
+      "sourceNames": [
+        "暖宮溫灸"
+      ],
+      "sourceImageFilenames": [
+        "溫灸肚子.jpg"
+      ],
+      "reviewNote": "原資料名稱為「暖宮溫灸」，含「婦科祛寒」訴求。本筆先保留草稿。待確認是否實際為溫灸、艾草燃燒及相關資格；不得靠改名迴避醫療行為規範。\nZIP 內未包含此課程圖片原檔，待補圖。\n美體照片待使用者提供，先保留草稿。"
+    },
+    {
+      "id": "navel-candle",
+      "category": "美體 SPA",
+      "title": "臍燭腹部保養",
+      "summary": "腹部按摩 · 保養呵護",
+      "description": "臍燭課程搭配腹部按摩保養。實際操作方式與課程安排，請於預約時確認。",
+      "images": [],
+      "visible": false,
+      "sortOrder": 18,
+      "sourceNames": [
+        "臍燭"
+      ],
+      "sourceImageFilenames": [
+        "臍燭.jpg"
+      ],
+      "reviewNote": "待補齊課程照片並確認實際操作說明；已移除改善婦科不適與手腳冰冷的宣稱。\nZIP 內未包含此課程圖片原檔，待補圖。\n美體照片待使用者提供，先保留草稿。"
+    },
+    {
+      "id": "ear-candle",
+      "category": "美體 SPA",
+      "title": "耳燭頭部保養",
+      "summary": "頭部放鬆 · 保養呵護",
+      "description": "耳燭課程搭配頭部放鬆護理。實際操作方式與課程安排，請於預約時確認。",
+      "images": [],
+      "visible": false,
+      "sortOrder": 19,
+      "sourceNames": [
+        "耳燭"
+      ],
+      "sourceImageFilenames": [
+        "耳燭1.png"
+      ],
+      "reviewNote": "待補齊課程照片並確認實際操作說明；已移除改善過敏、頭痛與睡眠品質的宣稱。\nZIP 內未包含此課程圖片原檔，待補圖。\n美體照片待使用者提供，先保留草稿。"
+    },
+    {
+      "id": "ocean-aroma",
+      "category": "美體 SPA",
+      "title": "海漾香氛",
+      "summary": "香氛保養 · 美體 SPA",
+      "description": "海漾香氛為美體 SPA 保養項目。實際使用產品與課程內容，請於預約時確認。",
+      "images": [],
+      "visible": false,
+      "sortOrder": 20,
+      "sourceNames": [
+        "海漾香氛"
+      ],
+      "sourceImageFilenames": [
+        "1.webp"
+      ],
+      "reviewNote": "原始清單未提供操作步驟；不自行加入按摩方式、時長或產品成分。已移除排毒、活絡循環、消水腫與排廢水的訴求。\nZIP 內未包含此課程圖片原檔，待補圖。\n美體照片待使用者提供，先保留草稿。"
+    },
+    {
+      "id": "back-massage",
+      "category": "美體 SPA",
+      "title": "背部擀筋保養",
+      "summary": "背部按摩 · 放鬆護理",
+      "description": "以背部擀筋方式進行按摩保養。實際手法與課程安排，請於預約時確認。",
+      "images": [],
+      "visible": false,
+      "sortOrder": 21,
+      "sourceNames": [
+        "背部擀筋"
+      ],
+      "sourceImageFilenames": [
+        "背部擀筋.jpg"
+      ],
+      "reviewNote": "已移除排毒、排除廢物的宣稱。\nZIP 內未包含此課程圖片原檔，待補圖。\n美體照片待使用者提供，先保留草稿。"
     }
   ],
   "journals": [

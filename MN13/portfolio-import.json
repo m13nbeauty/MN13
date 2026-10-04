@@ -1,0 +1,190 @@
+{
+  "importedAt": "2026-10-04",
+  "containsOriginalImages": false,
+  "rows": [
+    {
+      "name": "逆時彈力緊膚管理",
+      "imageFilename": "逆時彈力緊膚.jpg",
+      "features": "排除毒素、廢物, 臉部撥筋",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "全臉類音波",
+      "imageFilename": "類音波.jpg",
+      "features": "拉提緊緻肌膚, 淡化細紋",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "韓國小氣泡",
+      "imageFilename": "小氣泡.jpg",
+      "features": "戰痘, 暢通毛孔",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "臉部能量五行",
+      "imageFilename": "五行.jpg",
+      "features": "排除毒素、廢物, 淡化細紋, 臉部撥筋",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "黑科技矽晶煥膚",
+      "imageFilename": "矽晶.jpg",
+      "features": "戰痘, 暢通毛孔, 油痘肌, 縮毛孔, 縮短代謝周期",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "斑點剋星",
+      "imageFilename": "IG_臉貼文.png",
+      "features": "改善色素沉澱, 除斑",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "青春之泉汰酸排導",
+      "imageFilename": "青春之泉.jpg",
+      "features": "",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "MTS肌底賦活",
+      "imageFilename": "mts.jpg",
+      "features": "戰痘, 提亮膚色, 補充營養",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "外泌體幼態美膚",
+      "imageFilename": "plasma外泌體.jpg",
+      "features": "「零」修復期, 修護首選, 拉提緊緻肌膚, 縮毛孔",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "駐顏粉底",
+      "imageFilename": "駐顏粉底.jpg",
+      "features": "提亮膚色, 素顏美肌, 遮瑕",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "眼部三合一",
+      "imageFilename": "眼週護理.jpg",
+      "features": "保濕導入, 拉提緊緻肌膚, 淡化細紋",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "女神無創水光",
+      "imageFilename": "水光.jpg",
+      "features": "「零」修復期, 補充營養",
+      "portfolio": "肌膚管理"
+    },
+    {
+      "name": "暖宮溫灸",
+      "imageFilename": "溫灸肚子.jpg",
+      "features": "婦科祛寒, 暖宮",
+      "portfolio": "美體SPA"
+    },
+    {
+      "name": "臍燭",
+      "imageFilename": "臍燭.jpg",
+      "features": "改善婦科不適, 改善手腳冰冷, 腹部按摩",
+      "portfolio": "美體SPA"
+    },
+    {
+      "name": "耳燭",
+      "imageFilename": "耳燭1.png",
+      "features": "改善過敏、頭痛症狀, 睡眠品質提升, 頭部筋絡放鬆",
+      "portfolio": "美體SPA"
+    },
+    {
+      "name": "海漾香氛",
+      "imageFilename": "1.webp",
+      "features": "排除毒素、廢物, 活絡身體循環, 消水腫、排廢水",
+      "portfolio": "美體SPA"
+    },
+    {
+      "name": "背部擀筋",
+      "imageFilename": "背部擀筋.jpg",
+      "features": "排除毒素、廢物, 深層筋絡按摩",
+      "portfolio": "美體SPA"
+    },
+    {
+      "name": "青春之泉 汰酸排導",
+      "imageFilename": "汰酸.jpg",
+      "features": "",
+      "portfolio": "美體SPA"
+    }
+  ],
+  "newCourseIds": [
+    "five-elements",
+    "mts",
+    "facial-device",
+    "abdominal-warm-care",
+    "navel-candle",
+    "ear-candle",
+    "ocean-aroma",
+    "back-massage"
+  ],
+  "images": [
+    {
+      "courseId": "facial-device",
+      "uploadedFile": "類音波.webp",
+      "repoPath": "MN13/media/course-facial-device-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "mts",
+      "uploadedFile": "mts.webp",
+      "repoPath": "MN13/media/course-mts-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "crystal",
+      "uploadedFile": "矽晶.webp",
+      "repoPath": "MN13/media/course-crystal-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "bubble",
+      "uploadedFile": "小氣泡.webp",
+      "repoPath": "MN13/media/course-bubble-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "aqua",
+      "uploadedFile": "水光.webp",
+      "repoPath": "MN13/media/course-aqua-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "firming",
+      "uploadedFile": "逆時彈力緊膚.webp",
+      "repoPath": "MN13/media/course-firming-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "five-elements",
+      "uploadedFile": "五行.webp",
+      "repoPath": "MN13/media/course-five-elements-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "exosome_youth",
+      "uploadedFile": "plasma外泌體.webp",
+      "repoPath": "MN13/media/course-exosome-youth-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "courseId": "eye",
+      "uploadedFile": "眼週護理.webp",
+      "repoPath": "MN13/media/course-eye-20261004-v1.webp",
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "imageNote": "使用者另提供九張 128 × 128 操作照片縮圖，已配對；ZIP 本身未包含圖片。"
+}
