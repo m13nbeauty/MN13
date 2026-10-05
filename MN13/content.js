@@ -10,6 +10,9 @@ showPage=function(id,...args){if((id==='courses'||id==='diary')&&pageVisibility[
 function applyPageVisibility(settings){pageVisibility={courses:true,diary:true,...settings};for(const key of ['courses','diary']){const hidden=pageVisibility[key]===false;document.querySelectorAll('a[href="#'+key+'"],a[data-page="'+key+'"],#'+key).forEach(n=>n.hidden=hidden);if(key==='courses')document.querySelectorAll('#about .services-section').forEach(n=>n.hidden=hidden)}if(pageVisibility[location.hash.slice(1)]===false)showPage('about',false)}
 function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.isArray(data.journals))throw Error('資料格式不符');
  applyPageVisibility(data.pageVisibility);
+ const faqSection=document.querySelector('#courses .course-faq'),faqList=document.querySelector('#courses .course-faq-list');
+ if(faqList){faqList.replaceChildren();for(const faq of order(Array.isArray(data.faqs)?data.faqs:[])){if(typeof faq.title!=='string'||typeof faq.answer!=='string'||!faq.answer.trim())continue;const detail=el('details'),question=el('summary',null,faq.title),answer=el('p');answer.style.whiteSpace='pre-line';const lines=faq.answer.split(/\n+/);for(const [i,line] of lines.entries()){if(i)answer.append(document.createElement('br'));const sentences=line.match(/[^。！？]+[。！？]?/g)||[];if(line.length>=70&&sentences.length>1){for(const sentence of sentences)answer.append(el('span','reading-sentence',sentence))}else answer.append(document.createTextNode(line))}detail.append(question,answer);faqList.append(detail)}faqSection.hidden=!faqList.children.length;}
+
  const grid=document.querySelector('#courses .services-grid'),filters=document.querySelector('#courses .filters');grid.replaceChildren();filters.replaceChildren();Object.keys(courses).forEach(k=>delete courses[k]);
  const visible=order(data.courses),typeTabs=el('div','course-type-tabs');typeTabs.setAttribute('aria-label','課程類型');filters.before(typeTabs);
  function courseType(c){return c.serviceType==='body'||(!c.serviceType&&/^美體/.test(c.category||''))?'body':'beauty'}
@@ -27,7 +30,9 @@ function render(data){if(data.version!==1||!Array.isArray(data.courses)||!Array.
 }
 const config=window.MN13_BACKEND;
 for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料載入中…'))}
+const faqSection=document.querySelector('#courses .course-faq');if(faqSection)faqSection.hidden=true;
 if(!config)return;
 fetch(config.url+'/rest/v1/mn13_public_content?id=eq.main&select=document',{cache:'no-store',headers:{apikey:config.key}}).then(r=>{if(!r.ok)throw Error('讀取失敗');return r.json()}).then(rows=>{if(!rows[0]?.document)throw Error('資料尚未建立');render(rows[0].document)}).catch(()=>{applyPageVisibility({courses:false,diary:false});for(const selector of ['#courses .services-grid','#diary .diary-grid']){const box=document.querySelector(selector);if(box)box.replaceChildren(el('p','','資料暫時無法載入，請稍後重新整理。'))}});
 })();
+
 
