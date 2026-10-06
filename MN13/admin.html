@@ -8,7 +8,27 @@
 <div class="workspace"><aside><div class="list-heading"><h2 id="list-title">課程列表</h2><button id="add" type="button">＋ 新增</button></div><input id="search" type="search" aria-label="搜尋內容" placeholder="搜尋名稱、分類或回答"><div id="list"></div></aside><section class="editor"><div id="empty"><h2>選一份內容，開始編輯</h2><p>也可以按「新增」，建立下一份記錄。</p></div><form id="form" hidden></form></section></div>
 <section class="publish"><p>停止輸入後會自動同步，儲存時可繼續編輯。請確認上方顯示「已自動儲存」再離開；連線失敗時，修改會暫存在這台裝置。這裡只放公開內容，請勿輸入客人的聯絡資料或私密紀錄。</p><div><button id="save" type="button">暫存草稿</button><button id="export" type="button">下載備份</button><button id="reload" type="button">重新載入最新內容</button><button class="primary" id="publish" type="button">立即同步</button></div></section>
 <details class="guide"><summary>文字與圖片檢查提醒</summary><p>保養介紹應以實際服務內容為準，不使用治療、排毒、細胞再生或保證成效等宣稱。圖片中的文字也要檢查。產品成分、儀器用途與操作資格，需要另外確認；此提醒不能取代個案判斷。</p><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0030099" target="_blank" rel="noopener">化粧品廣告認定準則 ↗</a></details>
-</div></main><script src="backend-config.js?v=20261004-story"></script><script src="vendor/supabase-2.117.2.js"></script><script src="admin-auth-memory.js?v=20261005-remember"></script><script src="admin.js?v=20261006-autosave"></script></body></html>
+</div></main><script src="backend-config.js?v=20261004-story"></script><script src="vendor/supabase-2.117.2.js"></script><script src="admin-auth-memory.js?v=20261005-remember"></script><script src="admin.js?v=20261006-autosave"></script><script>
+(()=>{'use strict';
+const hubOrigin='https://mr-website-hub.mr-business-labb.chatgpt.site';
+if(location.hash!=='#mr-hub-login'||!window.opener)return;
+const opener=window.opener;let used=false;
+const ready=()=>opener.postMessage({type:'mr-hub-ready'},hubOrigin);
+const timer=setInterval(ready,500);const expire=setTimeout(()=>{clearInterval(timer);window.removeEventListener('message',receive)},60000);
+function receive(event){
+ if(used||event.origin!==hubOrigin||event.source!==opener||event.data?.type!=='mr-hub-credentials'||typeof event.data.password!=='string')return;
+ const password=document.getElementById('password'),button=document.getElementById('loginBtn')||document.getElementById('login-button');
+ if(!password||!button||button.disabled||password.disabled)return;
+ used=true;clearInterval(timer);clearTimeout(expire);window.removeEventListener('message',receive);
+ const email=document.getElementById('email');if(email&&typeof event.data.email==='string')email.value=event.data.email;
+ password.value=event.data.password;
+ const remember=document.getElementById('remember-login');if(remember)remember.checked=true;
+ history.replaceState(null,'',location.pathname+location.search);
+ button.click();
+}
+window.addEventListener('message',receive);ready();
+})();
+</script></body></html>
 
 
 
